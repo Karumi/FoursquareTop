@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConnectionErrorView" customModule="FoursquareTop" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="ieV-Pa-QrG" id="T9y-A6-Pvc"/>
+                <outlet property="message" destination="iuR-9K-J1M" id="ffK-NZ-v7u"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="p6l-Bu-sld" userLabel="ConnectionErrorView">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="313"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2b-hC-Kr3" userLabel="ContainerView">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="313"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_no_connection" translatesAutoresizingMaskIntoConstraints="NO" id="ieV-Pa-QrG" userLabel="ImageView">
+                            <rect key="frame" x="32" y="0.0" width="185" height="165"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuR-9K-J1M">
+                            <rect key="frame" x="0.5" y="217" width="250" height="80"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">¡Oh no!
+¡Se ha perdido la conexión!
+</string>
+                                    <attributes>
+                                        <color key="NSColor" red="0.45098039220000002" green="0.47450980390000003" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="12" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="Desliza hacia abajo para reintentar">
+                                    <attributes>
+                                        <color key="NSColor" red="0.45098039220000002" green="0.47450980390000003" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="313" id="1gP-X3-ZqH"/>
+                        <constraint firstItem="iuR-9K-J1M" firstAttribute="centerX" secondItem="c2b-hC-Kr3" secondAttribute="centerX" id="FLW-pd-2Rh"/>
+                        <constraint firstAttribute="width" constant="250" id="FtQ-kx-eVM"/>
+                        <constraint firstItem="iuR-9K-J1M" firstAttribute="width" secondItem="c2b-hC-Kr3" secondAttribute="width" id="Kxn-PP-0Zo"/>
+                        <constraint firstItem="iuR-9K-J1M" firstAttribute="top" secondItem="ieV-Pa-QrG" secondAttribute="bottom" constant="52" id="RdZ-II-SFG"/>
+                        <constraint firstItem="ieV-Pa-QrG" firstAttribute="top" secondItem="c2b-hC-Kr3" secondAttribute="top" id="jSz-Bb-8Wt"/>
+                        <constraint firstItem="iuR-9K-J1M" firstAttribute="leading" secondItem="c2b-hC-Kr3" secondAttribute="leading" constant="2" id="pxm-Ku-srj"/>
+                        <constraint firstItem="ieV-Pa-QrG" firstAttribute="centerX" secondItem="c2b-hC-Kr3" secondAttribute="centerX" id="vTt-9v-Pbu"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="pxm-Ku-srj"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="c2b-hC-Kr3" firstAttribute="centerX" secondItem="p6l-Bu-sld" secondAttribute="centerX" id="2I5-Kf-UmL"/>
+                <constraint firstItem="c2b-hC-Kr3" firstAttribute="leading" secondItem="p6l-Bu-sld" secondAttribute="leading" id="4KC-f8-B5l"/>
+                <constraint firstItem="c2b-hC-Kr3" firstAttribute="height" secondItem="p6l-Bu-sld" secondAttribute="height" id="Jkh-oP-vJI"/>
+                <constraint firstItem="c2b-hC-Kr3" firstAttribute="centerY" secondItem="p6l-Bu-sld" secondAttribute="centerY" id="qQW-7Q-XtS"/>
+                <constraint firstItem="c2b-hC-Kr3" firstAttribute="width" secondItem="p6l-Bu-sld" secondAttribute="width" id="rbn-De-mhR"/>
+                <constraint firstItem="c2b-hC-Kr3" firstAttribute="centerX" secondItem="p6l-Bu-sld" secondAttribute="centerX" id="tso-BY-llF"/>
+                <constraint firstItem="c2b-hC-Kr3" firstAttribute="top" secondItem="p6l-Bu-sld" secondAttribute="top" id="uVL-Dg-kxP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Jkh-oP-vJI"/>
+                    <exclude reference="qQW-7Q-XtS"/>
+                    <exclude reference="rbn-De-mhR"/>
+                    <exclude reference="tso-BY-llF"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="200" y="355.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_no_connection" width="185" height="165"/>
+    </resources>
+</document>
