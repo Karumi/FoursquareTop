@@ -1,7 +1,7 @@
 
 import UIKit
 
-class BestVenuesAroundYouDataSource : NSObject, UICollectionViewDataSource {
+class BestVenuesAroundYouCollectionViewDataSource : NSObject, UICollectionViewDataSource {
     
     var venueList: VenueListViewModel?
     
@@ -36,5 +36,9 @@ class BestVenuesAroundYouDataSource : NSObject, UICollectionViewDataSource {
             
             return cell
         }
+    }
+    
+    func venue(atIndexPath indexPath: NSIndexPath) -> VenueViewModel? {
+        return venueList?.venues[indexPath.item]
     }
 }

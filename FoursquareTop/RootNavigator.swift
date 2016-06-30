@@ -18,13 +18,10 @@ class RootNavigator : NSObject {
     
     init(serviceLocator: RootServiceLocator) {
         self.serviceLocator = serviceLocator
+        
         super.init()
         
-//        self.serviceLocator.user.navigator = self
-//        self.serviceLocator.appInitialization.navigator = self
-//        self.serviceLocator.advert.navigator = self
-//        self.serviceLocator.favorites.navigator = self
-//        self.serviceLocator.help.navigator = self
+        serviceLocator.venue.navigator = self
     }
     
     convenience override init() {

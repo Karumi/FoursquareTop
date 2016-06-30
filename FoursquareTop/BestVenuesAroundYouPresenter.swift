@@ -4,19 +4,25 @@ import MapKit
 
 struct BestVenuesAroundYouPresenter : Presenter {
     
-    let ui: BestVenuesAroundYouUI
-    let ds = VenueDataSource()
+    private weak var ui: BestVenuesAroundYouUI?
+    private let navigator: VenueNavigator
+    private let useCase: GetBestPlacesAroundYouUseCase
     
-    init(ui: BestVenuesAroundYouUI) {
+    init(ui: BestVenuesAroundYouUI, useCase: GetBestPlacesAroundYouUseCase, navigator: VenueNavigator) {
         self.ui = ui
+        self.useCase = useCase
+        self.navigator = navigator
     }
     
     func viewWillAppear() {
-        ds.topVenues(atLocation: CLLocation(latitude: 40.751622, longitude: -73.986789)) { result in
+        useCase.execute(CLLocation(latitude: 40.751622, longitude: -73.986789)) { result in
             if let venueList = result.value {
-                self.ui.showVenueList(venueList)
+                self.ui?.showVenueList(venueList)
             }
         }
     }
     
+    func venueSelected(venue: VenueViewModel) {
+        navigator.goTo(venueDetail: venue)
+    }
 }

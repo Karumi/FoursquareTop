@@ -1,46 +1,36 @@
 
 import UIKit
 
-class BestVenuesAroundYouViewController : FTViewController, BestVenuesAroundYouUI, UICollectionViewDelegateFlowLayout {
+class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionViewDelegateFlowLayout {
     
-    var venuesAroundYouPresenter: BestVenuesAroundYouPresenter!
+    var venueDetailPresenter: VenueDetailPresenter!
     override var presenter: Presenter? {
-        return venuesAroundYouPresenter
+        return venueDetailPresenter
     }
     
     private var collectionView: UICollectionView!
-    private var dataSource = BestVenuesAroundYouCollectionViewDataSource()
+    private var dataSource = VenueDetailCollectionViewDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         
         initCollectionView()
-        
-        navigationController?.navigationBar.topItem?.title = NSLocalizedString("BestPlacesAround.Title", comment: "Best places to eat around you screen title")
     }
     
-    // MARK: BestVenuesAroundYouUI
-    func showVenueList(venueList: VenueListViewModel) {
-        dataSource.venueList = venueList
+    // MARK: VenueDetailUI
+    func showVenue(venue: VenueViewModel) {
+        dataSource.venue = venue
         collectionView.reloadData()
+        navigationController?.navigationBar.topItem?.title = venue.name
     }
-
+    
     // MARK: UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        if indexPath.item == 0 {
-            return CGSize(width: view.bounds.width, height: 200)
-        } else {
-            return CGSize(width: view.bounds.width, height: 60)
-        }
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        guard let venue = dataSource.venue(atIndexPath: indexPath) else {
-            return
-        }
-        
-        venuesAroundYouPresenter.venueSelected(venue)
+        return CGSize(
+            width: view.bounds.width,
+            height: dataSource.cellTypeAtIndexPath(indexPath).heightForCell
+        )
     }
     
     // MARK: Private
@@ -64,3 +54,4 @@ class BestVenuesAroundYouViewController : FTViewController, BestVenuesAroundYouU
         dataSource.registerCells(collectionView)
     }
 }
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VenueDetailGalleryCollectionViewCellReusdeIdentifier" id="L6e-yt-tBk" customClass="VenueDetailGalleryCollectionViewCell" customModule="FoursquareTop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="228"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="310" height="228"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSS-Fv-KjL">
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="228"/>
+                    </scrollView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eg2-g4-sxg">
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="228"/>
+                    </imageView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="640-2i-lyg">
+                        <rect key="frame" x="135" y="191" width="39" height="37"/>
+                    </pageControl>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="jSS-Fv-KjL" firstAttribute="bottom" secondItem="640-2i-lyg" secondAttribute="bottom" id="1v9-Mo-kTP"/>
+                <constraint firstItem="jSS-Fv-KjL" firstAttribute="leading" secondItem="L6e-yt-tBk" secondAttribute="leading" id="9Hk-XI-gce"/>
+                <constraint firstAttribute="bottom" secondItem="jSS-Fv-KjL" secondAttribute="bottom" id="Ea7-Ka-RMy"/>
+                <constraint firstItem="640-2i-lyg" firstAttribute="centerX" secondItem="L6e-yt-tBk" secondAttribute="centerX" id="Gfo-aA-SZv"/>
+                <constraint firstItem="Eg2-g4-sxg" firstAttribute="top" secondItem="L6e-yt-tBk" secondAttribute="top" id="L2w-y7-YJP"/>
+                <constraint firstItem="jSS-Fv-KjL" firstAttribute="top" secondItem="L6e-yt-tBk" secondAttribute="top" id="QdT-G5-Lb3"/>
+                <constraint firstAttribute="bottom" secondItem="Eg2-g4-sxg" secondAttribute="bottom" id="ci4-Rf-Man"/>
+                <constraint firstAttribute="trailing" secondItem="jSS-Fv-KjL" secondAttribute="trailing" id="dIa-OC-z3n"/>
+                <constraint firstItem="Eg2-g4-sxg" firstAttribute="leading" secondItem="L6e-yt-tBk" secondAttribute="leading" id="sIX-8z-ams"/>
+                <constraint firstAttribute="trailing" secondItem="Eg2-g4-sxg" secondAttribute="trailing" id="wNg-qf-15q"/>
+            </constraints>
+            <size key="customSize" width="310" height="228"/>
+            <connections>
+                <outlet property="noPhotosImage" destination="Eg2-g4-sxg" id="Pt0-Tt-h7f"/>
+                <outlet property="pageControl" destination="640-2i-lyg" id="JD5-3D-Tyb"/>
+                <outlet property="scrollView" destination="jSS-Fv-KjL" id="DdV-vV-LWt"/>
+            </connections>
+            <point key="canvasLocation" x="220" y="117"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,6 +1,6 @@
 import Foundation
 
-protocol BaseUI {
+protocol BaseUI : class {
     var showingEmptyCase : Bool { get set }
     func showDefaultConnectionErrorMessage()
     func showMessage(message: String)

@@ -36,10 +36,16 @@ struct VenueParser {
         return VenueListViewModel(venues: venues)
     }
     
-    private func parseVenue(json: JSON, tips: [VenueTipViewModel]) -> VenueViewModel {
+    func parseVenue(response: AnyObject, tips: [VenueTipViewModel]? = nil) -> VenueViewModel {
+        let json = JSON(response)
+        return parseVenue(json["venue"])
+    }
+    
+    private func parseVenue(json: JSON, tips: [VenueTipViewModel]? = nil) -> VenueViewModel {
         
         let categories = json["categories"].array?.map(parseCategory) ?? []
-        let photos = json["photos"]["groups"]["items"].array?.map(parsePhoto) ?? []
+        let photoGroups = json["photos"]["groups"].arrayValue.first
+        let photos = photoGroups?["items"].array?.map(parsePhoto) ?? []
         let id = json["id"].stringValue
         
         return VenueViewModel(
@@ -61,7 +67,7 @@ struct VenueParser {
             ),
             distance: json["location"]["distance"].doubleValue,
             categories: categories,
-            tips: tips,
+            tips: tips ?? json["tips"].arrayValue.map(parseTip),
             photos: photos
         )
     }

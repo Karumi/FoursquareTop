@@ -5,7 +5,7 @@ import SwiftyJSON
 import QuadratTouch
 import enum Result.Result
 
-enum VenueDataSourceError : ErrorType {
+enum NetworkError : ErrorType {
     case Generic
 }
 
@@ -23,7 +23,7 @@ class VenueDataSource {
         return Session.sharedSession()
     }()
     
-    func topVenues(atLocation location: CLLocation, callback: (Result<VenueListViewModel, VenueDataSourceError>) -> ()) {
+    func topVenues(atLocation location: CLLocation, callback: (Result<VenueListViewModel, NetworkError>) -> ()) {
      
         self.session.venues.explore(
             [
@@ -41,5 +41,16 @@ class VenueDataSource {
                 callback(Result(parser.parseVenueList(response)))
             }
         }.start()
+    }
+    
+    func venue(withIdentifier id: String, callback: (Result<VenueViewModel, NetworkError>) -> ()) {
+    
+        self.session.venues.get(id) { result in
+            if let response = result.response {
+                let parser = VenueParser()
+                callback(Result(parser.parseVenue(response)))
+            }
+        }.start()
+        
     }
 }
