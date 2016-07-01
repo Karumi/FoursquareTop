@@ -9,7 +9,11 @@ protocol VenueDetailGalleryCollectionViewCellDelegate : class {
     func venueDetailGalleryCellDidMoveToImageIndex(index: Int, venue: VenueViewModel)
 }
 
-class VenueDetailGalleryCollectionViewCell : UICollectionViewCell, UIScrollViewDelegate {
+protocol DetailCell {
+    func configure(withVenue venue: VenueViewModel)
+}
+
+class VenueDetailGalleryCollectionViewCell : UICollectionViewCell, UIScrollViewDelegate, DetailCell {
     
     @IBOutlet weak var noPhotosImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -67,7 +71,7 @@ class VenueDetailGalleryCollectionViewCell : UICollectionViewCell, UIScrollViewD
                 scrollView.addSubview(imageView)
                 imageView.sd_setImageWithURL(
                     photo.url,
-                    placeholderImage: UIImage(named: "img_detail_loading")
+                    placeholderImage: UIImage(named: "image-placeholder")
                 )
                 
                 imageView.topAnchor.constraintEqualToAnchor(scrollView.topAnchor).active = true

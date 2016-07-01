@@ -54,6 +54,14 @@ struct VenueViewModel {
         
         return String(format: "%0.1f", rating)
     }
+    
+    var canOpenFoursquareApp: Bool {
+        guard let foursquareURL = foursquareURL else {
+            return false
+        }
+        
+        return UIApplication.sharedApplication().canOpenURL(foursquareURL)
+    }
 }
 
 //@property (nonatomic, strong) UIImage* backgroundThumb;

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F21FFB9A74CB8BAC57F8103 /* Pods_FoursquareTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7558D10968FE6BE3AE8367EF /* Pods_FoursquareTop.framework */; };
+		D35AFFF61D26AACF004E20EB /* VenueDetailActionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35AFFF51D26AACF004E20EB /* VenueDetailActionsCollectionViewCell.swift */; };
+		D35AFFF81D26AAE6004E20EB /* VenueDetailActionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35AFFF71D26AAE6004E20EB /* VenueDetailActionsCollectionViewCell.xib */; };
 		D36692DF1AD96DC400B25C55 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36692DE1AD96DC400B25C55 /* Image.xcassets */; };
 		D36692E11AD96E8600B25C55 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D36692E01AD96E8600B25C55 /* Icon.png */; };
 		D3891C411D1E6E41001858C8 /* RootNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891C401D1E6E41001858C8 /* RootNavigator.swift */; };
@@ -39,6 +41,7 @@
 		D3B828C71AD86F2300D60B6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B828C51AD86F2300D60B6F /* LaunchScreen.xib */; };
 		D3B828D31AD86F2300D60B6F /* FoursquareTopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B828D21AD86F2300D60B6F /* FoursquareTopTests.m */; };
 		D3B829251AD86F8000D60B6F /* poweredByFoursquare_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B829241AD86F8000D60B6F /* poweredByFoursquare_white.png */; };
+		D3DBDE911D26B3C800C63D68 /* DetailCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBDE901D26B3C800C63D68 /* DetailCellType.swift */; };
 		D3E156321D2429A1001FB5BE /* VenueCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E156311D2429A1001FB5BE /* VenueCategoryCollectionViewCell.swift */; };
 		D3E156341D2429A9001FB5BE /* VenueCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E156331D2429A9001FB5BE /* VenueCategoryCollectionViewCell.xib */; };
 		D3E1563E1D24300D001FB5BE /* UIFont+Ftop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1563D1D24300D001FB5BE /* UIFont+Ftop.swift */; };
@@ -75,6 +78,8 @@
 		1A6515A136A33C1C084D5FAD /* Pods-FoursquareTop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareTop.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareTop/Pods-FoursquareTop.release.xcconfig"; sourceTree = "<group>"; };
 		7558D10968FE6BE3AE8367EF /* Pods_FoursquareTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoursquareTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECBF7D2AF1D6AD1177114F5 /* Pods-FoursquareTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareTop/Pods-FoursquareTop.debug.xcconfig"; sourceTree = "<group>"; };
+		D35AFFF51D26AACF004E20EB /* VenueDetailActionsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailActionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D35AFFF71D26AAE6004E20EB /* VenueDetailActionsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueDetailActionsCollectionViewCell.xib; sourceTree = "<group>"; };
 		D36692DE1AD96DC400B25C55 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		D36692E01AD96E8600B25C55 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		D3891C3F1D1E6E40001858C8 /* FoursquareTop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoursquareTop-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -111,6 +116,7 @@
 		D3B828D11AD86F2300D60B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3B828D21AD86F2300D60B6F /* FoursquareTopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoursquareTopTests.m; sourceTree = "<group>"; };
 		D3B829241AD86F8000D60B6F /* poweredByFoursquare_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poweredByFoursquare_white.png; sourceTree = "<group>"; };
+		D3DBDE901D26B3C800C63D68 /* DetailCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCellType.swift; sourceTree = "<group>"; };
 		D3E156311D2429A1001FB5BE /* VenueCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3E156331D2429A9001FB5BE /* VenueCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D3E1563D1D24300D001FB5BE /* UIFont+Ftop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Ftop.swift"; sourceTree = "<group>"; };
@@ -461,6 +467,9 @@
 			children = (
 				D3E97AD61D25CC3400FE4297 /* VenueDetailGalleryCollectionViewCell.swift */,
 				D3E97AD81D25CC3A00FE4297 /* VenueDetailGalleryCollectionViewCell.xib */,
+				D35AFFF51D26AACF004E20EB /* VenueDetailActionsCollectionViewCell.swift */,
+				D35AFFF71D26AAE6004E20EB /* VenueDetailActionsCollectionViewCell.xib */,
+				D3DBDE901D26B3C800C63D68 /* DetailCellType.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -569,6 +578,7 @@
 				D3E156471D2436DF001FB5BE /* TopVenueCollectionViewCell.xib in Resources */,
 				D3B829251AD86F8000D60B6F /* poweredByFoursquare_white.png in Resources */,
 				D3891C811D1FF609001858C8 /* EmptyCaseView.xib in Resources */,
+				D35AFFF81D26AAE6004E20EB /* VenueDetailActionsCollectionViewCell.xib in Resources */,
 				D3E97AD91D25CC3A00FE4297 /* VenueDetailGalleryCollectionViewCell.xib in Resources */,
 				D3E156341D2429A9001FB5BE /* VenueCategoryCollectionViewCell.xib in Resources */,
 				D36692DF1AD96DC400B25C55 /* Image.xcassets in Resources */,
@@ -644,6 +654,7 @@
 				D3891C701D1FF4B1001858C8 /* BaseUI.swift in Sources */,
 				D3891C641D1FE993001858C8 /* VenueCategoryViewModel.swift in Sources */,
 				D3891C6E1D1FF494001858C8 /* BaseViewController.swift in Sources */,
+				D35AFFF61D26AACF004E20EB /* VenueDetailActionsCollectionViewCell.swift in Sources */,
 				D3891C7B1D1FF591001858C8 /* NSBundle+Nib.swift in Sources */,
 				D3891C681D1FEA74001858C8 /* VenuePhotoViewModel.swift in Sources */,
 				D3E97AD41D25CB9B00FE4297 /* VenueDetailViewController.swift in Sources */,
@@ -679,6 +690,7 @@
 				D3E156491D244042001FB5BE /* main.swift in Sources */,
 				D3891C6B1D1FEAE3001858C8 /* VenueParser.swift in Sources */,
 				D3E156321D2429A1001FB5BE /* VenueCategoryCollectionViewCell.swift in Sources */,
+				D3DBDE911D26B3C800C63D68 /* DetailCellType.swift in Sources */,
 				D3891C481D1E6FD1001858C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

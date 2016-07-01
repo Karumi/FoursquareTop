@@ -1,17 +1,6 @@
 
 import UIKit
 
-enum DetailCellType {
-    case Gallery
-    
-    var heightForCell: CGFloat {
-        switch self {
-        case .Gallery:
-            return 200
-        }
-    }
-}
-
 class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource {
     
     var venue: VenueViewModel? {
@@ -22,10 +11,7 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
     private var cells: [DetailCellType] = []
     
     func registerCells(collectionView: UICollectionView) {
-        collectionView.registerNib(
-            UINib(nibName: "VenueDetailGalleryCollectionViewCell", bundle: NSBundle.mainBundle()),
-            forCellWithReuseIdentifier: VenueDetailGalleryCollectionViewCellReusdeIdentifier
-        )
+        DetailCellType.all.forEach { $0.registerCells(forCollectionView: collectionView) }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,11 +24,12 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(VenueDetailGalleryCollectionViewCellReusdeIdentifier, forIndexPath: indexPath) as! VenueDetailGalleryCollectionViewCell
+        let cellType = cells[indexPath.item]
+        let cell = cellType.cell(forCollectionView: collectionView, indexPath: indexPath)
         
         cell.configure(withVenue: venue!)
         
-        return cell
+        return cell as! UICollectionViewCell
     }
     
     func cellTypeAtIndexPath(indexPath: NSIndexPath) -> DetailCellType {
@@ -54,6 +41,6 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
             return
         }
         
-        cells = [.Gallery]
+        cells = [.Gallery, .Actions]
     }
 }
