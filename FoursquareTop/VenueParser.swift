@@ -58,14 +58,16 @@ struct VenueParser {
             websiteURL: NSURL(string: json["url"].stringValue),
             phone: json["contact"]["phone"].stringValue,
             address: json["location"]["address"].stringValue,
+            status: json["hours"]["status"].string,
             price: VenuePrice(value: json["price"]["tier"].intValue),
+            phrases: [],
             likesCount: json["likes"]["count"].intValue,
             rating: json["rating"].doubleValue,
             location: CLLocation(
                 latitude: json["location"]["lat"].doubleValue,
                 longitude: json["location"]["lng"].doubleValue
             ),
-            distance: json["location"]["distance"].doubleValue,
+            distance: json["location"]["distance"].double,
             categories: categories,
             tips: tips ?? json["tips"].arrayValue.map(parseTip),
             photos: photos

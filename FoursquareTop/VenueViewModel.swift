@@ -21,6 +21,11 @@ enum VenuePrice : String {
     }
 }
 
+struct VenuePhrases {
+    let text: String
+    let highlightRange: Range<Int>
+}
+
 struct VenueViewModel {
     let foursquareID: String;
     let name: String
@@ -31,13 +36,15 @@ struct VenueViewModel {
     let websiteURL: NSURL?
     let phone: String?
     let address: String?
+    let status: String?
     let price: VenuePrice?
+    let phrases: [VenuePhrases]
     
     let likesCount: Int
     let rating: Double?
     
     let location: CLLocation
-    let distance: Double
+    let distance: Double?
     
     let categories: [VenueCategoryViewModel]
     let tips: [VenueTipViewModel]

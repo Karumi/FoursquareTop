@@ -5,24 +5,35 @@ let VenueDetailInformationCollectionViewCellReuseIdentifier = "VenueDetailInform
 
 class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var mapImageView: UIImageView!
+    @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var mapImageView: UIImageView!
+    @IBOutlet private weak var statusLabel: UILabel!
+    @IBOutlet private weak var ratingLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        nameLabel.font = UIFont.bigBold
-        nameLabel.textColor = UIColor.darkTextPrimary
-        typeLabel.font = UIFont.regular
-        typeLabel.textColor = UIColor.darkTextSecondary
+        addressLabel.font = .bigBold
+        addressLabel.textColor = .darkTextPrimary
+        
+        statusLabel.font = .regular
+        statusLabel.textColor = .darkTextSecondary
     }
     
     func configure(withVenue venue: VenueViewModel) {
-        nameLabel.text = venue.name
-        typeLabel.text = venue.formattedCategories
+        addressLabel.text = venue.address
+        statusLabel.text = venue.status
+        ratingLabel.text = venue.formattedRating
+        priceLabel.text = venue.formattedPrice
         
         venue.getMapSnapshot { [weak self] image in
+            let mask = CALayer()
+            mask.contents = UIImage(named: "alpha")!.CGImage
+            mask.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 200)
+            self?.mapImageView.layer.mask = mask
+            self?.mapImageView.layer.masksToBounds = true
+            
             self?.mapImageView.image = image
             UIView.animateWithDuration(0.1) {
                 self?.mapImageView.alpha = 1
