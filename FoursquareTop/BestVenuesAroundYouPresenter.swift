@@ -5,10 +5,10 @@ import MapKit
 struct BestVenuesAroundYouPresenter : Presenter {
     
     private weak var ui: BestVenuesAroundYouUI?
-    private let navigator: VenueNavigator
+    private let navigator: VenueListNavigator
     private let useCase: GetBestPlacesAroundYouUseCase
     
-    init(ui: BestVenuesAroundYouUI, useCase: GetBestPlacesAroundYouUseCase, navigator: VenueNavigator) {
+    init(ui: BestVenuesAroundYouUI, useCase: GetBestPlacesAroundYouUseCase, navigator: VenueListNavigator) {
         self.ui = ui
         self.useCase = useCase
         self.navigator = navigator

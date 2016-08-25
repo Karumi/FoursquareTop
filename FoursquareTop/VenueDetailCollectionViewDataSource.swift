@@ -9,6 +9,12 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
         }
     }
     private var cells: [DetailCellType] = []
+    private weak var detailActionsCelleDelegate: VenueDetailActionsCollectionViewCellDelegate?
+    
+    init(detailActionsCellDelegate: VenueDetailActionsCollectionViewCellDelegate) {
+        self.detailActionsCelleDelegate = detailActionsCellDelegate
+        super.init()
+    }
     
     func registerCells(collectionView: UICollectionView) {
         DetailCellType.all.forEach { $0.registerCells(forCollectionView: collectionView) }
@@ -26,6 +32,10 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
         
         let cellType = cells[indexPath.item]
         let cell = cellType.cell(forCollectionView: collectionView, indexPath: indexPath)
+        
+        if let c = cell as? VenueDetailActionsCollectionViewCell {
+            c.delegate = detailActionsCelleDelegate
+        }
         
         cell.configure(withVenue: venue!)
         

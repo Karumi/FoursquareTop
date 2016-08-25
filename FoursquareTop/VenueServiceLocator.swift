@@ -13,7 +13,8 @@ class VenueServiceLocator {
             useCase: GetVenueDetails(
                 dataSource: getVenueDataSource()
             ),
-            venue: venue
+            venue: venue,
+            navigator: getVenueDetailNavigator()
         )
         
         return vc
@@ -26,7 +27,7 @@ class VenueServiceLocator {
             useCase: GetBestPlacesAroundYou(
                 dataSource: getVenueDataSource()
             ),
-            navigator: navigator
+            navigator: getVenueListNavigator()
         )
         
         return vc
@@ -37,4 +38,11 @@ class VenueServiceLocator {
         return venueDataSource
     }
     
+    func getVenueListNavigator() -> VenueListNavigator {
+        return navigator
+    }
+    
+    func getVenueDetailNavigator() -> VenueDetailNavigator {
+        return navigator
+    }
 }

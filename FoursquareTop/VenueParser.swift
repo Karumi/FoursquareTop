@@ -48,14 +48,29 @@ struct VenueParser {
         let photos = photoGroups?["items"].array?.map(parsePhoto) ?? []
         let id = json["id"].stringValue
         
+        var menuURL: NSURL? = nil
+        if let menuStringURL = json["menu"]["mobileUrl"].string {
+            menuURL = NSURL(string: menuStringURL)
+        }
+        
+        var reservationsURL: NSURL? = nil
+        if let reservationsStringURL = json["reservations"]["url"].string {
+            reservationsURL = NSURL(string: reservationsStringURL)
+        }
+        
+        var websiteURL: NSURL? = nil
+        if let websiteStringURL = json["url"].string {
+            websiteURL = NSURL(string: websiteStringURL)
+        }
+        
         return VenueViewModel(
             foursquareID: id,
             name: json["name"].stringValue,
             URL: NSURL(string: String(format: "%@%@", VenueURLPrefix, id)),
             foursquareURL: NSURL(string: String(format: "%@%@", VenueAppURLPrefix, id)),
-            menuURL: NSURL(string: json["menu"]["mobileUrl"].stringValue),
-            reservationsURL: NSURL(string: json["reservations"]["url"].stringValue),
-            websiteURL: NSURL(string: json["url"].stringValue),
+            menuURL: menuURL,
+            reservationsURL: reservationsURL,
+            websiteURL: websiteURL,
             phone: json["contact"]["phone"].stringValue,
             address: json["location"]["address"].stringValue,
             status: json["hours"]["status"].string,

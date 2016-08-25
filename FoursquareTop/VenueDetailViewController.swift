@@ -1,7 +1,7 @@
 
 import UIKit
 
-class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionViewDelegateFlowLayout {
+class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionViewDelegateFlowLayout, VenueDetailActionsCollectionViewCellDelegate {
     
     var venueDetailPresenter: VenueDetailPresenter!
     override var presenter: Presenter? {
@@ -9,7 +9,9 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     }
     
     private var collectionView: UICollectionView!
-    private var dataSource = VenueDetailCollectionViewDataSource()
+    private lazy var dataSource: VenueDetailCollectionViewDataSource = {
+        return VenueDetailCollectionViewDataSource(detailActionsCellDelegate: self)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,15 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
             width: view.bounds.width,
             height: dataSource.cellTypeAtIndexPath(indexPath).heightForCell(venue)
         )
+    }
+    
+    // MARK: VenueDetailActionsCollectionViewCellDelegate
+    func venueDetailCellDidSelectCall() {
+        venueDetailPresenter.callSelected()
+    }
+    
+    func venueDetailCellDidSelectMenu() {
+        venueDetailPresenter.menuSelected()
     }
     
     // MARK: Private

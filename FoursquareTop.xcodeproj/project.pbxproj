@@ -14,6 +14,7 @@
 		D36221A01D2AFF500021059C /* VenueDetailEmptySpaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D362219F1D2AFF500021059C /* VenueDetailEmptySpaceCollectionViewCell.xib */; };
 		D36692DF1AD96DC400B25C55 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36692DE1AD96DC400B25C55 /* Image.xcassets */; };
 		D36692E11AD96E8600B25C55 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D36692E01AD96E8600B25C55 /* Icon.png */; };
+		D369CE521D6FB184006E13C8 /* VenueDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D369CE511D6FB184006E13C8 /* VenueDetailNavigator.swift */; };
 		D3891C411D1E6E41001858C8 /* RootNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891C401D1E6E41001858C8 /* RootNavigator.swift */; };
 		D3891C431D1E6E49001858C8 /* RootServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891C421D1E6E49001858C8 /* RootServiceLocator.swift */; };
 		D3891C481D1E6FD1001858C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891C471D1E6FD1001858C8 /* AppDelegate.swift */; };
@@ -88,6 +89,7 @@
 		D362219F1D2AFF500021059C /* VenueDetailEmptySpaceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueDetailEmptySpaceCollectionViewCell.xib; sourceTree = "<group>"; };
 		D36692DE1AD96DC400B25C55 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		D36692E01AD96E8600B25C55 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		D369CE511D6FB184006E13C8 /* VenueDetailNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailNavigator.swift; sourceTree = "<group>"; };
 		D3891C3F1D1E6E40001858C8 /* FoursquareTop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoursquareTop-Bridging-Header.h"; sourceTree = "<group>"; };
 		D3891C401D1E6E41001858C8 /* RootNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigator.swift; sourceTree = "<group>"; };
 		D3891C421D1E6E49001858C8 /* RootServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootServiceLocator.swift; sourceTree = "<group>"; };
@@ -183,6 +185,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D369CE4F1D6FB174006E13C8 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				D3E97AE01D25D73900FE4297 /* VenueNavigator.swift */,
+			);
+			name = Navigator;
+			sourceTree = "<group>";
+		};
+		D369CE501D6FB17B006E13C8 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				D369CE511D6FB184006E13C8 /* VenueDetailNavigator.swift */,
+			);
+			name = Navigator;
+			sourceTree = "<group>";
+		};
 		D3891C3E1D1E6E33001858C8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				D3891C401D1E6E41001858C8 /* RootNavigator.swift */,
-				D3E97AE01D25D73900FE4297 /* VenueNavigator.swift */,
 			);
 			name = Navigator;
 			sourceTree = "<group>";
@@ -247,6 +264,7 @@
 		D3891C4F1D1E79EB001858C8 /* Best Venues Around */ = {
 			isa = PBXGroup;
 			children = (
+				D369CE4F1D6FB174006E13C8 /* Navigator */,
 				D3E97AE41D25DA4A00FE4297 /* Use Case */,
 				D3891C551D1E7A0C001858C8 /* Presenter */,
 				D3891C541D1E7A0A001858C8 /* View */,
@@ -257,6 +275,7 @@
 		D3891C501D1E79F0001858C8 /* Venue Detail */ = {
 			isa = PBXGroup;
 			children = (
+				D369CE501D6FB17B006E13C8 /* Navigator */,
 				D3E97AE71D25DB3D00FE4297 /* Use Case */,
 				D3E97AD21D25CB7300FE4297 /* Presenter */,
 				D3E97AD11D25CB7100FE4297 /* View */,
@@ -698,6 +717,7 @@
 				D3E97ADB1D25D23F00FE4297 /* VenueDetailUI.swift in Sources */,
 				D3E97AE31D25D78200FE4297 /* VenueServiceLocator.swift in Sources */,
 				D3E97AE61D25DA5900FE4297 /* GetBestPlacesAroundYou.swift in Sources */,
+				D369CE521D6FB184006E13C8 /* VenueDetailNavigator.swift in Sources */,
 				D3891C781D1FF57A001858C8 /* CustomView.swift in Sources */,
 				D3891C5D1D1E7B9A001858C8 /* VenueDataSource.swift in Sources */,
 				D3891C431D1E6E49001858C8 /* RootServiceLocator.swift in Sources */,
