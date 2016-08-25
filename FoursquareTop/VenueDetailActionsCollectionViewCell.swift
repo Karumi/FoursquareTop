@@ -8,14 +8,7 @@ class VenueDetailActionsCollectionViewCell : UICollectionViewCell, DetailCell {
     @IBOutlet private weak var stackView: UIStackView!
     
     func configure(withVenue venue: VenueViewModel) {
-        
-        if let _ = venue.foursquareURL where venue.canOpenFoursquareApp {
-            let button = UIButton()
-            button.setTitle("See in Foursquare", forState: .Normal)
-            button.backgroundColor = UIColor.ftopBlue
-            button.sizeToFit()
-            stackView.addArrangedSubview(button)
-        }
+        stackView.subviews.forEach { $0.removeFromSuperview() }
         
         if let _ = venue.menuURL {
             let button = UIButton()

@@ -37,10 +37,14 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
     }
     
     private func configureCellsForVenue() {
-        guard let _ = venue else {
+        guard let venue = venue else {
             return
         }
         
-        cells = [.Gallery, .Actions]
+        cells = [.Gallery, .Information]
+        
+        if venue.hasSecondaryActions {
+            cells.insert(.Actions, atIndex: 1)
+        }
     }
 }

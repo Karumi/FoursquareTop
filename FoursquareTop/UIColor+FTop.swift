@@ -6,5 +6,8 @@ extension UIColor {
     @nonobjc static var ftopYellow = UIColor(rgba: "#FFC533")
     @nonobjc static var ftopOrange = UIColor(rgba: "#FF5A33")
     @nonobjc static var ftopGreen = UIColor(rgba: "#60B500")
+    
+    @nonobjc static var darkTextPrimary = UIColor(rgba: "#333333")
+    @nonobjc static var darkTextSecondary = UIColor(rgba: "#666666")
 }
 

@@ -27,9 +27,13 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     
     // MARK: UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        guard let venue = dataSource.venue else {
+            return .zero
+        }
+        
         return CGSize(
             width: view.bounds.width,
-            height: dataSource.cellTypeAtIndexPath(indexPath).heightForCell
+            height: dataSource.cellTypeAtIndexPath(indexPath).heightForCell(venue)
         )
     }
     
