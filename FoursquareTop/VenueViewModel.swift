@@ -86,8 +86,15 @@ struct VenueViewModel {
         mapView.userInteractionEnabled = false
         
         let options = MKMapSnapshotOptions()
-        options.region = region
-        options.scale = UIScreen.mainScreen().scale
+        options.camera = MKMapCamera(
+            lookingAtCenterCoordinate: CLLocationCoordinate2D(
+                latitude: location.coordinate.latitude,
+                longitude: location.coordinate.longitude - 0.005
+            ),
+            fromDistance: 1000,
+            pitch: 0,
+            heading: 0
+        )
         
         let height = DetailCellType.Information.heightForCell(nil)
         
@@ -96,9 +103,33 @@ struct VenueViewModel {
         let snapshotter = MKMapSnapshotter(options: options)
         let executeOnBackground = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         snapshotter.startWithQueue(executeOnBackground) { (snapshot, error) in
+            
+            guard let snapshot = snapshot else {
+                callback(nil)
+                return
+            }
+            
+            let pin = MKPinAnnotationView(annotation: nil, reuseIdentifier: nil)
+            let image = snapshot.image
+            
+            UIGraphicsBeginImageContextWithOptions(image.size, true, image.scale)
+            image.drawAtPoint(CGPoint.zero)
+            
+            let visibleRect = CGRect(origin: CGPoint.zero, size: image.size)
+            for annotation in mapView.annotations {
+                var point = snapshot.pointForCoordinate(annotation.coordinate)
+                if visibleRect.contains(point) {
+                    point.x = point.x + pin.centerOffset.x - (pin.bounds.size.width / 2)
+                    point.y = point.y + pin.centerOffset.y - (pin.bounds.size.height / 2)
+                    pin.image?.drawAtPoint(point)
+                }
+            }
+            
+            let compositeImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
             dispatch_async(dispatch_get_main_queue()) {
-                snapshot?.image
-                callback(snapshot?.image)
+                callback(compositeImage)
             }
         }
         

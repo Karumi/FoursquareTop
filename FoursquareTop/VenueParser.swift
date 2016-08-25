@@ -63,7 +63,7 @@ struct VenueParser {
             rating: json["rating"].doubleValue,
             location: CLLocation(
                 latitude: json["location"]["lat"].doubleValue,
-                longitude: json["location"]["long"].doubleValue
+                longitude: json["location"]["lng"].doubleValue
             ),
             distance: json["location"]["distance"].doubleValue,
             categories: categories,

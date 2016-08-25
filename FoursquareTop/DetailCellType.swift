@@ -19,7 +19,7 @@ enum DetailCellType {
             }
             return venue.hasSecondaryActions ? 60 : 0
         case .Information:
-            return 80
+            return 200
         case .EmptySpace(let height):
             return height
         }
