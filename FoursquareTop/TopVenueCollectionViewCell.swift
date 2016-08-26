@@ -5,12 +5,10 @@ let TopVenueCollectionViewCellReuseIdentifier = "TopVenueCollectionViewCellReuse
 
 class TopVenueCollectionViewCell : UICollectionViewCell {
     
-    @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var typeLabel: UILabel!
-    @IBOutlet private weak var addressLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,12 +20,10 @@ class TopVenueCollectionViewCell : UICollectionViewCell {
         ratingLabel.font = UIFont.small
         ratingLabel.backgroundColor = UIColor.ftopBlue
         
-        nameLabel.textColor = .whiteColor()
+        nameLabel.textColor = .darkTextPrimary
         nameLabel.font = UIFont.bigBold
-        typeLabel.textColor = .whiteColor()
+        typeLabel.textColor = .darkTextSecondary
         typeLabel.font = UIFont.regular
-        addressLabel.textColor = .whiteColor()
-        addressLabel.font = UIFont.regular
     }
     
     func configure(withVenue venue: VenueViewModel) {
@@ -36,7 +32,6 @@ class TopVenueCollectionViewCell : UICollectionViewCell {
         
         nameLabel.text = venue.name
         typeLabel.text = venue.categories.map { $0.names.get(forType: .Regular) }.joinWithSeparator(", ")
-        addressLabel.text = venue.address
     }
     
     private func setValueOrHide(label: UILabel, value: String?) {

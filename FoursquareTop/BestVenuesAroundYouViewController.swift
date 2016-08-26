@@ -29,7 +29,7 @@ class BestVenuesAroundYouViewController : FTViewController, BestVenuesAroundYouU
     // MARK: UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         if indexPath.item == 0 {
-            return CGSize(width: view.bounds.width, height: 200)
+            return CGSize(width: view.bounds.width, height: 100)
         } else {
             return CGSize(width: view.bounds.width, height: 60)
         }
