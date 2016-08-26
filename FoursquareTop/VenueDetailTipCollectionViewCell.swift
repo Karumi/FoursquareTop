@@ -24,7 +24,7 @@ class VenueDetailTipCollectionViewCell : UICollectionViewCell, DetailCell {
         
         venue.topTips.forEach {
             let label = UILabel()
-            label.backgroundColor = UIColor.yellowColor().colorWithAlphaComponent(0.2)
+            label.backgroundColor = .ftopLightYellow
             VenueDetailTipCollectionViewCell.configure(label: label, forTip: $0)
             label.textColor = UIColor.darkTextSecondary
             
