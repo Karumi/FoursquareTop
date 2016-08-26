@@ -8,6 +8,7 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
             configureCellsForVenue()
         }
     }
+    private var allSupportedCells: [DetailCellType] = [.Gallery, .Actions, .Information, .Tips, .EmptySpace(16)]
     private var cells: [DetailCellType] = []
     private weak var detailActionsCelleDelegate: VenueDetailActionsCollectionViewCellDelegate?
     
@@ -17,7 +18,14 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
     }
     
     func registerCells(collectionView: UICollectionView) {
-        DetailCellType.all.forEach { $0.registerCells(forCollectionView: collectionView) }
+        allSupportedCells.forEach {
+            let (nibName, reuseIdentifier) = self.getCellIdentification(forType: $0)
+            
+            collectionView.registerNib(
+                UINib(nibName: nibName, bundle: NSBundle.mainBundle()),
+                forCellWithReuseIdentifier: reuseIdentifier
+            )
+        }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -31,7 +39,7 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cellType = cells[indexPath.item]
-        let cell = cellType.cell(forCollectionView: collectionView, indexPath: indexPath)
+        let cell = getCell(forType: cellType, forCollectionView: collectionView, indexPath: indexPath)
         
         if let c = cell as? VenueDetailActionsCollectionViewCell {
             c.delegate = detailActionsCelleDelegate
@@ -55,6 +63,42 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
         
         if venue.hasSecondaryActions {
             cells.insert(.Actions, atIndex: 1)
+        }
+        
+        if !venue.tips.isEmpty {
+            cells.append(.Tips)
+        }
+    }
+    
+    private func getCell(forType type: DetailCellType, forCollectionView collectionView: UICollectionView, indexPath: NSIndexPath) -> DetailCell {
+        let (_, reuseIdentifier) = getCellIdentification(forType: type)
+        
+        switch type {
+        case .Gallery:
+            return collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! VenueDetailGalleryCollectionViewCell
+        case .Actions:
+            return collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! VenueDetailActionsCollectionViewCell
+        case .Information:
+            return collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! VenueDetailInformationCollectionViewCell
+        case .Tips:
+            return collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! VenueDetailTipCollectionViewCell
+        case .EmptySpace(_):
+            return collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! VenueDetailEmptySpaceCollectionViewCell
+        }
+    }
+    
+    private func getCellIdentification(forType type: DetailCellType) -> (String, String) {
+        switch type {
+        case .Gallery:
+            return ("VenueDetailGalleryCollectionViewCell", VenueDetailGalleryCollectionViewCellReusdeIdentifier)
+        case .Actions:
+            return ("VenueDetailActionsCollectionViewCell", VenueDetailActionsCollectionViewCellReuseIdentifier)
+        case .Information:
+            return ("VenueDetailInformationCollectionViewCell", VenueDetailInformationCollectionViewCellReuseIdentifier)
+        case .Tips:
+            return ("VenueDetailTipCollectionViewCell", VenueDetailTipCollectionViewCellReuseIdentifier)
+        case .EmptySpace(_):
+            return ("VenueDetailEmptySpaceCollectionViewCell", VenueDetailEmptySpaceCollectionViewCellReuseIdentifier)
         }
     }
 }

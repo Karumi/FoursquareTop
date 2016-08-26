@@ -21,11 +21,6 @@ enum VenuePrice : String {
     }
 }
 
-struct VenuePhrases {
-    let text: String
-    let highlightRange: Range<Int>
-}
-
 struct VenueViewModel {
     let foursquareID: String;
     let name: String
@@ -38,7 +33,7 @@ struct VenueViewModel {
     let address: String?
     let status: String?
     let price: VenuePrice?
-    let phrases: [VenuePhrases]
+    let phrases: [VenuePhraseViewModel]
     
     let likesCount: Int
     let rating: Double?
@@ -75,7 +70,7 @@ struct VenueViewModel {
     }
     
     var hasSecondaryActions: Bool {
-        return menuURL != nil || reservationsURL != nil
+        return menuURL != nil || phone != nil
     }
     
     func getMapSnapshot(callback: (UIImage?) -> ()) {
@@ -103,7 +98,8 @@ struct VenueViewModel {
             heading: 0
         )
         
-        let height = DetailCellType.Information.heightForCell(nil)
+        let calculator = VenueDetailCollectionViewCellHeightCalculator(availableWidth: UIScreen.mainScreen().bounds.width)
+        let height = calculator.heightForCell(forType: .Information)
         
         options.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: height)
         
@@ -139,6 +135,10 @@ struct VenueViewModel {
                 callback(compositeImage)
             }
         }
-        
+    }
+    
+    var topTips: [VenueTipViewModel] {
+        let sorted = tips.sort { $0.likesCount > $1.likesCount }
+        return Array(sorted[0..<min(sorted.count, 3)])
     }
 }

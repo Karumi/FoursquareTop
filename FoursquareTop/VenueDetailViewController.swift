@@ -8,6 +8,7 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         return venueDetailPresenter
     }
     
+    private var cellHeightCalculator: VenueDetailCollectionViewCellHeightCalculator!
     private var collectionView: UICollectionView!
     private lazy var dataSource: VenueDetailCollectionViewDataSource = {
         return VenueDetailCollectionViewDataSource(detailActionsCellDelegate: self)
@@ -18,6 +19,12 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         automaticallyAdjustsScrollViewInsets = false
         
         initCollectionView()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        cellHeightCalculator = VenueDetailCollectionViewCellHeightCalculator(availableWidth: view.bounds.width)
     }
     
     // MARK: VenueDetailUI
@@ -35,7 +42,10 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         
         return CGSize(
             width: view.bounds.width,
-            height: dataSource.cellTypeAtIndexPath(indexPath).heightForCell(venue)
+            height: cellHeightCalculator.heightForCell(
+                forType: dataSource.cellTypeAtIndexPath(indexPath),
+                venue: venue
+            )
         )
     }
     
@@ -51,7 +61,7 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     // MARK: Private
     func initCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 1
+        layout.minimumLineSpacing = 0
         
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false

@@ -10,6 +10,7 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +28,8 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
         ratingLabel.text = venue.formattedRating
         priceLabel.text = venue.formattedPrice
         
+        activityIndicator.startAnimating()
+        
         venue.getMapSnapshot { [weak self] image in
             let mask = CALayer()
             mask.contents = UIImage(named: "alpha")!.CGImage
@@ -35,6 +38,7 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
             self?.mapImageView.layer.masksToBounds = true
             
             self?.mapImageView.image = image
+            self?.activityIndicator.stopAnimating()
             UIView.animateWithDuration(0.1) {
                 self?.mapImageView.alpha = 1
             }

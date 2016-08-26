@@ -34,8 +34,8 @@ class VenueDetailGalleryCollectionViewCell : UICollectionViewCell, UIScrollViewD
                 target: self, action: #selector(scrollViewTapped(_:))
             )
         )
-        pageControl.pageIndicatorTintColor = .whiteColor()
-        pageControl.currentPageIndicatorTintColor = UIColor.ftopBlue
+        pageControl.pageIndicatorTintColor = .lightGrayColor()
+        pageControl.currentPageIndicatorTintColor = .ftopBlue
     }
     
     override func prepareForReuse() {

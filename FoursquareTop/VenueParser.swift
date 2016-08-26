@@ -29,19 +29,19 @@ struct VenueParser {
         
         if let list = json["groups"].array?.first, items = list["items"].array {
             venues = items.map {
-                self.parseVenue($0["venue"], tips: $0["tips"].array?.map(parseTip) ?? [])
+                self.parseVenue($0["venue"])
             }
         }
         
         return VenueListViewModel(venues: venues)
     }
     
-    func parseVenue(response: AnyObject, tips: [VenueTipViewModel]? = nil) -> VenueViewModel {
+    func parseVenue(response: AnyObject) -> VenueViewModel {
         let json = JSON(response)
         return parseVenue(json["venue"])
     }
     
-    private func parseVenue(json: JSON, tips: [VenueTipViewModel]? = nil) -> VenueViewModel {
+    private func parseVenue(json: JSON) -> VenueViewModel {
         
         let categories = json["categories"].array?.map(parseCategory) ?? []
         let photoGroups = json["photos"]["groups"].arrayValue.first
@@ -63,6 +63,8 @@ struct VenueParser {
             websiteURL = NSURL(string: websiteStringURL)
         }
         
+        let allTipsGroup = json["tips"]["groups"].arrayValue.first ?? []
+        
         return VenueViewModel(
             foursquareID: id,
             name: json["name"].stringValue,
@@ -75,7 +77,7 @@ struct VenueParser {
             address: json["location"]["address"].stringValue,
             status: json["hours"]["status"].string,
             price: VenuePrice(value: json["price"]["tier"].intValue),
-            phrases: [],
+            phrases: json["phrases"].arrayValue.flatMap(parsePhrase),
             likesCount: json["likes"]["count"].intValue,
             rating: json["rating"].doubleValue,
             location: CLLocation(
@@ -84,7 +86,7 @@ struct VenueParser {
             ),
             distance: json["location"]["distance"].double,
             categories: categories,
-            tips: tips ?? json["tips"].arrayValue.map(parseTip),
+            tips: allTipsGroup["items"].arrayValue.map(parseTip),
             photos: photos
         )
     }
@@ -135,5 +137,16 @@ struct VenueParser {
     private func urlForCategoryImage(json: JSON, size: CategoryImageSize) -> NSURL {
         let urlString = String(format: "%@\(size.rawValue)%@", json["icon"]["prefix"].stringValue, json["icon"]["suffix"].stringValue)
         return NSURL(string: urlString)!
+    }
+    
+    private func parsePhrase(json: JSON) -> VenuePhraseViewModel? {
+        guard let sample = json["sample"].dictionary, term = json["phrase"].string, text = sample["text"]?.string else {
+            return nil
+        }
+        
+        return VenuePhraseViewModel(
+            term: term,
+            text: text
+        )
     }
 }
