@@ -1,6 +1,6 @@
 
 import Foundation
 
-protocol VenueDetailUI : class {
+protocol VenueDetailUI : class, BaseUI {
     func showVenue(venue: VenueViewModel)
 }

@@ -5,7 +5,7 @@ import MapKit
 class VenueDetailPresenter : Presenter {
     
     private let partialVenue: VenueViewModel
-    private let ui: VenueDetailUI
+    private weak var ui: VenueDetailUI?
     private let useCase: GetVenueDetailsUseCase
     private let navigator: VenueDetailNavigator
     
@@ -22,7 +22,9 @@ class VenueDetailPresenter : Presenter {
         useCase.execute(partialVenue.foursquareID) { result in
             if let venue = result.value {
                 self.venue = venue
-                self.ui.showVenue(venue)
+                self.ui?.showVenue(venue)
+            } else {
+                self.ui?.showError(message: "Could not show this venue information, please tap anywhere to retry")
             }
         }
     }
