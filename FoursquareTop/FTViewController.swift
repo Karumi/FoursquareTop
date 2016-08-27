@@ -80,8 +80,7 @@ class FTViewController : UIViewController, BaseUI, ErrorViewDelegate {
     }
     
     private func removeErrorView() {
-        loadingView?.removeFromSuperview()
-        loadingView?.hidden = true
+        errorView?.removeFromSuperview()
     }
     
     func showEmptyCase(message message: String) {

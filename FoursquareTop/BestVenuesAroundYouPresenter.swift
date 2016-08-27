@@ -32,6 +32,7 @@ struct BestVenuesAroundYouPresenter : Presenter {
         self.ui?.loading = !getUserLocationUseCase.isLocationPotentiallyGood()
         
         getUserLocationUseCase.execute { locationResult in
+            self.ui?.loading = false
             if let location = locationResult.value {
                 self.getBestPlacesAroundYouUseCase.execute(location) { result in
                     if let venueList = result.value {
@@ -39,8 +40,6 @@ struct BestVenuesAroundYouPresenter : Presenter {
                     } else {
                         self.ui?.showError(message: "Could not fetch the venues, please tap anywhere to retry")
                     }
-                    
-                    self.ui?.loading = false
                 }
             } else {
                 switch locationResult.error! {
@@ -50,8 +49,6 @@ struct BestVenuesAroundYouPresenter : Presenter {
                     self.ui?.showError(message: "Can not access to your GPS")
                     self.ui?.showNoGPSAccessError()
                 }
-                
-                self.ui?.loading = false
             }
         }
     }

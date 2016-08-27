@@ -31,7 +31,13 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     func showVenue(venue: VenueViewModel) {
         dataSource.venue = venue
         collectionView.reloadData()
-        navigationController?.navigationBar.topItem?.title = venue.name
+        
+        let titleView = VenueDetailTitleView()
+        titleView.configure(withVenue: venue)
+        let size = titleView.intrinsicContentSize()
+        titleView.frame = CGRect(origin: .zero, size: size)
+        
+        navigationController?.navigationBar.topItem?.titleView = titleView
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
