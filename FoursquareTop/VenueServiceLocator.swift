@@ -24,8 +24,12 @@ class VenueServiceLocator {
         let vc = BestVenuesAroundYouViewController()
         vc.venuesAroundYouPresenter = BestVenuesAroundYouPresenter(
             ui: vc,
-            useCase: GetBestPlacesAroundYou(
+            getBestPlacesAroundYouUseCase: GetBestPlacesAroundYou(
                 dataSource: getVenueDataSource()
+            ),
+            getUserLocationUseCase: GetUserLocation(
+                gps: getGPS(),
+                repository: getVenueDataSource()
             ),
             navigator: getVenueListNavigator()
         )
@@ -33,10 +37,26 @@ class VenueServiceLocator {
         return vc
     }
     
+    // MARK: DataSource
+    
     private let venueDataSource = VenueDataSource()
     func getVenueDataSource() -> VenueDataSource {
         return venueDataSource
     }
+    
+    // MARK: Repository
+    
+    private let locationRepository = LocationRepository()
+    func getVenueDataSource() -> LocationRepositoryProtocol {
+        return locationRepository
+    }
+    
+    // MARK: GPS
+    func getGPS() -> GPS {
+        return IntuLocationManagerGPS()
+    }
+    
+    // MARK: Navigator
     
     func getVenueListNavigator() -> VenueListNavigator {
         return navigator

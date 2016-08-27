@@ -23,7 +23,6 @@ class AppDelegate : NSObject, UIApplicationDelegate {
         
         createWindow()
         installRootNavigator()
-        registerForNotifications(application)
         
         return delegateResult
     }
@@ -107,12 +106,5 @@ class AppDelegate : NSObject, UIApplicationDelegate {
         navigator = RootNavigator()
         navigator.installRootViewController(window!)
         window?.makeKeyAndVisible()
-    }
-    
-    private func registerForNotifications(application: UIApplication) {
-        application.registerUserNotificationSettings(
-            UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        )
-        application.registerForRemoteNotifications()
     }
 }

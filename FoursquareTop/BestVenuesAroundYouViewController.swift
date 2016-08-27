@@ -26,6 +26,24 @@ class BestVenuesAroundYouViewController : FTViewController, BestVenuesAroundYouU
         collectionView.reloadData()
     }
 
+    func showNoGPSAccessError() {
+        let alert = UIAlertController(
+            title: NSLocalizedString("VenuesList.NoGPSAccess.ErrorTitle", comment: "Title of the no GPS access in an alert"),
+            message: NSLocalizedString("VenuesList.NoGPSAccess.ErrorMessage", comment: "Message of the no GPS access in an alert"),
+            preferredStyle: .Alert
+        )
+        
+        let openSettingsAction = UIAlertAction(title: NSLocalizedString("VenuesList.NoGPSAccess.GoToGeneralSettings", comment: "Open settings button"), style: .Default) { _ in
+            self.venuesAroundYouPresenter.openSettingsSelected()
+        }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("VenuesList.NoGPSAccess.Cancel", comment: "Cancel button"), style: .Cancel, handler: nil)
+        
+        alert.addAction(openSettingsAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
     // MARK: UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         if indexPath.item == 0 {

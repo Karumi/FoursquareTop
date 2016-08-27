@@ -7,6 +7,8 @@ public protocol Presenter {
     func viewWillAppear()
     func viewDidDisppear()
     func viewWillDisappear()
+    
+    func retry()
 }
 
 extension Presenter {
@@ -15,4 +17,6 @@ extension Presenter {
     func viewWillAppear() {}
     func viewDidDisppear() {}
     func viewWillDisappear() {}
+    
+    func retry() {}
 }

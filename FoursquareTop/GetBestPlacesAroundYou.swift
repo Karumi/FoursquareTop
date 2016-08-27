@@ -15,8 +15,7 @@ struct GetBestPlacesAroundYou : GetBestPlacesAroundYouUseCase {
         self.dataSource = dataSource
     }
     
-    func execute(location: CLLocation, callback: Result<VenueListViewModel, NetworkError> -> ()) {
-        
+    func execute(location: CLLocation, callback: Result<VenueListViewModel, NetworkError> -> ()) {        
         dataSource.topVenues(atLocation: location) { result in
             if let venueList = result.value {
                 callback(Result(venueList))
