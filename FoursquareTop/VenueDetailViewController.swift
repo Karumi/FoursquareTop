@@ -3,6 +3,7 @@ import UIKit
 
 class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionViewDelegateFlowLayout, VenueDetailActionsCollectionViewCellDelegate {
     
+    var pageIndex = 0
     var venueDetailPresenter: VenueDetailPresenter!
     override var presenter: Presenter? {
         return venueDetailPresenter
@@ -65,7 +66,7 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     }
     
     // MARK: Private
-    func initCollectionView() {
+    private func initCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         

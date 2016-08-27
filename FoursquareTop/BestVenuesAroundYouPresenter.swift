@@ -2,12 +2,13 @@
 import Foundation
 import MapKit
 
-struct BestVenuesAroundYouPresenter : Presenter {
+class BestVenuesAroundYouPresenter : Presenter {
     
     private weak var ui: BestVenuesAroundYouUI?
     private let navigator: VenueListNavigator
     private let getBestPlacesAroundYouUseCase: GetBestPlacesAroundYouUseCase
     private let getUserLocationUseCase: GetUserLocationUseCase
+    private var venues: [VenueViewModel] = []
     
     init(ui: BestVenuesAroundYouUI, getBestPlacesAroundYouUseCase: GetBestPlacesAroundYouUseCase, getUserLocationUseCase: GetUserLocationUseCase, navigator: VenueListNavigator) {
         self.ui = ui
@@ -36,6 +37,7 @@ struct BestVenuesAroundYouPresenter : Presenter {
             if let location = locationResult.value {
                 self.getBestPlacesAroundYouUseCase.execute(location) { result in
                     if let venueList = result.value {
+                        self.venues = venueList.venues
                         self.ui?.showVenueList(venueList)
                     } else {
                         self.ui?.showError(message: "Could not fetch the venues, please tap anywhere to retry")
@@ -54,6 +56,6 @@ struct BestVenuesAroundYouPresenter : Presenter {
     }
     
     func venueSelected(venue: VenueViewModel) {
-        navigator.goTo(venueDetail: venue)
+        navigator.goTo(venueDetail: venue, ofList: venues)
     }
 }

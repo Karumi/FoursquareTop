@@ -6,13 +6,26 @@ class VenueServiceLocator {
     var serviceLocator: RootServiceLocator!
     var navigator: RootNavigator!
     
-    func getVenueDetailViewController(venue: VenueViewModel) -> UIViewController {
+    func getVenueDetailPageViewController(venues: [VenueViewModel], initialIndex: Int) -> UIViewController {
+        let provider = DefaultVenueDetailViewControllerProvider(serviceLocator: self)
+        let vc = VenueDetailPageViewController()
+        vc.dataSource = VenueDetailPageViewControllerDataSource(
+            venueDetailViewControllerProvider: provider,
+            venues: venues,
+            initialIndex: initialIndex,
+            getVenueDetailUseCase: getVenueDetailsUseCase()
+        )
+        vc.initialIndex = initialIndex
+        
+        return vc
+    }
+    
+    func getVenueDetailViewController(venue: VenueViewModel, forIndex index: Int) -> UIViewController {
         let vc = VenueDetailViewController()
+        vc.pageIndex = index
         vc.venueDetailPresenter = VenueDetailPresenter(
             ui: vc,
-            useCase: GetVenueDetails(
-                dataSource: getVenueDataSource()
-            ),
+            useCase: getVenueDetailsUseCase(),
             venue: venue,
             navigator: getVenueDetailNavigator()
         )
@@ -24,17 +37,33 @@ class VenueServiceLocator {
         let vc = BestVenuesAroundYouViewController()
         vc.venuesAroundYouPresenter = BestVenuesAroundYouPresenter(
             ui: vc,
-            getBestPlacesAroundYouUseCase: GetBestPlacesAroundYou(
-                dataSource: getVenueDataSource()
-            ),
-            getUserLocationUseCase: GetUserLocation(
-                gps: getGPS(),
-                repository: getVenueDataSource()
-            ),
+            getBestPlacesAroundYouUseCase: getGetBestPlacesAroundYouUseCase(),
+            getUserLocationUseCase: getGetUserLocationUseCase(),
             navigator: getVenueListNavigator()
         )
         
         return vc
+    }
+    
+    // MARK: Use Case
+    
+    func getGetUserLocationUseCase() -> GetUserLocationUseCase {
+        return GetUserLocation(
+            gps: getGPS(),
+            repository: getVenueDataSource()
+        )
+    }
+    
+    func getGetBestPlacesAroundYouUseCase() -> GetBestPlacesAroundYouUseCase {
+        return GetBestPlacesAroundYou(
+            dataSource: getVenueDataSource()
+        )
+    }
+    
+    func getVenueDetailsUseCase() -> GetVenueDetailsUseCase {
+        return GetVenueDetails(
+            dataSource: getVenueDataSource()
+        )
     }
     
     // MARK: DataSource

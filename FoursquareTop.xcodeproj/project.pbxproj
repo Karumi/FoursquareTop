@@ -75,6 +75,10 @@
 		D3F363B81D71F0E000D5288B /* IntuLocationManagerGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F363B71D71F0E000D5288B /* IntuLocationManagerGPS.swift */; };
 		D3F363BA1D72436C00D5288B /* VenueDetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F363B91D72436C00D5288B /* VenueDetailTitleView.swift */; };
 		D3F363BC1D72437100D5288B /* VenueDetailTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3F363BB1D72437100D5288B /* VenueDetailTitleView.xib */; };
+		D3F363BE1D7255B500D5288B /* VenueDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F363BD1D7255B500D5288B /* VenueDetailPageViewController.swift */; };
+		D3F363C01D72561A00D5288B /* VenueDetailPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F363BF1D72561A00D5288B /* VenueDetailPageViewControllerDataSource.swift */; };
+		D3F363C21D72565F00D5288B /* VenueDetailViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F363C11D72565F00D5288B /* VenueDetailViewControllerProvider.swift */; };
+		D3F363C41D7257E200D5288B /* Array+SafeAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F363C31D7257E200D5288B /* Array+SafeAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +167,10 @@
 		D3F363B71D71F0E000D5288B /* IntuLocationManagerGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntuLocationManagerGPS.swift; sourceTree = "<group>"; };
 		D3F363B91D72436C00D5288B /* VenueDetailTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailTitleView.swift; sourceTree = "<group>"; };
 		D3F363BB1D72437100D5288B /* VenueDetailTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueDetailTitleView.xib; sourceTree = "<group>"; };
+		D3F363BD1D7255B500D5288B /* VenueDetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailPageViewController.swift; sourceTree = "<group>"; };
+		D3F363BF1D72561A00D5288B /* VenueDetailPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailPageViewControllerDataSource.swift; sourceTree = "<group>"; };
+		D3F363C11D72565F00D5288B /* VenueDetailViewControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailViewControllerProvider.swift; sourceTree = "<group>"; };
+		D3F363C31D7257E200D5288B /* Array+SafeAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SafeAccess.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +385,7 @@
 				D3E1563F1D2430B4001FB5BE /* UIColor+FTop.swift */,
 				D3E156411D2430D2001FB5BE /* UIColor+RGBA.swift */,
 				D3E97AAD1D24770600FE4297 /* UImage+Color.swift */,
+				D3F363C31D7257E200D5288B /* Array+SafeAccess.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -481,6 +490,9 @@
 				D3F363AE1D707B9200D5288B /* VenueDetailCollectionViewCellHeightCalculator.swift */,
 				D3F363B91D72436C00D5288B /* VenueDetailTitleView.swift */,
 				D3F363BB1D72437100D5288B /* VenueDetailTitleView.xib */,
+				D3F363BD1D7255B500D5288B /* VenueDetailPageViewController.swift */,
+				D3F363BF1D72561A00D5288B /* VenueDetailPageViewControllerDataSource.swift */,
+				D3F363C11D72565F00D5288B /* VenueDetailViewControllerProvider.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -708,7 +720,10 @@
 				D3891C7B1D1FF591001858C8 /* NSBundle+Nib.swift in Sources */,
 				D3891C681D1FEA74001858C8 /* VenuePhotoViewModel.swift in Sources */,
 				D3DBDE931D26B6FB00C63D68 /* VenueDetailInformationCollectionViewCell.swift in Sources */,
+				D3F363BE1D7255B500D5288B /* VenueDetailPageViewController.swift in Sources */,
 				D3E97AD41D25CB9B00FE4297 /* VenueDetailViewController.swift in Sources */,
+				D3F363C01D72561A00D5288B /* VenueDetailPageViewControllerDataSource.swift in Sources */,
+				D3F363C21D72565F00D5288B /* VenueDetailViewControllerProvider.swift in Sources */,
 				D3891C571D1E7A18001858C8 /* BestVenuesAroundYouUI.swift in Sources */,
 				D3891C591D1E7A27001858C8 /* BestVenuesAroundYouPresenter.swift in Sources */,
 				D3E97AE91D25DB4700FE4297 /* GetVenueDetails.swift in Sources */,
@@ -717,6 +732,7 @@
 				D3891C7F1D1FF5EB001858C8 /* ErrorView.swift in Sources */,
 				D3F363B11D71EE1500D5288B /* GetUserLocationUseCase.swift in Sources */,
 				D3E97AE11D25D73900FE4297 /* VenueNavigator.swift in Sources */,
+				D3F363C41D7257E200D5288B /* Array+SafeAccess.swift in Sources */,
 				D3E97ADF1D25D3EC00FE4297 /* VenueDetailCollectionViewDataSource.swift in Sources */,
 				D35C012F1D7037F000D2F106 /* VenuePhraseViewModel.swift in Sources */,
 				D3E97AD71D25CC3400FE4297 /* VenueDetailGalleryCollectionViewCell.swift in Sources */,

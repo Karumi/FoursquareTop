@@ -3,6 +3,7 @@ import Foundation
 import SafariServices
 
 protocol VenueDetailNavigator {
+    func dismissVenueDetail()
     func goToMenu(venueDetail venue: VenueViewModel)
     func call(venueDetail venue: VenueViewModel)
 }
@@ -14,6 +15,10 @@ extension RootNavigator : VenueDetailNavigator {
         }
         
         goTo(url: url)
+    }
+    
+    func dismissVenueDetail() {
+        currentNavigationController?.popViewControllerAnimated(true)
     }
     
     func call(venueDetail venue: VenueViewModel) {
