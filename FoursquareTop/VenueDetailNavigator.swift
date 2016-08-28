@@ -1,6 +1,7 @@
 
 import Foundation
 import SafariServices
+import MapKit
 
 enum MapProvider : String {
     case Apple
@@ -48,16 +49,26 @@ extension RootNavigator : VenueDetailNavigator {
 
     func openInMaps(venueDetail venue: VenueViewModel, usingProvider provider: MapProvider) {
         
-        let lat = String(venue.location.coordinate.latitude)
-        let lng = String(venue.location.coordinate.longitude)
-        
         switch provider {
         case .Apple:
-            if let url = NSURL(string: "http://maps.apple.com/?ll=\(lat),\(lng)") {
-                UIApplication.sharedApplication().openURL(url)
-            }
+            let placemark = MKPlacemark(coordinate: venue.location.coordinate,
+                addressDictionary: nil)
+            
+            let mapItem = MKMapItem(placemark:placemark)
+            mapItem.name = venue.name
+            
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking]
+            let currentLocationMapItem = MKMapItem.mapItemForCurrentLocation()
+            MKMapItem.openMapsWithItems([currentLocationMapItem, mapItem], launchOptions: launchOptions)
+
         case .Google:
-            if let url = NSURL(string: "comgooglemaps://?center=\(lat),\(lng)") {
+            
+            let lat = String(venue.location.coordinate.latitude)
+            let lng = String(venue.location.coordinate.longitude)
+            let latLongQuery = "\(lat),\(lng)"
+            
+            if let url = NSURL(string: "comgooglemaps-x-callback://?daddr=\(latLongQuery)&directionsmode=walking&x-success=sourceapp://?resume=true&x-source=Ftop") {
+                print(url.absoluteString)
                 UIApplication.sharedApplication().openURL(url)
             }
         }

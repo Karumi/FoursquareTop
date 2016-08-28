@@ -24,6 +24,7 @@
 	<array>
 		<string>foursquare</string>
         <string>comgooglemaps</string>
+        <string>comgooglemaps-x-callback</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
