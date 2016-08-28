@@ -36,7 +36,7 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
         
         venue.getMapSnapshot { [weak self] image in
             let mask = CALayer()
-            mask.contents = UIImage(named: "alpha")!.CGImage
+            mask.contents = UIImage(named: "bg_map_alpha")!.CGImage
             mask.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 200)
             self?.mapImageView.layer.mask = mask
             self?.mapImageView.layer.masksToBounds = true

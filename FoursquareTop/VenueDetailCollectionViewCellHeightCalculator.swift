@@ -19,7 +19,7 @@ struct VenueDetailCollectionViewCellHeightCalculator {
             }
             return venue.hasSecondaryActions ? 60 : 0
         case .Information:
-            return 200
+            return 150
         case .Tips:
             guard let venue = venue where !venue.topTips.isEmpty else {
                 return 0
