@@ -74,7 +74,7 @@ struct VenueViewModel {
     }
     
     var hasSecondaryActions: Bool {
-        return menuURL != nil || phone != nil
+        return menuURL != nil
     }
     
     func getMapSnapshot(callback: (UIImage?) -> ()) {

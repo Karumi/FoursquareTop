@@ -25,7 +25,6 @@ class VenueDetailPageViewController : FTViewController {
         pageViewController.delegate = dataSource
         
         let vc = dataSource.viewControllerAtIndex(initialIndex)
-        dataSource.prefetchPreviousAndNextDetails(initialIndex)
         
         pageViewController.setViewControllers([vc], direction: .Forward, animated: false, completion: nil)
         pageViewController.willMoveToParentViewController(self)

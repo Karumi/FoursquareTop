@@ -18,7 +18,7 @@ class VenueDetailPresenter : Presenter {
         self.navigator = navigator
     }
     
-    func viewDidLoad() {
+    func viewWillAppear() {
         useCase.execute(partialVenue.foursquareID) { result in
             if let venue = result.value {
                 self.venue = venue
@@ -43,5 +43,13 @@ class VenueDetailPresenter : Presenter {
         }
         
         navigator.call(venueDetail: venue)
+    }
+    
+    func openInFoursquareSelected() {
+        guard let venue = venue else {
+            return
+        }
+        
+        navigator.openInFoursquare(venueDetail: venue)
     }
 }

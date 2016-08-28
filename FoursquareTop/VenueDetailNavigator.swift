@@ -6,6 +6,7 @@ protocol VenueDetailNavigator {
     func dismissVenueDetail()
     func goToMenu(venueDetail venue: VenueViewModel)
     func call(venueDetail venue: VenueViewModel)
+    func openInFoursquare(venueDetail venue: VenueViewModel)
 }
 
 extension RootNavigator : VenueDetailNavigator {
@@ -29,6 +30,14 @@ extension RootNavigator : VenueDetailNavigator {
         UIApplication.sharedApplication().openURL(url)
     }
     
+    func openInFoursquare(venueDetail venue: VenueViewModel) {
+        guard let url = venue.foursquareURL else {
+            return
+        }
+        
+        UIApplication.sharedApplication().openURL(url)
+    }
+
     private func goTo(url url: NSURL) {
         let vc = SFSafariViewController(
             URL: url

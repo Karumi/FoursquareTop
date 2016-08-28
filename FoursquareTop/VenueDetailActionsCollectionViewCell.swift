@@ -24,22 +24,6 @@ class VenueDetailActionsCollectionViewCell : UICollectionViewCell, DetailCell {
             button.sizeToFit()
             stackView.addArrangedSubview(button)
         }
-        
-        if let _ = venue.phone {
-            let button = UIButton()
-            button.setTitle("Call", forState: .Normal)
-            button.backgroundColor = UIColor.ftopOrange
-            button.addTarget(
-                self,
-                action: #selector(callButtonTapped),
-                forControlEvents: .TouchUpInside
-            )
-            stackView.addArrangedSubview(button)
-        }
-    }
-    
-    func callButtonTapped() {
-        delegate?.venueDetailCellDidSelectCall()
     }
     
     func menuButtonTapped() {
@@ -48,6 +32,5 @@ class VenueDetailActionsCollectionViewCell : UICollectionViewCell, DetailCell {
 }
 
 protocol VenueDetailActionsCollectionViewCellDelegate : class {
-    func venueDetailCellDidSelectCall()
     func venueDetailCellDidSelectMenu()
 }

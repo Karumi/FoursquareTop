@@ -9,7 +9,6 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         return venueDetailPresenter
     }
     
-    private var viewWillActuallyAppear = false
     private var cellHeightCalculator: VenueDetailCollectionViewCellHeightCalculator!
     private var collectionView: UICollectionView!
     private lazy var dataSource: VenueDetailCollectionViewDataSource = {
@@ -26,8 +25,6 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewWillActuallyAppear = true
-        
         cellHeightCalculator = VenueDetailCollectionViewCellHeightCalculator(availableWidth: view.bounds.width)
         
         if let venue = dataSource.venue {
@@ -35,14 +32,19 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         }
     }
     
+    func callSelected() {
+        venueDetailPresenter.callSelected()
+    }
+    
+    func openInFoursquareSelected() {
+        venueDetailPresenter.openInFoursquareSelected()
+    }
+    
     // MARK: VenueDetailUI
     func showVenue(venue: VenueViewModel) {
         dataSource.venue = venue
         collectionView.reloadData()
-        
-        if viewWillActuallyAppear {
-            setScreenTitle(venue)
-        }
+        setScreenTitle(venue)
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -61,10 +63,6 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     }
     
     // MARK: VenueDetailActionsCollectionViewCellDelegate
-    func venueDetailCellDidSelectCall() {
-        venueDetailPresenter.callSelected()
-    }
-    
     func venueDetailCellDidSelectMenu() {
         venueDetailPresenter.menuSelected()
     }
@@ -99,6 +97,32 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         titleView.frame = CGRect(origin: .zero, size: size)
         
         navigationController?.navigationBar.topItem?.titleView = titleView
+        
+        if let _ = venue.phone {
+            var buttons: [UIBarButtonItem] = []
+            
+            buttons.append(
+                UIBarButtonItem(
+                    image: UIImage(named: "ic_phone"),
+                    style: .Plain,
+                    target: self,
+                    action: #selector(callSelected)
+                )
+            )
+            
+            if let url = venue.foursquareURL where UIApplication.sharedApplication().canOpenURL(url) {
+                buttons.append(
+                    UIBarButtonItem(
+                        image: UIImage(named: "ic_foursquare"),
+                        style: .Plain,
+                        target: self,
+                        action: #selector(openInFoursquareSelected)
+                    )
+                )
+            }
+            
+            navigationController?.navigationBar.topItem?.rightBarButtonItems = buttons
+        }
     }
 }
 

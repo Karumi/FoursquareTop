@@ -17,7 +17,8 @@ class BestVenuesAroundYouViewController : FTViewController, BestVenuesAroundYouU
         
         initCollectionView()
         
-        navigationController?.navigationBar.topItem?.title = NSLocalizedString("BestPlacesAround.Title", comment: "Best places to eat around you screen title")
+        navigationItem.title = NSLocalizedString("BestPlacesAround.Title", comment: "Best places to eat around you screen title")
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
     
     // MARK: BestVenuesAroundYouUI
