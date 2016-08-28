@@ -8,6 +8,10 @@ class BestVenuesAroundYouViewController : FTViewController, BestVenuesAroundYouU
         return venuesAroundYouPresenter
     }
     
+    override var contentView: UIView {
+        return collectionView
+    }
+    
     private var collectionView: UICollectionView!
     private var dataSource = BestVenuesAroundYouCollectionViewDataSource()
     

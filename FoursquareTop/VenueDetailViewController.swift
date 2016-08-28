@@ -9,6 +9,10 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         return venueDetailPresenter
     }
     
+    override var contentView: UIView {
+        return collectionView
+    }
+    
     private var cellHeightCalculator: VenueDetailCollectionViewCellHeightCalculator!
     private var collectionView: UICollectionView!
     private lazy var dataSource: VenueDetailCollectionViewDataSource = {

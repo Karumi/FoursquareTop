@@ -9,10 +9,14 @@ class FTViewController : UIViewController, BaseUI, ErrorViewDelegate {
         return loadingView
     }()
     
+    var contentView: UIView {
+        return view
+    }
+    
     lazy var emptyCaseView: ErrorView? = {
         let view = ErrorView()
         view.delegate = self
-        view.topErrorViewImage = "ic_sad"
+        view.topErrorViewImage = Asset.Ic_sad.rawValue
         
         return view
     }()
@@ -20,7 +24,7 @@ class FTViewController : UIViewController, BaseUI, ErrorViewDelegate {
     lazy var errorView: ErrorView? = {
         let view = ErrorView()
         view.delegate = self
-        view.topErrorViewImage = "ic_embarrassed"
+        view.topErrorViewImage = Asset.Ic_embarrassed.rawValue
         
         return view
     }()
@@ -55,6 +59,8 @@ class FTViewController : UIViewController, BaseUI, ErrorViewDelegate {
         didSet {
             removeAllSupplementaryViews()
             
+            setContent(asVisible: !loading)
+            
             if loading {
                 addLoadingView()
             }
@@ -68,6 +74,7 @@ class FTViewController : UIViewController, BaseUI, ErrorViewDelegate {
     func showError(message message: String) {
         removeAllSupplementaryViews()
         
+        setContent(asVisible: false)
         addErrorView()
         
         errorView?.errorMessage = message
@@ -86,6 +93,7 @@ class FTViewController : UIViewController, BaseUI, ErrorViewDelegate {
     func showEmptyCase(message message: String) {
         removeAllSupplementaryViews()
         
+        setContent(asVisible: false)
         addEmptyCaseView()
         
         emptyCaseView?.errorMessage = message
@@ -137,5 +145,9 @@ class FTViewController : UIViewController, BaseUI, ErrorViewDelegate {
         view.bottomAnchor.constraintEqualToAnchor(bottomLayoutGuide.topAnchor).active = true
         view.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
         view.rightAnchor.constraintEqualToAnchor(self.view.rightAnchor).active = true
+    }
+    
+    private func setContent(asVisible visible: Bool) {
+        contentView.hidden = !visible
     }
 }
