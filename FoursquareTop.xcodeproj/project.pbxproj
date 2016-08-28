@@ -60,6 +60,7 @@
 		D395DB811D73614A00882A09 /* BaseUITestCase+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395DB7F1D73614800882A09 /* BaseUITestCase+Localized.swift */; };
 		D395DB861D73618300882A09 /* XCTestCase+KIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395DB841D73618000882A09 /* XCTestCase+KIF.swift */; };
 		D395DB871D73618500882A09 /* KifTestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395DB821D73616C00882A09 /* KifTestActor.swift */; };
+		D395DB8B1D73925900882A09 /* BestVenuesAroundYouViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395DB8A1D73925900882A09 /* BestVenuesAroundYouViewControllerTests.swift */; };
 		D3B828C71AD86F2300D60B6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B828C51AD86F2300D60B6F /* LaunchScreen.xib */; };
 		D3B829251AD86F8000D60B6F /* poweredByFoursquare_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B829241AD86F8000D60B6F /* poweredByFoursquare_white.png */; };
 		D3CE1A3F1D706ED1003A0FEF /* VenueDetailTipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE1A3E1D706ED1003A0FEF /* VenueDetailTipCollectionViewCell.swift */; };
@@ -173,6 +174,7 @@
 		D395DB7F1D73614800882A09 /* BaseUITestCase+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseUITestCase+Localized.swift"; sourceTree = "<group>"; };
 		D395DB821D73616C00882A09 /* KifTestActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KifTestActor.swift; sourceTree = "<group>"; };
 		D395DB841D73618000882A09 /* XCTestCase+KIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+KIF.swift"; sourceTree = "<group>"; };
+		D395DB8A1D73925900882A09 /* BestVenuesAroundYouViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestVenuesAroundYouViewControllerTests.swift; sourceTree = "<group>"; };
 		D3B828B31AD86F2300D60B6F /* FoursquareTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B828B71AD86F2300D60B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3B828C61AD86F2300D60B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -581,6 +583,22 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		D395DB881D73923C00882A09 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D395DB891D73923F00882A09 /* Best Venues Around */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		D395DB891D73923F00882A09 /* Best Venues Around */ = {
+			isa = PBXGroup;
+			children = (
+				D395DB8A1D73925900882A09 /* BestVenuesAroundYouViewControllerTests.swift */,
+			);
+			name = "Best Venues Around";
+			sourceTree = "<group>";
+		};
 		D3B828AA1AD86F2300D60B6F = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +650,7 @@
 		D3B828CF1AD86F2300D60B6F /* FoursquareTopUITests */ = {
 			isa = PBXGroup;
 			children = (
+				D395DB881D73923C00882A09 /* Screens */,
 				D338EBCE1D73579F00EB2B53 /* Test Doubles */,
 				D338EBCA1D73570500EB2B53 /* Base */,
 				D3B828D01AD86F2300D60B6F /* Supporting Files */,
@@ -1080,6 +1099,7 @@
 				D395DB861D73618300882A09 /* XCTestCase+KIF.swift in Sources */,
 				D338EBDD1D7359B100EB2B53 /* StubVenueDetailNavigator.swift in Sources */,
 				D395DB811D73614A00882A09 /* BaseUITestCase+Localized.swift in Sources */,
+				D395DB8B1D73925900882A09 /* BestVenuesAroundYouViewControllerTests.swift in Sources */,
 				D395DB871D73618500882A09 /* KifTestActor.swift in Sources */,
 				D338EBDF1D735DF400EB2B53 /* StubEnvironment.swift in Sources */,
 				D338EBE31D735E9E00EB2B53 /* StubGetUserLocationUseCase.swift in Sources */,

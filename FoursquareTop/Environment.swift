@@ -19,6 +19,10 @@ struct Environment : EnvironmentProtocol {
         return MapProvider.all.filter(isMapProviderSupported)
     }
     
+    func isInTestingRun() -> Bool {
+        return NSProcessInfo().environment["isTestRun"] != nil
+    }
+    
     private func isMapProviderSupported(provider: MapProvider) -> Bool {
         switch provider {
         case .Apple:

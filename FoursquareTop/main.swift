@@ -1,4 +1,12 @@
+
 import Foundation
 import UIKit
 
-UIApplicationMain(Process.argc, Process.unsafeArgv, nil, NSStringFromClass(AppDelegate))
+if (Environment().isInTestingRun()) {
+    UIApplicationMain(Process.argc, Process.unsafeArgv, nil, NSStringFromClass(AppDelegateForTests))
+} else {
+    UIApplicationMain(Process.argc, Process.unsafeArgv, nil, NSStringFromClass(AppDelegate))
+}
+
+
+
