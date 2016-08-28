@@ -18,11 +18,15 @@ class BestVenuesAroundYouCollectionViewDataSource : NSObject, UICollectionViewDa
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return venueList?.allCategories.count ?? 0 + (venueList?.topVenue != nil ? 1 : 0)
+        return venueList?.venues.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if let venue = venueList?.topVenue where indexPath.item == 0 {
+        guard let venue = venueList?.venues[indexPath.item] else {
+            return UICollectionViewCell()
+        }
+        
+        if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(TopVenueCollectionViewCellReuseIdentifier, forIndexPath: indexPath) as! TopVenueCollectionViewCell
             
             cell.configure(withVenue: venue)
@@ -31,8 +35,7 @@ class BestVenuesAroundYouCollectionViewDataSource : NSObject, UICollectionViewDa
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(VenueCategoryCollectionViewCellReuseIdentifier, forIndexPath: indexPath) as! VenueCategoryCollectionViewCell
             
-            let category = venueList!.allCategories[indexPath.row - 1]
-            cell.configureWithCategory(category)
+            cell.configureWithCategory(venue.primaryCategory)
             
             return cell
         }

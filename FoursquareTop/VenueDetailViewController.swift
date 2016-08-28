@@ -9,6 +9,7 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         return venueDetailPresenter
     }
     
+    private var viewWillActuallyAppear = false
     private var cellHeightCalculator: VenueDetailCollectionViewCellHeightCalculator!
     private var collectionView: UICollectionView!
     private lazy var dataSource: VenueDetailCollectionViewDataSource = {
@@ -25,7 +26,13 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        viewWillActuallyAppear = true
+        
         cellHeightCalculator = VenueDetailCollectionViewCellHeightCalculator(availableWidth: view.bounds.width)
+        
+        if let venue = dataSource.venue {
+            setScreenTitle(venue)
+        }
     }
     
     // MARK: VenueDetailUI
@@ -33,12 +40,9 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         dataSource.venue = venue
         collectionView.reloadData()
         
-        let titleView = VenueDetailTitleView()
-        titleView.configure(withVenue: venue)
-        let size = titleView.intrinsicContentSize()
-        titleView.frame = CGRect(origin: .zero, size: size)
-        
-        navigationController?.navigationBar.topItem?.titleView = titleView
+        if viewWillActuallyAppear {
+            setScreenTitle(venue)
+        }
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -84,6 +88,17 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         collectionView.bottomAnchor.constraintEqualToAnchor(bottomLayoutGuide.topAnchor).active = true
         
         dataSource.registerCells(collectionView)
+    }
+    
+    // MARK : Private 
+    
+    private func setScreenTitle(venue: VenueViewModel) {
+        let titleView = VenueDetailTitleView()
+        titleView.configure(withVenue: venue)
+        let size = titleView.intrinsicContentSize()
+        titleView.frame = CGRect(origin: .zero, size: size)
+        
+        navigationController?.navigationBar.topItem?.titleView = titleView
     }
 }
 

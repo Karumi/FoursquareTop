@@ -4,25 +4,43 @@ import Foundation
 struct VenueListViewModel {
     let venues: [VenueViewModel]
     
-    var topVenue: VenueViewModel? {
-        return venues.first!
-    }
-    
-    var allVenuesButTopVenue: [VenueViewModel] {
-        guard venues.count > 1 else {
-            return []
+    init(venues: [VenueViewModel]) {
+        
+        let allVenuesWithCategories: [VenueViewModel] = Array(venues[1..<venues.count]).flatMap {
+            let primaryCategories = $0.categories.filter { $0.primary }
+            guard primaryCategories.count > 0 else {
+                return nil
+            }
+            
+            return $0
         }
         
-        return Array(venues[1..<venues.count])
-    }
-    
-    var allCategories: [VenueCategoryViewModel] {
-        return Array<VenueCategoryViewModel>(
-            Set<VenueCategoryViewModel>(venues.flatMap { $0.categories })
-        ).sort { $0.names.get(forType: .Regular) < $1.names.get(forType: .Regular) }
-    }
-    
-    func topVenue(forCategoryId categoryId: String)-> VenueViewModel? {
-        return venues.filter { $0.foursquareID == categoryId }.first
+        let topVenuesPerCategory = allVenuesWithCategories.reduce([String:VenueViewModel]()) { (dict, venue) in
+            
+            var copy = dict
+            if let storedVenue = dict[venue.primaryCategory.identifier] {
+                if venue.rating > storedVenue.rating {
+                    copy[venue.primaryCategory.identifier] = venue
+                }
+            } else {
+                copy[venue.primaryCategory.identifier] = venue
+            }
+            
+            return copy
+        }.values
+        
+        let resultingVenues = Array(topVenuesPerCategory)
+
+        guard resultingVenues.count > 1 else {
+            self.venues = resultingVenues
+            return
+        }
+        
+        let topVenue = resultingVenues.sort { $0.rating > $1.rating }.first!
+        let allVenuesButTheTopSorted: [VenueViewModel] = Array(resultingVenues[1..<resultingVenues.count]).sort {
+            $0.primaryCategory.names.get(forType: .Regular) < $1.primaryCategory.names.get(forType: .Regular)
+        }
+        
+        self.venues = [topVenue] + allVenuesButTheTopSorted
     }
 }

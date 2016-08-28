@@ -43,15 +43,17 @@ class VenueDetailPageViewControllerDataSource : NSObject, UIPageViewControllerDa
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         var index = getPageIndex(viewController)
         
+        if index >= venues.count - 1  {
+            return nil
+        }
+        
         index += 1
         prefetchPreviousAndNextDetails(index)
         
-        return self.viewControllerAtIndex(index)
+        return viewControllerAtIndex(index)
     }
     
     func viewControllerAtIndex(index: Int) -> UIViewController {
-        NSLog("Creating new VC at index %d", index)
-        
         if let venue = venues[optional:index], let vc = viewControllersCache[venue.foursquareID] {
             return vc
         } else {

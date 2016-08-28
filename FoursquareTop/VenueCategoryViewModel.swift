@@ -21,6 +21,7 @@ struct VenueCategoryViewModel : Hashable {
     let identifier: String
     let images: VenueCategoryImages
     let names: VenueCategoryNames
+    let iconURL: NSURL?
     let primary: Bool
     
     var hashValue: Int {

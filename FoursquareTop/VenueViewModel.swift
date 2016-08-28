@@ -45,6 +45,10 @@ struct VenueViewModel {
     let tips: [VenueTipViewModel]
     let photos: [VenuePhotoViewModel]
     
+    var primaryCategory: VenueCategoryViewModel {
+        return categories.filter { $0.primary }.first!
+    }
+    
     var formattedPrice: String? {
         return price?.rawValue
     }

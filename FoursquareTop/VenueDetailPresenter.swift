@@ -18,7 +18,7 @@ class VenueDetailPresenter : Presenter {
         self.navigator = navigator
     }
     
-    func viewWillAppear() {
+    func viewDidLoad() {
         useCase.execute(partialVenue.foursquareID) { result in
             if let venue = result.value {
                 self.venue = venue

@@ -92,6 +92,13 @@ struct VenueParser {
     }
     
     private func parseCategory(json: JSON) -> VenueCategoryViewModel {
+        var iconURL: NSURL? = nil
+        
+        if let iconDictionary = json["icon"].dictionary, prefix = iconDictionary["prefix"]?.string, suffix = iconDictionary["suffix"]?.string {
+            
+            iconURL = NSURL(string: String(format: "%@%@", prefix, suffix))
+        }
+
         return VenueCategoryViewModel(
             identifier: json["id"].stringValue,
             images: VenueCategoryImages(
@@ -109,6 +116,7 @@ struct VenueParser {
                     .Plural : json["pluralName"].stringValue,
                 ]
             ),
+            iconURL: iconURL,
             primary: json["primary"].intValue == 1
         )
     }
