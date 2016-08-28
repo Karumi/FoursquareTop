@@ -13,6 +13,8 @@ enum MapProvider : String {
 protocol VenueDetailNavigator {
     func dismissVenueDetail()
     func goToMenu(venueDetail venue: VenueViewModel)
+    func goToPhotoViewer(venueDetail venue: VenueViewModel, selectedIndex: Int, delegate: VenueDetailGalleryViewControllerDelegate)
+    func closePhotoViewer()
     func call(venueDetail venue: VenueViewModel)
     func openInFoursquare(venueDetail venue: VenueViewModel)
     func openInMaps(venueDetail venue: VenueViewModel, usingProvider: MapProvider)
@@ -72,6 +74,15 @@ extension RootNavigator : VenueDetailNavigator {
                 UIApplication.sharedApplication().openURL(url)
             }
         }
+    }
+    
+    func goToPhotoViewer(venueDetail venue: VenueViewModel, selectedIndex: Int, delegate: VenueDetailGalleryViewControllerDelegate) {
+        let vc = serviceLocator.venue.getPhotoViewerViewController(venue, initialIndex: selectedIndex, delegate: delegate)
+        currentNavigationController?.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func closePhotoViewer() {
+        currentlyPresentedViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     private func goTo(url url: NSURL) {

@@ -9,4 +9,5 @@ target 'FoursquareTop' do
     pod 'INTULocationManager', '~> 4.0'
     pod 'Result', '~> 2.0'
     pod 'SwiftyJSON', '~> 2.0'
+    pod 'NYTPhotoViewer', '~> 1.1.0'
 end

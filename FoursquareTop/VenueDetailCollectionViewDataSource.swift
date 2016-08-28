@@ -8,14 +8,22 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
             configureCellsForVenue()
         }
     }
+    
+    var photoIndex: Int = 0
+    
     private var allSupportedCells: [DetailCellType] = [.Gallery, .Actions, .Information, .Tips, .EmptySpace(16)]
     private var cells: [DetailCellType] = []
     private weak var detailActionsCelleDelegate: VenueDetailActionsCollectionViewCellDelegate?
     private weak var detailInformationDelegate: VenueDetailInformationDelegate?
+    private weak var galleryDelegate: VenueDetailGalleryCollectionViewCellDelegate?
     
-    init(detailActionsCellDelegate: VenueDetailActionsCollectionViewCellDelegate, detailInformationDelegate: VenueDetailInformationDelegate) {
+    var galleryHeader: VenueDetailGalleryCollectionViewCell?
+    
+    init(detailActionsCellDelegate: VenueDetailActionsCollectionViewCellDelegate, detailInformationDelegate: VenueDetailInformationDelegate, galleryDelegate: VenueDetailGalleryCollectionViewCellDelegate) {
         self.detailActionsCelleDelegate = detailActionsCellDelegate
         self.detailInformationDelegate = detailInformationDelegate
+        self.galleryDelegate = galleryDelegate
+        
         super.init()
     }
     
@@ -42,6 +50,11 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
         
         let cellType = cells[indexPath.item]
         let cell = getCell(forType: cellType, forCollectionView: collectionView, indexPath: indexPath)
+        
+        if let c = cell as? VenueDetailGalleryCollectionViewCell {
+            c.delegate = galleryDelegate
+            galleryHeader = c
+        }
         
         if let c = cell as? VenueDetailActionsCollectionViewCell {
             c.delegate = detailActionsCelleDelegate

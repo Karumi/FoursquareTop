@@ -3,6 +3,8 @@
 import Foundation
 
 enum L10n {
+  /// Close
+  case Close
   /// Cancel
   case Cancel
   /// Loading
@@ -29,6 +31,8 @@ enum L10n {
   case VenueDetailSeeMenu
   /// Could not show this venue information, please tap anywhere to retry
   case VenueDetailCanNotFetchVenueError
+  /// %lu de %lu
+  case VenueDetailPhotoGalleryTitle(Int, Int)
 }
 
 extension L10n: CustomStringConvertible {
@@ -36,6 +40,8 @@ extension L10n: CustomStringConvertible {
 
   var string: String {
     switch self {
+      case .Close:
+        return L10n.tr("Close")
       case .Cancel:
         return L10n.tr("Cancel")
       case .Loading:
@@ -62,6 +68,8 @@ extension L10n: CustomStringConvertible {
         return L10n.tr("VenueDetail.SeeMenu")
       case .VenueDetailCanNotFetchVenueError:
         return L10n.tr("VenueDetail.CanNotFetchVenue.Error")
+      case .VenueDetailPhotoGalleryTitle(let p0, let p1):
+        return L10n.tr("VenueDetail.PhotoGallery.Title", p0, p1)
     }
   }
 

@@ -1,3 +1,4 @@
+"Close" = "Close";
 "Cancel" = "Cancel";
 "Loading" = "Loading";
 
@@ -13,3 +14,4 @@
 "VenueDetail.MapPicker.Message" = "What do you want to use?";
 "VenueDetail.SeeMenu" = "See Menu";
 "VenueDetail.CanNotFetchVenue.Error" = "Could not show this venue information, please tap anywhere to retry";
+"VenueDetail.PhotoGallery.Title" = "%lu de %lu";

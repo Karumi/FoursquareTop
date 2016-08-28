@@ -1,5 +1,13 @@
 PODS:
+  - FLAnimatedImage (1.0.12)
   - INTULocationManager (4.2.0)
+  - NYTPhotoViewer (1.1.0):
+    - NYTPhotoViewer/AnimatedGifSupport (= 1.1.0)
+    - NYTPhotoViewer/Core (= 1.1.0)
+  - NYTPhotoViewer/AnimatedGifSupport (1.1.0):
+    - FLAnimatedImage (~> 1.0.8)
+    - NYTPhotoViewer/Core
+  - NYTPhotoViewer/Core (1.1.0)
   - QuadratTouch (1.1.1)
   - Result (2.1.1)
   - SDWebImage (3.8.1):
@@ -9,18 +17,21 @@ PODS:
 
 DEPENDENCIES:
   - INTULocationManager (~> 4.0)
+  - NYTPhotoViewer (~> 1.1.0)
   - QuadratTouch (>= 1.0)
   - Result (~> 2.0)
   - SDWebImage (~> 3.0)
   - SwiftyJSON (~> 2.0)
 
 SPEC CHECKSUMS:
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   INTULocationManager: 73f8254b3d05c897c56bb13c190e5b7c648c0998
+  NYTPhotoViewer: e80e8767f3780d2df37c6f72cbab15d6c7232911
   QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
   Result: 822c879f145943320cc80a9a8372378e3d699fe4
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: de0dba9b3a9c7edc858f318666ddd8bf0bc8f6a3
+PODFILE CHECKSUM: 0c05d85b220f7c6914f8dacc94bb48887e98392b
 
 COCOAPODS: 1.0.1

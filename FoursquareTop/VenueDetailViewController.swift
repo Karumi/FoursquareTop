@@ -1,7 +1,8 @@
 
 import UIKit
+import NYTPhotoViewer
 
-class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionViewDelegateFlowLayout, VenueDetailActionsCollectionViewCellDelegate, VenueDetailInformationDelegate {
+class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionViewDelegateFlowLayout, VenueDetailActionsCollectionViewCellDelegate, VenueDetailInformationDelegate, VenueDetailGalleryViewControllerDelegate, VenueDetailGalleryCollectionViewCellDelegate {
     
     var pageIndex = 0
     var venueDetailPresenter: VenueDetailPresenter!
@@ -13,10 +14,14 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         return collectionView
     }
     
+    var galleryCell: VenueDetailGalleryCollectionViewCell? {
+        return dataSource.galleryHeader
+    }
+    
     private var cellHeightCalculator: VenueDetailCollectionViewCellHeightCalculator!
     private var collectionView: UICollectionView!
     private lazy var dataSource: VenueDetailCollectionViewDataSource = {
-        return VenueDetailCollectionViewDataSource(detailActionsCellDelegate: self, detailInformationDelegate: self)
+        return VenueDetailCollectionViewDataSource(detailActionsCellDelegate: self, detailInformationDelegate: self, galleryDelegate: self)
     }()
     
     override func viewDidLoad() {
@@ -87,6 +92,32 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
                 forType: dataSource.cellTypeAtIndexPath(indexPath),
                 venue: venue
             )
+        )
+    }
+    
+    // MARK: VenueDetailGalleryCollectionViewCellDelegate
+    func venueDetailGalleryCellDidSelectImage(index: Int, venue: VenueViewModel) {
+        venueDetailPresenter.galleryPhotoSelected(venue, selectedIndex: index, delegate: self)
+    }
+    
+    func venueDetailGalleryCellDidMoveToImageIndex(index: Int, venue: VenueViewModel) {
+        dataSource.photoIndex = index
+    }
+    
+    // MARK: VenueDetailGalleryViewControllerDelegate
+    func photosViewController(photosViewController: NYTPhotosViewController, referenceViewForPhoto photo: NYTPhoto) -> UIView? {
+        return galleryCell
+    }
+    
+    func photosViewController(photosViewController: NYTPhotosViewController, didNavigateToPhoto photo: NYTPhoto, atIndex photoIndex: UInt) {
+        let index = Int(photoIndex)
+        dataSource.photoIndex = index
+        galleryCell?.setImageIndex(index)
+    }
+    
+    func photosViewController(photosViewController: NYTPhotosViewController, titleForPhoto photo: NYTPhoto, atIndex photoIndex: UInt, totalPhotoCount: UInt) -> String? {
+        return String.localizedStringWithFormat(
+            tr(.VenueDetailPhotoGalleryTitle(Int(photoIndex + 1), Int(totalPhotoCount)))
         )
     }
     

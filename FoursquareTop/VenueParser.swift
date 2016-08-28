@@ -126,7 +126,8 @@ struct VenueParser {
             identifier: json["id"].stringValue,
             url: NSURL(
                 string: String(format: "%@original%@", json["prefix"].stringValue, json["suffix"].stringValue)
-            )
+            ),
+            image: nil
         )
     }
     

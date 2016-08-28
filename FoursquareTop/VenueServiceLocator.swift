@@ -46,6 +46,18 @@ class VenueServiceLocator {
         return vc
     }
     
+    func getPhotoViewerViewController(venue: VenueViewModel, initialIndex: Int, delegate: VenueDetailGalleryViewControllerDelegate) -> UIViewController {
+        let vc = VenuePhotoViewerViewController(
+            photos: venue.photos,
+            initialPhoto: venue.photos[initialIndex],
+            delegate: delegate
+        )
+        
+        vc.presenter = VenuePhotoViewerPresenter(navigator: getVenueDetailNavigator())
+        
+        return vc
+    }
+    
     // MARK: Environment
     func getEnvironment() -> EnvironmentProtocol {
         return Environment()

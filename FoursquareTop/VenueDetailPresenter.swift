@@ -75,4 +75,8 @@ class VenueDetailPresenter : Presenter {
         
         navigator.openInMaps(venueDetail: venue, usingProvider: provider)
     }
+    
+    func galleryPhotoSelected(venue: VenueViewModel, selectedIndex: Int, delegate: VenueDetailGalleryViewControllerDelegate) {
+        navigator.goToPhotoViewer(venueDetail: venue, selectedIndex: selectedIndex, delegate: delegate)
+    }
 }
