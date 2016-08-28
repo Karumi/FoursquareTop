@@ -13,6 +13,10 @@ class FTViewController : UIViewController, BaseUI, ErrorViewDelegate {
         return view
     }
     
+    var width: CGFloat {
+        return view.bounds.width
+    }
+    
     lazy var emptyCaseView: ErrorView? = {
         let view = ErrorView()
         view.delegate = self

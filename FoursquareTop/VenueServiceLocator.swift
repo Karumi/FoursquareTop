@@ -28,7 +28,8 @@ class VenueServiceLocator {
             useCase: getVenueDetailsUseCase(),
             venue: venue,
             navigator: getVenueDetailNavigator(),
-            environment: getEnvironment()
+            environment: getEnvironment(),
+            snapshotGenerator: getMapSnapshotGenerator()
         )
         
         return vc
@@ -58,9 +59,14 @@ class VenueServiceLocator {
         return vc
     }
     
-    // MARK: Environment
+    // MARK: Other Collaborators
+    
     func getEnvironment() -> EnvironmentProtocol {
         return Environment()
+    }
+    
+    func getMapSnapshotGenerator() -> MapSnapshotGeneratorProtocol {
+        return MapSnapshotGenerator()
     }
     
     // MARK: Use Case

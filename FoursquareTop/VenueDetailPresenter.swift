@@ -9,21 +9,33 @@ class VenueDetailPresenter : Presenter {
     private let useCase: GetVenueDetailsUseCase
     private let navigator: VenueDetailNavigator
     private let environment: EnvironmentProtocol
+    private let snapshotGenerator: MapSnapshotGeneratorProtocol
     private var venue: VenueViewModel?
     
-    init(ui: VenueDetailUI, useCase: GetVenueDetailsUseCase, venue: VenueViewModel, navigator: VenueDetailNavigator, environment: EnvironmentProtocol) {
+    init(ui: VenueDetailUI, useCase: GetVenueDetailsUseCase, venue: VenueViewModel, navigator: VenueDetailNavigator, environment: EnvironmentProtocol, snapshotGenerator: MapSnapshotGeneratorProtocol) {
         self.ui = ui
         self.useCase = useCase
         self.partialVenue = venue
         self.navigator = navigator
         self.environment = environment
+        self.snapshotGenerator = snapshotGenerator
     }
     
     func viewWillAppear() {
         useCase.execute(partialVenue.foursquareID) { result in
-            if let venue = result.value {
+            if let ui = self.ui, venue = result.value {
                 self.venue = venue
-                self.ui?.showVenue(venue)
+                ui.showVenue(venue)
+                
+                self.snapshotGenerator.getMapSnapshot(
+                    forVenue: venue,
+                    ofSize: CGSize(width: ui.width, height: VenueDetailInformationCellProvider.height)
+                ) { image in
+                    if let image = image {
+                        ui.showMap(image)
+                    }
+                }
+                
             } else {
                 self.ui?.showError(message: tr(.VenueDetailCanNotFetchVenueError))
             }

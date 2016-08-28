@@ -3,7 +3,7 @@ import UIKit
 
 let VenueDetailTipCollectionViewCellReuseIdentifier = "VenueDetailTipCollectionViewCellReuseIdentifier"
 
-class VenueDetailTipCollectionViewCell : UICollectionViewCell, DetailCell {
+class VenueDetailTipCollectionViewCell : DetailCell {
     
     @IBOutlet private weak var stackView: UIStackView!
     
@@ -19,7 +19,9 @@ class VenueDetailTipCollectionViewCell : UICollectionViewCell, DetailCell {
         return label.frame.height
     }
     
-    func configure(withVenue venue: VenueViewModel) {
+    override func configure(withVenue venue: VenueViewModel) {
+        super.configure(withVenue: venue)
+        
         stackView.subviews.forEach { $0.removeFromSuperview() }
         
         venue.topTips.forEach {

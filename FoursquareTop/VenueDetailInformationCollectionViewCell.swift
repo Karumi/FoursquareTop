@@ -3,7 +3,7 @@ import UIKit
 
 let VenueDetailInformationCollectionViewCellReuseIdentifier = "VenueDetailInformationCollectionViewCellReuseIdentifier"
 
-class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCell {
+class VenueDetailInformationCollectionViewCell : DetailCell {
     
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var mapImageView: UIImageView!
@@ -26,26 +26,28 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mapTapped)))
     }
     
-    func configure(withVenue venue: VenueViewModel) {
+    override func configure(withVenue venue: VenueViewModel) {
+        super.configure(withVenue: venue)
+        
         addressLabel.text = venue.address
         statusLabel.text = venue.status
         ratingLabel.text = venue.formattedRating
         priceLabel.text = venue.formattedPrice
         
         activityIndicator.startAnimating()
-        
-        venue.getMapSnapshot { [weak self] image in
-            let mask = CALayer()
-            mask.contents = UIImage(asset: .Bg_map_alpha)!.CGImage
-            mask.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 200)
-            self?.mapImageView.layer.mask = mask
-            self?.mapImageView.layer.masksToBounds = true
-            
-            self?.mapImageView.image = image
-            self?.activityIndicator.stopAnimating()
-            UIView.animateWithDuration(0.1) {
-                self?.mapImageView.alpha = 1
-            }
+    }
+    
+    func showMap(image: UIImage) {
+        let mask = CALayer()
+        mask.contents = UIImage(asset: .Bg_map_alpha)!.CGImage
+        mask.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 200)
+        mapImageView.layer.mask = mask
+        mapImageView.layer.masksToBounds = true
+
+        mapImageView.image = image
+        activityIndicator.stopAnimating()
+        UIView.animateWithDuration(0.1) {
+            self.mapImageView.alpha = 1
         }
     }
     

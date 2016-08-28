@@ -2,7 +2,7 @@
 import UIKit
 import NYTPhotoViewer
 
-class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionViewDelegateFlowLayout, VenueDetailActionsCollectionViewCellDelegate, VenueDetailInformationDelegate, VenueDetailGalleryViewControllerDelegate, VenueDetailGalleryCollectionViewCellDelegate {
+class VenueDetailViewController : FTViewController, VenueDetailUI, VenueDetailActionsCollectionViewCellDelegate, VenueDetailInformationDelegate, VenueDetailGalleryViewControllerDelegate, VenueDetailGalleryCollectionViewCellDelegate {
     
     var pageIndex = 0
     var venueDetailPresenter: VenueDetailPresenter!
@@ -15,13 +15,23 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     }
     
     var galleryCell: VenueDetailGalleryCollectionViewCell? {
-        return dataSource.galleryHeader
+        return dataSource.galleryCell
     }
     
-    private var cellHeightCalculator: VenueDetailCollectionViewCellHeightCalculator!
+    var informationCell: VenueDetailInformationCollectionViewCell? {
+        return dataSource.informationCell
+    }
+    
     private var collectionView: UICollectionView!
     private lazy var dataSource: VenueDetailCollectionViewDataSource = {
-        return VenueDetailCollectionViewDataSource(detailActionsCellDelegate: self, detailInformationDelegate: self, galleryDelegate: self)
+        return VenueDetailCollectionViewDataSource(
+            providers: [
+                VenueDetailGalleryCellProvider(delegate: self),
+                VenueDetailActionsCellProvider(delegate: self),
+                VenueDetailInformationCellProvider(delegate: self),
+                VenueDetailTipCellProvider(),
+            ]
+        )
     }()
     
     override func viewDidLoad() {
@@ -33,8 +43,6 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        cellHeightCalculator = VenueDetailCollectionViewCellHeightCalculator(availableWidth: view.bounds.width)
         
         if let venue = dataSource.venue {
             setScreenTitle(venue)
@@ -80,19 +88,8 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    // MARK: UICollectionViewDelegateFlowLayout
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        guard let venue = dataSource.venue else {
-            return .zero
-        }
-        
-        return CGSize(
-            width: view.bounds.width,
-            height: cellHeightCalculator.heightForCell(
-                forType: dataSource.cellTypeAtIndexPath(indexPath),
-                venue: venue
-            )
-        )
+    func showMap(image: UIImage) {
+        informationCell?.showMap(image)
     }
     
     // MARK: VenueDetailGalleryCollectionViewCellDelegate
@@ -139,7 +136,7 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = dataSource
-        collectionView.delegate = self
+        collectionView.delegate = dataSource
         collectionView.backgroundColor = .whiteColor()
         
         view.addSubview(collectionView)

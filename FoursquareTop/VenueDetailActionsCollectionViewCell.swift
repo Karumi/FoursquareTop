@@ -3,13 +3,15 @@ import UIKit
 
 let VenueDetailActionsCollectionViewCellReuseIdentifier = "VenueDetailActionsCollectionViewCellReuseIdentifier"
 
-class VenueDetailActionsCollectionViewCell : UICollectionViewCell, DetailCell {
+class VenueDetailActionsCollectionViewCell : DetailCell {
     
     @IBOutlet private weak var stackView: UIStackView!
     
     weak var delegate: VenueDetailActionsCollectionViewCellDelegate?
     
-    func configure(withVenue venue: VenueViewModel) {
+    override func configure(withVenue venue: VenueViewModel) {
+        super.configure(withVenue: venue)
+        
         stackView.subviews.forEach { $0.removeFromSuperview() }
         
         if let _ = venue.menuURL {

@@ -9,11 +9,16 @@ protocol VenueDetailGalleryCollectionViewCellDelegate : class {
     func venueDetailGalleryCellDidMoveToImageIndex(index: Int, venue: VenueViewModel)
 }
 
-protocol DetailCell {
-    func configure(withVenue venue: VenueViewModel)
+class DetailCell : UICollectionViewCell {
+    
+    var venue: VenueViewModel?
+    
+    func configure(withVenue venue: VenueViewModel) {
+        self.venue = venue
+    }
 }
 
-class VenueDetailGalleryCollectionViewCell : UICollectionViewCell, UIScrollViewDelegate, DetailCell {
+class VenueDetailGalleryCollectionViewCell : DetailCell, UIScrollViewDelegate {
     
     @IBOutlet weak var noPhotosImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -24,7 +29,6 @@ class VenueDetailGalleryCollectionViewCell : UICollectionViewCell, UIScrollViewD
     
     var scrollViewImagesHeightLayoutConstraints: [NSLayoutConstraint] = []
     weak var delegate: VenueDetailGalleryCollectionViewCellDelegate?
-    var venue: VenueViewModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,8 +51,8 @@ class VenueDetailGalleryCollectionViewCell : UICollectionViewCell, UIScrollViewD
         onScrollViewTapped()
     }
     
-    func configure(withVenue venue: VenueViewModel) {
-        self.venue = venue
+    override func configure(withVenue venue: VenueViewModel) {
+        super.configure(withVenue: venue)
         renderScrollView(venue)
         clipsToBounds = venue.photos.count == 0
     }

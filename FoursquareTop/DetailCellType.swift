@@ -6,5 +6,4 @@ enum DetailCellType {
     case Actions
     case Information
     case Tips
-    case EmptySpace(CGFloat)
 }
