@@ -5,6 +5,7 @@ class AppDelegate : NSObject, UIApplicationDelegate {
     
     var window: UIWindow?
     var navigator: RootNavigator!
+    private var serviceLocator: RootServiceLocator!
     private var tasks: [ApplicationLifecycleTask] = []
     
     // MARK: UIApplicationDelegate
@@ -103,7 +104,8 @@ class AppDelegate : NSObject, UIApplicationDelegate {
     }
     
     private func installRootNavigator() {
-        navigator = RootNavigator()
+        serviceLocator = RootServiceLocator.Builder().build()
+        navigator = RootNavigator(serviceLocator: serviceLocator)
         navigator.installRootViewController(window!)
         window?.makeKeyAndVisible()
     }

@@ -5,12 +5,6 @@ class RootServiceLocator : NSObject {
     
     let venue: VenueServiceLocator
 
-    private(set) static var instance: RootServiceLocator = RootServiceLocator.Builder().build()
-    
-    static func override(rootServiceLocator: RootServiceLocator) {
-        RootServiceLocator.instance = rootServiceLocator
-    }
-    
     private convenience override init() {
         self.init(
             venue: VenueServiceLocator()

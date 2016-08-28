@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D3B828CB1AD86F2300D60B6F"
-               BuildableName = "FoursquareTopTests.xctest"
-               BlueprintName = "FoursquareTopTests"
+               BuildableName = "FoursquareTopUITests.xctest"
+               BlueprintName = "FoursquareTopUITests"
                ReferencedContainer = "container:FoursquareTop.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D3B828CB1AD86F2300D60B6F"
-               BuildableName = "FoursquareTopTests.xctest"
-               BlueprintName = "FoursquareTopTests"
+               BuildableName = "FoursquareTopUITests.xctest"
+               BlueprintName = "FoursquareTopUITests"
                ReferencedContainer = "container:FoursquareTop.xcodeproj">
             </BuildableReference>
          </TestableReference>

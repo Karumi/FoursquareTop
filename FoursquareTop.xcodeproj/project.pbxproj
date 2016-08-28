@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F21FFB9A74CB8BAC57F8103 /* Pods_FoursquareTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7558D10968FE6BE3AE8367EF /* Pods_FoursquareTop.framework */; };
+		C257C798DE60918C4CCE2290 /* Pods_FoursquareTopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F226C0B8E824E71223683834 /* Pods_FoursquareTopUITests.framework */; };
 		D32BD4C31D73001B00397E39 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32BD4C21D73001B00397E39 /* Environment.swift */; };
 		D338EBB61D734A2B00EB2B53 /* VenueDetailCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBB51D734A2B00EB2B53 /* VenueDetailCellProvider.swift */; };
 		D338EBB91D734A7A00EB2B53 /* VenueDetailGalleryCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBB81D734A7A00EB2B53 /* VenueDetailGalleryCellProvider.swift */; };
@@ -16,6 +17,16 @@
 		D338EBC21D734D1100EB2B53 /* VenueDetailInformationCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBC11D734D1100EB2B53 /* VenueDetailInformationCellProvider.swift */; };
 		D338EBC41D734D6E00EB2B53 /* VenueDetailTipCellProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBC31D734D6E00EB2B53 /* VenueDetailTipCellProvider.swift */; };
 		D338EBC71D73508F00EB2B53 /* MapSnapshotGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBC61D73508F00EB2B53 /* MapSnapshotGenerator.swift */; };
+		D338EBC91D73552A00EB2B53 /* AppDelegateForTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBC81D73552A00EB2B53 /* AppDelegateForTests.swift */; };
+		D338EBCD1D73571900EB2B53 /* BaseUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBCB1D73571600EB2B53 /* BaseUITestCase.swift */; };
+		D338EBD11D7357B400EB2B53 /* TestingVenueServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBCF1D7357B200EB2B53 /* TestingVenueServiceLocator.swift */; };
+		D338EBDB1D7359A100EB2B53 /* StubVenueListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBD91D73592D00EB2B53 /* StubVenueListNavigator.swift */; };
+		D338EBDD1D7359B100EB2B53 /* StubVenueDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBDC1D7359B100EB2B53 /* StubVenueDetailNavigator.swift */; };
+		D338EBDF1D735DF400EB2B53 /* StubEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBDE1D735DF400EB2B53 /* StubEnvironment.swift */; };
+		D338EBE11D735DFC00EB2B53 /* StubMapSnapshotGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBE01D735DFC00EB2B53 /* StubMapSnapshotGenerator.swift */; };
+		D338EBE31D735E9E00EB2B53 /* StubGetUserLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBE21D735E9E00EB2B53 /* StubGetUserLocationUseCase.swift */; };
+		D338EBE51D735EFE00EB2B53 /* StubGetBestPlacesAroundYouUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBE41D735EFE00EB2B53 /* StubGetBestPlacesAroundYouUseCase.swift */; };
+		D338EBE71D735F3300EB2B53 /* StubGetVenueDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBE61D735F3300EB2B53 /* StubGetVenueDetailsUseCase.swift */; };
 		D35AFFF61D26AACF004E20EB /* VenueDetailActionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35AFFF51D26AACF004E20EB /* VenueDetailActionsCollectionViewCell.swift */; };
 		D35AFFF81D26AAE6004E20EB /* VenueDetailActionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35AFFF71D26AAE6004E20EB /* VenueDetailActionsCollectionViewCell.xib */; };
 		D35C012F1D7037F000D2F106 /* VenuePhraseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35C012E1D7037F000D2F106 /* VenuePhraseViewModel.swift */; };
@@ -46,8 +57,10 @@
 		D3891C7D1D1FF5B7001858C8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3891C7C1D1FF5B7001858C8 /* LoadingView.xib */; };
 		D3891C7F1D1FF5EB001858C8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891C7E1D1FF5EB001858C8 /* ErrorView.swift */; };
 		D3891C811D1FF609001858C8 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3891C801D1FF609001858C8 /* ErrorView.xib */; };
+		D395DB811D73614A00882A09 /* BaseUITestCase+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395DB7F1D73614800882A09 /* BaseUITestCase+Localized.swift */; };
+		D395DB861D73618300882A09 /* XCTestCase+KIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395DB841D73618000882A09 /* XCTestCase+KIF.swift */; };
+		D395DB871D73618500882A09 /* KifTestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395DB821D73616C00882A09 /* KifTestActor.swift */; };
 		D3B828C71AD86F2300D60B6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B828C51AD86F2300D60B6F /* LaunchScreen.xib */; };
-		D3B828D31AD86F2300D60B6F /* FoursquareTopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B828D21AD86F2300D60B6F /* FoursquareTopTests.m */; };
 		D3B829251AD86F8000D60B6F /* poweredByFoursquare_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B829241AD86F8000D60B6F /* poweredByFoursquare_white.png */; };
 		D3CE1A3F1D706ED1003A0FEF /* VenueDetailTipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE1A3E1D706ED1003A0FEF /* VenueDetailTipCollectionViewCell.swift */; };
 		D3CE1A411D706ED9003A0FEF /* VenueDetailTipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CE1A401D706ED9003A0FEF /* VenueDetailTipCollectionViewCell.xib */; };
@@ -104,8 +117,10 @@
 
 /* Begin PBXFileReference section */
 		1A6515A136A33C1C084D5FAD /* Pods-FoursquareTop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareTop.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareTop/Pods-FoursquareTop.release.xcconfig"; sourceTree = "<group>"; };
+		465E128467B92594FDED88B0 /* Pods-FoursquareTopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareTopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareTopUITests/Pods-FoursquareTopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7558D10968FE6BE3AE8367EF /* Pods_FoursquareTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoursquareTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECBF7D2AF1D6AD1177114F5 /* Pods-FoursquareTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareTop/Pods-FoursquareTop.debug.xcconfig"; sourceTree = "<group>"; };
+		A2EB3C2091C3EE0EB8BE088B /* Pods-FoursquareTopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareTopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareTopUITests/Pods-FoursquareTopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D32BD4C21D73001B00397E39 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D338EBB51D734A2B00EB2B53 /* VenueDetailCellProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailCellProvider.swift; sourceTree = "<group>"; };
 		D338EBB81D734A7A00EB2B53 /* VenueDetailGalleryCellProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailGalleryCellProvider.swift; sourceTree = "<group>"; };
@@ -114,6 +129,16 @@
 		D338EBC11D734D1100EB2B53 /* VenueDetailInformationCellProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailInformationCellProvider.swift; sourceTree = "<group>"; };
 		D338EBC31D734D6E00EB2B53 /* VenueDetailTipCellProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailTipCellProvider.swift; sourceTree = "<group>"; };
 		D338EBC61D73508F00EB2B53 /* MapSnapshotGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSnapshotGenerator.swift; sourceTree = "<group>"; };
+		D338EBC81D73552A00EB2B53 /* AppDelegateForTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateForTests.swift; sourceTree = "<group>"; };
+		D338EBCB1D73571600EB2B53 /* BaseUITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUITestCase.swift; sourceTree = "<group>"; };
+		D338EBCF1D7357B200EB2B53 /* TestingVenueServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingVenueServiceLocator.swift; sourceTree = "<group>"; };
+		D338EBD91D73592D00EB2B53 /* StubVenueListNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubVenueListNavigator.swift; sourceTree = "<group>"; };
+		D338EBDC1D7359B100EB2B53 /* StubVenueDetailNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubVenueDetailNavigator.swift; sourceTree = "<group>"; };
+		D338EBDE1D735DF400EB2B53 /* StubEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubEnvironment.swift; sourceTree = "<group>"; };
+		D338EBE01D735DFC00EB2B53 /* StubMapSnapshotGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubMapSnapshotGenerator.swift; sourceTree = "<group>"; };
+		D338EBE21D735E9E00EB2B53 /* StubGetUserLocationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubGetUserLocationUseCase.swift; sourceTree = "<group>"; };
+		D338EBE41D735EFE00EB2B53 /* StubGetBestPlacesAroundYouUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubGetBestPlacesAroundYouUseCase.swift; sourceTree = "<group>"; };
+		D338EBE61D735F3300EB2B53 /* StubGetVenueDetailsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubGetVenueDetailsUseCase.swift; sourceTree = "<group>"; };
 		D35AFFF51D26AACF004E20EB /* VenueDetailActionsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailActionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D35AFFF71D26AAE6004E20EB /* VenueDetailActionsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueDetailActionsCollectionViewCell.xib; sourceTree = "<group>"; };
 		D35C012E1D7037F000D2F106 /* VenuePhraseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuePhraseViewModel.swift; sourceTree = "<group>"; };
@@ -145,12 +170,14 @@
 		D3891C7C1D1FF5B7001858C8 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		D3891C7E1D1FF5EB001858C8 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		D3891C801D1FF609001858C8 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		D395DB7F1D73614800882A09 /* BaseUITestCase+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseUITestCase+Localized.swift"; sourceTree = "<group>"; };
+		D395DB821D73616C00882A09 /* KifTestActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KifTestActor.swift; sourceTree = "<group>"; };
+		D395DB841D73618000882A09 /* XCTestCase+KIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+KIF.swift"; sourceTree = "<group>"; };
 		D3B828B31AD86F2300D60B6F /* FoursquareTop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareTop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B828B71AD86F2300D60B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3B828C61AD86F2300D60B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D3B828CC1AD86F2300D60B6F /* FoursquareTopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoursquareTopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3B828CC1AD86F2300D60B6F /* FoursquareTopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoursquareTopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B828D11AD86F2300D60B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3B828D21AD86F2300D60B6F /* FoursquareTopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoursquareTopTests.m; sourceTree = "<group>"; };
 		D3B829241AD86F8000D60B6F /* poweredByFoursquare_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poweredByFoursquare_white.png; sourceTree = "<group>"; };
 		D3CE1A3E1D706ED1003A0FEF /* VenueDetailTipCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailTipCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3CE1A401D706ED9003A0FEF /* VenueDetailTipCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueDetailTipCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -196,6 +223,7 @@
 		D3F363BF1D72561A00D5288B /* VenueDetailPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailPageViewControllerDataSource.swift; sourceTree = "<group>"; };
 		D3F363C11D72565F00D5288B /* VenueDetailViewControllerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailViewControllerProvider.swift; sourceTree = "<group>"; };
 		D3F363C31D7257E200D5288B /* Array+SafeAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SafeAccess.swift"; sourceTree = "<group>"; };
+		F226C0B8E824E71223683834 /* Pods_FoursquareTopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoursquareTopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C257C798DE60918C4CCE2290 /* Pods_FoursquareTopUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +251,8 @@
 			children = (
 				8ECBF7D2AF1D6AD1177114F5 /* Pods-FoursquareTop.debug.xcconfig */,
 				1A6515A136A33C1C084D5FAD /* Pods-FoursquareTop.release.xcconfig */,
+				A2EB3C2091C3EE0EB8BE088B /* Pods-FoursquareTopUITests.debug.xcconfig */,
+				465E128467B92594FDED88B0 /* Pods-FoursquareTopUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -230,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				7558D10968FE6BE3AE8367EF /* Pods_FoursquareTop.framework */,
+				F226C0B8E824E71223683834 /* Pods_FoursquareTopUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,6 +329,72 @@
 				D338EBC61D73508F00EB2B53 /* MapSnapshotGenerator.swift */,
 			);
 			name = "Map Snapshot Generator";
+			sourceTree = "<group>";
+		};
+		D338EBCA1D73570500EB2B53 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D338EBCB1D73571600EB2B53 /* BaseUITestCase.swift */,
+				D395DB7F1D73614800882A09 /* BaseUITestCase+Localized.swift */,
+				D395DB821D73616C00882A09 /* KifTestActor.swift */,
+				D395DB841D73618000882A09 /* XCTestCase+KIF.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		D338EBCE1D73579F00EB2B53 /* Test Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				D338EBD61D73591A00EB2B53 /* Library */,
+				D338EBD51D73590800EB2B53 /* Venue */,
+			);
+			name = "Test Doubles";
+			sourceTree = "<group>";
+		};
+		D338EBD21D7358FF00EB2B53 /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				D338EBCF1D7357B200EB2B53 /* TestingVenueServiceLocator.swift */,
+			);
+			name = "Service Locator";
+			sourceTree = "<group>";
+		};
+		D338EBD41D73590500EB2B53 /* Use Case */ = {
+			isa = PBXGroup;
+			children = (
+				D338EBE21D735E9E00EB2B53 /* StubGetUserLocationUseCase.swift */,
+				D338EBE61D735F3300EB2B53 /* StubGetVenueDetailsUseCase.swift */,
+				D338EBE41D735EFE00EB2B53 /* StubGetBestPlacesAroundYouUseCase.swift */,
+			);
+			name = "Use Case";
+			sourceTree = "<group>";
+		};
+		D338EBD51D73590800EB2B53 /* Venue */ = {
+			isa = PBXGroup;
+			children = (
+				D338EBD81D73592600EB2B53 /* Navigator */,
+				D338EBD41D73590500EB2B53 /* Use Case */,
+				D338EBD21D7358FF00EB2B53 /* Service Locator */,
+			);
+			name = Venue;
+			sourceTree = "<group>";
+		};
+		D338EBD61D73591A00EB2B53 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D338EBDE1D735DF400EB2B53 /* StubEnvironment.swift */,
+				D338EBE01D735DFC00EB2B53 /* StubMapSnapshotGenerator.swift */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		D338EBD81D73592600EB2B53 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				D338EBD91D73592D00EB2B53 /* StubVenueListNavigator.swift */,
+				D338EBDC1D7359B100EB2B53 /* StubVenueDetailNavigator.swift */,
+			);
+			name = Navigator;
 			sourceTree = "<group>";
 		};
 		D369CE4F1D6FB174006E13C8 /* Navigator */ = {
@@ -487,7 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				D3B828B51AD86F2300D60B6F /* FoursquareTop */,
-				D3B828CF1AD86F2300D60B6F /* FoursquareTopTests */,
+				D3B828CF1AD86F2300D60B6F /* FoursquareTopUITests */,
 				D3B828B41AD86F2300D60B6F /* Products */,
 				6AC53E7FC022CBE064F03EE1 /* Pods */,
 				A07F1F7E2A931F5AF9122D67 /* Frameworks */,
@@ -498,7 +596,7 @@
 			isa = PBXGroup;
 			children = (
 				D3B828B31AD86F2300D60B6F /* FoursquareTop.app */,
-				D3B828CC1AD86F2300D60B6F /* FoursquareTopTests.xctest */,
+				D3B828CC1AD86F2300D60B6F /* FoursquareTopUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -509,6 +607,7 @@
 				D3891C461D1E6FB9001858C8 /* Screens */,
 				D3891C3E1D1E6E33001858C8 /* Library */,
 				D3891C471D1E6FD1001858C8 /* AppDelegate.swift */,
+				D338EBC81D73552A00EB2B53 /* AppDelegateForTests.swift */,
 				D3B828C51AD86F2300D60B6F /* LaunchScreen.xib */,
 				D3B828B61AD86F2300D60B6F /* Supporting Files */,
 				D36692DE1AD96DC400B25C55 /* Image.xcassets */,
@@ -530,12 +629,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D3B828CF1AD86F2300D60B6F /* FoursquareTopTests */ = {
+		D3B828CF1AD86F2300D60B6F /* FoursquareTopUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D3B828D21AD86F2300D60B6F /* FoursquareTopTests.m */,
+				D338EBCE1D73579F00EB2B53 /* Test Doubles */,
+				D338EBCA1D73570500EB2B53 /* Base */,
 				D3B828D01AD86F2300D60B6F /* Supporting Files */,
 			);
+			name = FoursquareTopUITests;
 			path = FoursquareTopTests;
 			sourceTree = "<group>";
 		};
@@ -697,22 +798,25 @@
 			productReference = D3B828B31AD86F2300D60B6F /* FoursquareTop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D3B828CB1AD86F2300D60B6F /* FoursquareTopTests */ = {
+		D3B828CB1AD86F2300D60B6F /* FoursquareTopUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3B828D91AD86F2300D60B6F /* Build configuration list for PBXNativeTarget "FoursquareTopTests" */;
+			buildConfigurationList = D3B828D91AD86F2300D60B6F /* Build configuration list for PBXNativeTarget "FoursquareTopUITests" */;
 			buildPhases = (
+				3424018E0552AAC9EE586941 /* [CP] Check Pods Manifest.lock */,
 				D3B828C81AD86F2300D60B6F /* Sources */,
 				D3B828C91AD86F2300D60B6F /* Frameworks */,
 				D3B828CA1AD86F2300D60B6F /* Resources */,
+				F33F0CC5B1B63A6185C435EA /* [CP] Embed Pods Frameworks */,
+				651E1965E9804EB688AC0A4E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				D3B828CE1AD86F2300D60B6F /* PBXTargetDependency */,
 			);
-			name = FoursquareTopTests;
+			name = FoursquareTopUITests;
 			productName = FoursquareTopTests;
-			productReference = D3B828CC1AD86F2300D60B6F /* FoursquareTopTests.xctest */;
+			productReference = D3B828CC1AD86F2300D60B6F /* FoursquareTopUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -749,7 +853,7 @@
 			projectRoot = "";
 			targets = (
 				D3B828B21AD86F2300D60B6F /* FoursquareTop */,
-				D3B828CB1AD86F2300D60B6F /* FoursquareTopTests */,
+				D3B828CB1AD86F2300D60B6F /* FoursquareTopUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -802,6 +906,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoursquareTop/Pods-FoursquareTop-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3424018E0552AAC9EE586941 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		651E1965E9804EB688AC0A4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoursquareTopUITests/Pods-FoursquareTopUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A4DF2242BCBA8683CDC70591 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -831,6 +965,21 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftgen >/dev/null; then\nswiftgen images \"$PROJECT_DIR\" --output \"$PROJECT_DIR/FoursquareTop/Constants/Images.swift\"\nswiftgen strings \"$PROJECT_DIR/FoursquareTop/Base.lproj/Localizable.strings\" --output \"$PROJECT_DIR/FoursquareTop/Constants/Strings.swift\"\nswiftgen colors \"$PROJECT_DIR/FoursquareTop/colors.txt\" --output \"$PROJECT_DIR/FoursquareTop/Constants/Colors.swift\"\nswiftgen fonts \"$PROJECT_DIR\" --output \"$PROJECT_DIR/FoursquareTop/Constants/Fonts.swift\"\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
 		};
+		F33F0CC5B1B63A6185C435EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoursquareTopUITests/Pods-FoursquareTopUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F6EAB9CD18594AD430A765BB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -857,6 +1006,7 @@
 				D3DA9DBE1D734172000A42E4 /* VenuePhotoViewerViewController.swift in Sources */,
 				D338EBC01D734BEB00EB2B53 /* VenueDetailActionsCellProvider.swift in Sources */,
 				D3891C701D1FF4B1001858C8 /* BaseUI.swift in Sources */,
+				D338EBC91D73552A00EB2B53 /* AppDelegateForTests.swift in Sources */,
 				D3891C641D1FE993001858C8 /* VenueCategoryViewModel.swift in Sources */,
 				D3891C6E1D1FF494001858C8 /* FTViewController.swift in Sources */,
 				D35AFFF61D26AACF004E20EB /* VenueDetailActionsCollectionViewCell.swift in Sources */,
@@ -926,7 +1076,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3B828D31AD86F2300D60B6F /* FoursquareTopTests.m in Sources */,
+				D338EBE71D735F3300EB2B53 /* StubGetVenueDetailsUseCase.swift in Sources */,
+				D395DB861D73618300882A09 /* XCTestCase+KIF.swift in Sources */,
+				D338EBDD1D7359B100EB2B53 /* StubVenueDetailNavigator.swift in Sources */,
+				D395DB811D73614A00882A09 /* BaseUITestCase+Localized.swift in Sources */,
+				D395DB871D73618500882A09 /* KifTestActor.swift in Sources */,
+				D338EBDF1D735DF400EB2B53 /* StubEnvironment.swift in Sources */,
+				D338EBE31D735E9E00EB2B53 /* StubGetUserLocationUseCase.swift in Sources */,
+				D338EBE11D735DFC00EB2B53 /* StubMapSnapshotGenerator.swift in Sources */,
+				D338EBDB1D7359A100EB2B53 /* StubVenueListNavigator.swift in Sources */,
+				D338EBE51D735EFE00EB2B53 /* StubGetBestPlacesAroundYouUseCase.swift in Sources */,
+				D338EBD11D7357B400EB2B53 /* TestingVenueServiceLocator.swift in Sources */,
+				D338EBCD1D73571900EB2B53 /* BaseUITestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,7 +1161,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1037,7 +1198,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1077,6 +1238,7 @@
 		};
 		D3B828DA1AD86F2300D60B6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2EB3C2091C3EE0EB8BE088B /* Pods-FoursquareTopUITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1097,6 +1259,7 @@
 		};
 		D3B828DB1AD86F2300D60B6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 465E128467B92594FDED88B0 /* Pods-FoursquareTopUITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1132,7 +1295,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D3B828D91AD86F2300D60B6F /* Build configuration list for PBXNativeTarget "FoursquareTopTests" */ = {
+		D3B828D91AD86F2300D60B6F /* Build configuration list for PBXNativeTarget "FoursquareTopUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3B828DA1AD86F2300D60B6F /* Debug */,

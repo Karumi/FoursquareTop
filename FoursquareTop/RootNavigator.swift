@@ -24,10 +24,6 @@ class RootNavigator : NSObject {
         serviceLocator.venue.navigator = self
     }
     
-    convenience override init() {
-        self.init(serviceLocator: RootServiceLocator.instance)
-    }
-    
     func installRootViewController(window: UIWindow) {
         let vc = serviceLocator.getInitialViewController()
         currentNavigationController = vc
