@@ -23,6 +23,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>foursquare</string>
+        <string>comgooglemaps</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

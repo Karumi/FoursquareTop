@@ -27,7 +27,8 @@ class VenueServiceLocator {
             ui: vc,
             useCase: getVenueDetailsUseCase(),
             venue: venue,
-            navigator: getVenueDetailNavigator()
+            navigator: getVenueDetailNavigator(),
+            environment: getEnvironment()
         )
         
         return vc
@@ -43,6 +44,11 @@ class VenueServiceLocator {
         )
         
         return vc
+    }
+    
+    // MARK: Environment
+    func getEnvironment() -> EnvironmentProtocol {
+        return Environment()
     }
     
     // MARK: Use Case

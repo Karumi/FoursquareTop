@@ -1,7 +1,7 @@
 
 import UIKit
 
-class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionViewDelegateFlowLayout, VenueDetailActionsCollectionViewCellDelegate {
+class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionViewDelegateFlowLayout, VenueDetailActionsCollectionViewCellDelegate, VenueDetailInformationDelegate {
     
     var pageIndex = 0
     var venueDetailPresenter: VenueDetailPresenter!
@@ -12,7 +12,7 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     private var cellHeightCalculator: VenueDetailCollectionViewCellHeightCalculator!
     private var collectionView: UICollectionView!
     private lazy var dataSource: VenueDetailCollectionViewDataSource = {
-        return VenueDetailCollectionViewDataSource(detailActionsCellDelegate: self)
+        return VenueDetailCollectionViewDataSource(detailActionsCellDelegate: self, detailInformationDelegate: self)
     }()
     
     override func viewDidLoad() {
@@ -47,6 +47,30 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
         setScreenTitle(venue)
     }
     
+    func showMapProviders(providers: [MapProvider]) {
+        
+        let alert = UIAlertController(
+            title: NSLocalizedString("VenueDetail.MapPicker.Title", comment: "Title of the map picker in an alert"),
+            message: NSLocalizedString("VenueDetail.MapPicker.Message", comment: "Message of the map picker in an alert"),
+            preferredStyle: .ActionSheet
+        )
+        
+        let actions = providers.map { provider in
+            return UIAlertAction(
+                title: provider.rawValue,
+                style: .Default) { _ in
+                    self.venueDetailPresenter.mapProviderSelected(provider)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("VenuesList.NoGPSAccess.Cancel", comment: "Cancel button"), style: .Cancel, handler: nil)
+        
+        let allActions = actions + [cancelAction]
+        allActions.forEach(alert.addAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
     // MARK: UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         guard let venue = dataSource.venue else {
@@ -65,6 +89,11 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     // MARK: VenueDetailActionsCollectionViewCellDelegate
     func venueDetailCellDidSelectMenu() {
         venueDetailPresenter.menuSelected()
+    }
+    
+    // MARK: VenueDetailInformationDelegate
+    func venueDetailInformationDidTapMap() {
+        venueDetailPresenter.mapSelected()
     }
     
     // MARK: Private

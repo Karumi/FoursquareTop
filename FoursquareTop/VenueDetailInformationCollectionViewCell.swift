@@ -12,6 +12,8 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
+    weak var delegate: VenueDetailInformationDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -20,6 +22,8 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
         
         statusLabel.font = .regular
         statusLabel.textColor = .darkTextSecondary
+        
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mapTapped)))
     }
     
     func configure(withVenue venue: VenueViewModel) {
@@ -44,4 +48,12 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
             }
         }
     }
+    
+    func mapTapped() {
+        delegate?.venueDetailInformationDidTapMap()
+    }
+}
+
+protocol VenueDetailInformationDelegate : class {
+    func venueDetailInformationDidTapMap()
 }

@@ -11,9 +11,11 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
     private var allSupportedCells: [DetailCellType] = [.Gallery, .Actions, .Information, .Tips, .EmptySpace(16)]
     private var cells: [DetailCellType] = []
     private weak var detailActionsCelleDelegate: VenueDetailActionsCollectionViewCellDelegate?
+    private weak var detailInformationDelegate: VenueDetailInformationDelegate?
     
-    init(detailActionsCellDelegate: VenueDetailActionsCollectionViewCellDelegate) {
+    init(detailActionsCellDelegate: VenueDetailActionsCollectionViewCellDelegate, detailInformationDelegate: VenueDetailInformationDelegate) {
         self.detailActionsCelleDelegate = detailActionsCellDelegate
+        self.detailInformationDelegate = detailInformationDelegate
         super.init()
     }
     
@@ -43,6 +45,10 @@ class VenueDetailCollectionViewDataSource : NSObject, UICollectionViewDataSource
         
         if let c = cell as? VenueDetailActionsCollectionViewCell {
             c.delegate = detailActionsCelleDelegate
+        }
+        
+        if let c = cell as? VenueDetailInformationCollectionViewCell {
+            c.delegate = detailInformationDelegate
         }
         
         cell.configure(withVenue: venue!)
