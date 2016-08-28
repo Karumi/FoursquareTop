@@ -25,7 +25,7 @@ class VenueDetailPresenter : Presenter {
                 self.venue = venue
                 self.ui?.showVenue(venue)
             } else {
-                self.ui?.showError(message: "Could not show this venue information, please tap anywhere to retry")
+                self.ui?.showError(message: tr(.VenueDetailCanNotFetchVenueError))
             }
         }
     }

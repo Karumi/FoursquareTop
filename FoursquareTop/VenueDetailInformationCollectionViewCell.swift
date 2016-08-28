@@ -18,10 +18,10 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
         super.awakeFromNib()
         
         addressLabel.font = .bigBold
-        addressLabel.textColor = .darkTextPrimary
+        addressLabel.textColor = UIColor(named: .DarkTextPrimary)
         
         statusLabel.font = .regular
-        statusLabel.textColor = .darkTextSecondary
+        statusLabel.textColor = UIColor(named: .DarkTextSecondary)
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mapTapped)))
     }
@@ -36,7 +36,7 @@ class VenueDetailInformationCollectionViewCell : UICollectionViewCell, DetailCel
         
         venue.getMapSnapshot { [weak self] image in
             let mask = CALayer()
-            mask.contents = UIImage(named: "bg_map_alpha")!.CGImage
+            mask.contents = UIImage(asset: .Bg_map_alpha)!.CGImage
             mask.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 200)
             self?.mapImageView.layer.mask = mask
             self?.mapImageView.layer.masksToBounds = true

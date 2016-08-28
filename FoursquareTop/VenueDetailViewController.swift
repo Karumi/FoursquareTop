@@ -50,8 +50,8 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
     func showMapProviders(providers: [MapProvider]) {
         
         let alert = UIAlertController(
-            title: NSLocalizedString("VenueDetail.MapPicker.Title", comment: "Title of the map picker in an alert"),
-            message: NSLocalizedString("VenueDetail.MapPicker.Message", comment: "Message of the map picker in an alert"),
+            title: tr(.VenueDetailMapPickerTitle),
+            message: tr(.VenueDetailMapPickerMessage),
             preferredStyle: .ActionSheet
         )
         
@@ -63,7 +63,7 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
             }
         }
         
-        let cancelAction = UIAlertAction(title: NSLocalizedString("VenuesList.NoGPSAccess.Cancel", comment: "Cancel button"), style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: tr(.Cancel), style: .Cancel, handler: nil)
         
         let allActions = actions + [cancelAction]
         allActions.forEach(alert.addAction)
@@ -132,7 +132,7 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
             
             buttons.append(
                 UIBarButtonItem(
-                    image: UIImage(named: "ic_phone"),
+                    image: UIImage(asset: .Ic_phone),
                     style: .Plain,
                     target: self,
                     action: #selector(callSelected)
@@ -142,7 +142,7 @@ class VenueDetailViewController : FTViewController, VenueDetailUI, UICollectionV
             if let url = venue.foursquareURL where UIApplication.sharedApplication().canOpenURL(url) {
                 buttons.append(
                     UIBarButtonItem(
-                        image: UIImage(named: "ic_foursquare"),
+                        image: UIImage(asset: .Ic_foursquare),
                         style: .Plain,
                         target: self,
                         action: #selector(openInFoursquareSelected)

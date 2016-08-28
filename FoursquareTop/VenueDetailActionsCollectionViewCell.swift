@@ -14,8 +14,11 @@ class VenueDetailActionsCollectionViewCell : UICollectionViewCell, DetailCell {
         
         if let _ = venue.menuURL {
             let button = UIButton()
-            button.setTitle("See menu", forState: .Normal)
-            button.backgroundColor = UIColor.ftopYellow
+            button.setTitle(
+                tr(.VenueDetailSeeMenu),
+                forState: .Normal
+            )
+            button.backgroundColor = UIColor(named: .FtopYellow)
             button.addTarget(
                 self,
                 action: #selector(menuButtonTapped),

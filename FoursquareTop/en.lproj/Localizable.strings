@@ -1,0 +1,15 @@
+"Cancel" = "Cancel";
+"Loading" = "Loading";
+
+"BestPlacesAround.Title" = "Best open places around you";
+"VenuesList.CanNotFetchVenues.Error" = "Could not fetch the venues, please tap anywhere to retry";
+"VenuesList.CanNotFetchLocation.Error" = "Could not fetch your location, please tap anywhere to retry";
+"VenuesList.NoGPSAccess.Error" = "Can not access to your GPS";
+"VenuesList.NoGPSAccess.ErrorTitle" = "Ftop can not access to the GPS";
+"VenuesList.NoGPSAccess.ErrorMessage" = "Please enable GPS in settings";
+"VenuesList.NoGPSAccess.GoToGeneralSettings" = "Open settings";
+
+"VenueDetail.MapPicker.Title" = "Directions";
+"VenueDetail.MapPicker.Message" = "What do you want to use?";
+"VenueDetail.SeeMenu" = "See Menu";
+"VenueDetail.CanNotFetchVenue.Error" = "Could not show this venue information, please tap anywhere to retry";

@@ -35,7 +35,7 @@ class VenueDetailGalleryCollectionViewCell : UICollectionViewCell, UIScrollViewD
             )
         )
         pageControl.pageIndicatorTintColor = .whiteColor()
-        pageControl.currentPageIndicatorTintColor = .ftopBlue
+        pageControl.currentPageIndicatorTintColor = UIColor(named: .FtopBlue)
     }
     
     override func prepareForReuse() {
@@ -71,7 +71,7 @@ class VenueDetailGalleryCollectionViewCell : UICollectionViewCell, UIScrollViewD
                 scrollView.addSubview(imageView)
                 imageView.sd_setImageWithURL(
                     photo.url,
-                    placeholderImage: UIImage(named: "image-placeholder")
+                    placeholderImage: UIImage(asset: .Image_Placeholder)
                 )
                 
                 imageView.topAnchor.constraintEqualToAnchor(scrollView.topAnchor).active = true

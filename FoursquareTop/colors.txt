@@ -1,0 +1,7 @@
+FtopBlue                : #34A9DD
+FtopYellow              : #FFC533
+FtopOrange              : #FF5A33
+FtopGreen               : #60B500
+FtopLightYellow         : #FFC53333
+DarkTextPrimary         : #333333
+DarkTextSecondary       : #666666

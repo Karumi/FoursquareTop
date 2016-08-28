@@ -11,7 +11,7 @@ class VenueCategoryCollectionViewCell : UICollectionViewCell {
         super.awakeFromNib()
         
         label.font = UIFont.regularBold
-        backgroundColor = UIColor.ftopBlue
+        backgroundColor = UIColor(named: .FtopBlue)
     }
     
     func configureWithCategory(category: VenueCategoryViewModel) {

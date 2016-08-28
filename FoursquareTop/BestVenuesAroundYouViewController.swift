@@ -17,7 +17,7 @@ class BestVenuesAroundYouViewController : FTViewController, BestVenuesAroundYouU
         
         initCollectionView()
         
-        navigationItem.title = NSLocalizedString("BestPlacesAround.Title", comment: "Best places to eat around you screen title")
+        navigationItem.title = tr(.BestPlacesAroundTitle)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
     
@@ -29,15 +29,18 @@ class BestVenuesAroundYouViewController : FTViewController, BestVenuesAroundYouU
 
     func showNoGPSAccessError() {
         let alert = UIAlertController(
-            title: NSLocalizedString("VenuesList.NoGPSAccess.ErrorTitle", comment: "Title of the no GPS access in an alert"),
-            message: NSLocalizedString("VenuesList.NoGPSAccess.ErrorMessage", comment: "Message of the no GPS access in an alert"),
+            title: tr(.VenuesListNoGPSAccessErrorTitle),
+            message: tr(.VenuesListNoGPSAccessErrorMessage),
             preferredStyle: .Alert
         )
         
-        let openSettingsAction = UIAlertAction(title: NSLocalizedString("VenuesList.NoGPSAccess.GoToGeneralSettings", comment: "Open settings button"), style: .Default) { _ in
-            self.venuesAroundYouPresenter.openSettingsSelected()
+        let openSettingsAction = UIAlertAction(
+            title: tr(.VenuesListNoGPSAccessGoToGeneralSettings),
+            style: .Default) { _ in
+                
+                self.venuesAroundYouPresenter.openSettingsSelected()
         }
-        let cancelAction = UIAlertAction(title: NSLocalizedString("VenuesList.NoGPSAccess.Cancel", comment: "Cancel button"), style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: tr(.Cancel), style: .Cancel, handler: nil)
         
         alert.addAction(openSettingsAction)
         alert.addAction(cancelAction)

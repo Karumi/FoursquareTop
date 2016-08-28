@@ -5,7 +5,7 @@ class FTViewController : UIViewController, BaseUI, ErrorViewDelegate {
     
     lazy var loadingView: LoadingView? = {
         let loadingView = LoadingView()
-        loadingView.accessibilityLabel = NSLocalizedString("Loading", comment: "Loading")
+        loadingView.accessibilityLabel = tr(.Loading)
         return loadingView
     }()
     

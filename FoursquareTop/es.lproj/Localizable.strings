@@ -1,0 +1,15 @@
+"Cancel" = "Cancelar";
+"Loading" = "Cargando";
+
+"BestPlacesAround.Title" = "Los mejores sitios abiertos a tu alrededor";
+"VenuesList.CanNotFetchVenues.Error" = "No ha sido posible cargar los sitios, por favor haz tap en cualquier parte para reintentar";
+"VenuesList.CanNotFetchLocation.Error" = "No ha sido posible obtener tu localización, por favor haz tap en cualquier parte para reintentar";
+"VenuesList.NoGPSAccess.Error" = "No se puede acceder a tu GPS";
+"VenuesList.NoGPSAccess.ErrorTitle" = "Ftop no puede acceder a tu GPS";
+"VenuesList.NoGPSAccess.ErrorMessage" = "Por favor, activa el GPS en Ajustes";
+"VenuesList.NoGPSAccess.GoToGeneralSettings" = "Abrir Ajusted";
+
+"VenueDetail.MapPicker.Title" = "Cómo llegar";
+"VenueDetail.MapPicker.Message" = "¿Qué quieres usar?";
+"VenueDetail.SeeMenu" = "Ver menú";
+"VenueDetail.CanNotFetchVenue.Error" = "No ha sido posible cargar la informacieon de este sitio, por favor haz tap en cualquier parte para reintentar";

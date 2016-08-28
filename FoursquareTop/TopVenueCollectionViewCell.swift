@@ -15,14 +15,14 @@ class TopVenueCollectionViewCell : UICollectionViewCell {
         
         priceLabel.textColor = .whiteColor()
         priceLabel.font = UIFont.small
-        priceLabel.backgroundColor = UIColor.ftopGreen
+        priceLabel.backgroundColor = UIColor(named: .FtopGreen)
         ratingLabel.textColor = .whiteColor()
         ratingLabel.font = UIFont.small
-        ratingLabel.backgroundColor = UIColor.ftopBlue
+        ratingLabel.backgroundColor = UIColor(named: .FtopBlue)
         
-        nameLabel.textColor = .darkTextPrimary
+        nameLabel.textColor = UIColor(named: .DarkTextPrimary)
         nameLabel.font = UIFont.bigBold
-        typeLabel.textColor = .darkTextSecondary
+        typeLabel.textColor = UIColor(named: .DarkTextSecondary)
         typeLabel.font = UIFont.regular
     }
     

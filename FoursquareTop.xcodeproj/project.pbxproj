@@ -46,14 +46,18 @@
 		D3B829251AD86F8000D60B6F /* poweredByFoursquare_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D3B829241AD86F8000D60B6F /* poweredByFoursquare_white.png */; };
 		D3CE1A3F1D706ED1003A0FEF /* VenueDetailTipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE1A3E1D706ED1003A0FEF /* VenueDetailTipCollectionViewCell.swift */; };
 		D3CE1A411D706ED9003A0FEF /* VenueDetailTipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CE1A401D706ED9003A0FEF /* VenueDetailTipCollectionViewCell.xib */; };
+		D3DA9DAA1D7328CA000A42E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3DA9DAC1D7328CA000A42E4 /* Localizable.strings */; };
+		D3DA9DAF1D732C58000A42E4 /* colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3DA9DAE1D732C58000A42E4 /* colors.txt */; };
+		D3DA9DB51D732D2F000A42E4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA9DB11D732D2F000A42E4 /* Colors.swift */; };
+		D3DA9DB61D732D2F000A42E4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA9DB21D732D2F000A42E4 /* Fonts.swift */; };
+		D3DA9DB71D732D2F000A42E4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA9DB31D732D2F000A42E4 /* Images.swift */; };
+		D3DA9DB81D732D2F000A42E4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA9DB41D732D2F000A42E4 /* Strings.swift */; };
 		D3DBDE911D26B3C800C63D68 /* DetailCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBDE901D26B3C800C63D68 /* DetailCellType.swift */; };
 		D3DBDE931D26B6FB00C63D68 /* VenueDetailInformationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBDE921D26B6FB00C63D68 /* VenueDetailInformationCollectionViewCell.swift */; };
 		D3DBDE951D26B70300C63D68 /* VenueDetailInformationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3DBDE941D26B70300C63D68 /* VenueDetailInformationCollectionViewCell.xib */; };
 		D3E156321D2429A1001FB5BE /* VenueCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E156311D2429A1001FB5BE /* VenueCategoryCollectionViewCell.swift */; };
 		D3E156341D2429A9001FB5BE /* VenueCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E156331D2429A9001FB5BE /* VenueCategoryCollectionViewCell.xib */; };
 		D3E1563E1D24300D001FB5BE /* UIFont+Ftop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1563D1D24300D001FB5BE /* UIFont+Ftop.swift */; };
-		D3E156401D2430B4001FB5BE /* UIColor+FTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1563F1D2430B4001FB5BE /* UIColor+FTop.swift */; };
-		D3E156421D2430D2001FB5BE /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E156411D2430D2001FB5BE /* UIColor+RGBA.swift */; };
 		D3E156451D243273001FB5BE /* TopVenueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E156441D243273001FB5BE /* TopVenueCollectionViewCell.swift */; };
 		D3E156471D2436DF001FB5BE /* TopVenueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E156461D2436DF001FB5BE /* TopVenueCollectionViewCell.xib */; };
 		D3E156491D244042001FB5BE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E156481D244042001FB5BE /* main.swift */; };
@@ -139,14 +143,21 @@
 		D3B829241AD86F8000D60B6F /* poweredByFoursquare_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poweredByFoursquare_white.png; sourceTree = "<group>"; };
 		D3CE1A3E1D706ED1003A0FEF /* VenueDetailTipCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailTipCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3CE1A401D706ED9003A0FEF /* VenueDetailTipCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueDetailTipCollectionViewCell.xib; sourceTree = "<group>"; };
+		D3DA9DAB1D7328CA000A42E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3DA9DAD1D7328CB000A42E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3DA9DAE1D732C58000A42E4 /* colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
+		D3DA9DB11D732D2F000A42E4 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Constants/Colors.swift; sourceTree = "<group>"; };
+		D3DA9DB21D732D2F000A42E4 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fonts.swift; path = Constants/Fonts.swift; sourceTree = "<group>"; };
+		D3DA9DB31D732D2F000A42E4 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Constants/Images.swift; sourceTree = "<group>"; };
+		D3DA9DB41D732D2F000A42E4 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Constants/Strings.swift; sourceTree = "<group>"; };
+		D3DA9DB91D733088000A42E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D3DA9DBA1D733088000A42E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3DBDE901D26B3C800C63D68 /* DetailCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCellType.swift; sourceTree = "<group>"; };
 		D3DBDE921D26B6FB00C63D68 /* VenueDetailInformationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailInformationCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3DBDE941D26B70300C63D68 /* VenueDetailInformationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueDetailInformationCollectionViewCell.xib; sourceTree = "<group>"; };
 		D3E156311D2429A1001FB5BE /* VenueCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3E156331D2429A9001FB5BE /* VenueCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D3E1563D1D24300D001FB5BE /* UIFont+Ftop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Ftop.swift"; sourceTree = "<group>"; };
-		D3E1563F1D2430B4001FB5BE /* UIColor+FTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FTop.swift"; sourceTree = "<group>"; };
-		D3E156411D2430D2001FB5BE /* UIColor+RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBA.swift"; sourceTree = "<group>"; };
 		D3E156441D243273001FB5BE /* TopVenueCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopVenueCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3E156461D2436DF001FB5BE /* TopVenueCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopVenueCollectionViewCell.xib; sourceTree = "<group>"; };
 		D3E156481D244042001FB5BE /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -238,6 +249,7 @@
 		D3891C3E1D1E6E33001858C8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D3DA9DB01D732D22000A42E4 /* Constants (Autogenerated) */,
 				D32BD4C11D72FFA700397E39 /* Environment */,
 				D3F363B21D71F0B700D5288B /* Location */,
 				D3891C791D1FF58B001858C8 /* Extension */,
@@ -393,8 +405,6 @@
 			children = (
 				D3891C7A1D1FF591001858C8 /* NSBundle+Nib.swift */,
 				D3E1563D1D24300D001FB5BE /* UIFont+Ftop.swift */,
-				D3E1563F1D2430B4001FB5BE /* UIColor+FTop.swift */,
-				D3E156411D2430D2001FB5BE /* UIColor+RGBA.swift */,
 				D3E97AAD1D24770600FE4297 /* UImage+Color.swift */,
 				D3F363C31D7257E200D5288B /* Array+SafeAccess.swift */,
 			);
@@ -442,6 +452,8 @@
 				D3B829241AD86F8000D60B6F /* poweredByFoursquare_white.png */,
 				D3B828B71AD86F2300D60B6F /* Info.plist */,
 				D3E156481D244042001FB5BE /* main.swift */,
+				D3DA9DAC1D7328CA000A42E4 /* Localizable.strings */,
+				D3DA9DAE1D732C58000A42E4 /* colors.txt */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -461,6 +473,17 @@
 				D3B828D11AD86F2300D60B6F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3DA9DB01D732D22000A42E4 /* Constants (Autogenerated) */ = {
+			isa = PBXGroup;
+			children = (
+				D3DA9DB11D732D2F000A42E4 /* Colors.swift */,
+				D3DA9DB21D732D2F000A42E4 /* Fonts.swift */,
+				D3DA9DB31D732D2F000A42E4 /* Images.swift */,
+				D3DA9DB41D732D2F000A42E4 /* Strings.swift */,
+			);
+			name = "Constants (Autogenerated)";
 			sourceTree = "<group>";
 		};
 		D3E156301D242984001FB5BE /* Category */ = {
@@ -568,6 +591,7 @@
 			buildConfigurationList = D3B828D61AD86F2300D60B6F /* Build configuration list for PBXNativeTarget "FoursquareTop" */;
 			buildPhases = (
 				A4DF2242BCBA8683CDC70591 /* [CP] Check Pods Manifest.lock */,
+				D32BD4C81D73277E00397E39 /* [SwiftGen] Build resources */,
 				D3B828AF1AD86F2300D60B6F /* Sources */,
 				D3B828B01AD86F2300D60B6F /* Frameworks */,
 				D3B828B11AD86F2300D60B6F /* Resources */,
@@ -627,6 +651,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = D3B828AA1AD86F2300D60B6F;
 			productRefGroup = D3B828B41AD86F2300D60B6F /* Products */;
@@ -654,6 +679,8 @@
 				D3E97AD91D25CC3A00FE4297 /* VenueDetailGalleryCollectionViewCell.xib in Resources */,
 				D3F363BC1D72437100D5288B /* VenueDetailTitleView.xib in Resources */,
 				D3E156341D2429A9001FB5BE /* VenueCategoryCollectionViewCell.xib in Resources */,
+				D3DA9DAF1D732C58000A42E4 /* colors.txt in Resources */,
+				D3DA9DAA1D7328CA000A42E4 /* Localizable.strings in Resources */,
 				D36692DF1AD96DC400B25C55 /* Image.xcassets in Resources */,
 				D3891C7D1D1FF5B7001858C8 /* LoadingView.xib in Resources */,
 				D3B828C71AD86F2300D60B6F /* LaunchScreen.xib in Resources */,
@@ -701,6 +728,20 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D32BD4C81D73277E00397E39 /* [SwiftGen] Build resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftGen] Build resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\nswiftgen images \"$PROJECT_DIR\" --output \"$PROJECT_DIR/FoursquareTop/Constants/Images.swift\"\nswiftgen strings \"$PROJECT_DIR/FoursquareTop/Base.lproj/Localizable.strings\" --output \"$PROJECT_DIR/FoursquareTop/Constants/Strings.swift\"\nswiftgen colors \"$PROJECT_DIR/FoursquareTop/colors.txt\" --output \"$PROJECT_DIR/FoursquareTop/Constants/Colors.swift\"\nswiftgen fonts \"$PROJECT_DIR\" --output \"$PROJECT_DIR/FoursquareTop/Constants/Fonts.swift\"\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi";
+		};
 		F6EAB9CD18594AD430A765BB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -740,6 +781,7 @@
 				D3E97AE91D25DB4700FE4297 /* GetVenueDetails.swift in Sources */,
 				D3891C761D1FF56F001858C8 /* LoadingView.swift in Sources */,
 				D3E97AAB1D246F7F00FE4297 /* BestVenuesAroundYouCollectionViewDataSource.swift in Sources */,
+				D3DA9DB51D732D2F000A42E4 /* Colors.swift in Sources */,
 				D3891C7F1D1FF5EB001858C8 /* ErrorView.swift in Sources */,
 				D3F363B11D71EE1500D5288B /* GetUserLocationUseCase.swift in Sources */,
 				D3E97AE11D25D73900FE4297 /* VenueNavigator.swift in Sources */,
@@ -747,7 +789,6 @@
 				D3E97ADF1D25D3EC00FE4297 /* VenueDetailCollectionViewDataSource.swift in Sources */,
 				D35C012F1D7037F000D2F106 /* VenuePhraseViewModel.swift in Sources */,
 				D3E97AD71D25CC3400FE4297 /* VenueDetailGalleryCollectionViewCell.swift in Sources */,
-				D3E156401D2430B4001FB5BE /* UIColor+FTop.swift in Sources */,
 				D3F363AF1D707B9200D5288B /* VenueDetailCollectionViewCellHeightCalculator.swift in Sources */,
 				D3891C531D1E7A08001858C8 /* BestVenuesAroundYouViewController.swift in Sources */,
 				D362219E1D2AFF4A0021059C /* VenueDetailEmptySpaceCollectionViewCell.swift in Sources */,
@@ -762,7 +803,7 @@
 				D3891C601D1E7E8C001858C8 /* VenueViewModel.swift in Sources */,
 				D3E1563E1D24300D001FB5BE /* UIFont+Ftop.swift in Sources */,
 				D3E97AAE1D24770600FE4297 /* UImage+Color.swift in Sources */,
-				D3E156421D2430D2001FB5BE /* UIColor+RGBA.swift in Sources */,
+				D3DA9DB71D732D2F000A42E4 /* Images.swift in Sources */,
 				D3F363B41D71F0C300D5288B /* GPS.swift in Sources */,
 				D3E97ADB1D25D23F00FE4297 /* VenueDetailUI.swift in Sources */,
 				D3E97AE31D25D78200FE4297 /* VenueServiceLocator.swift in Sources */,
@@ -779,6 +820,8 @@
 				D3E156321D2429A1001FB5BE /* VenueCategoryCollectionViewCell.swift in Sources */,
 				D3F363B81D71F0E000D5288B /* IntuLocationManagerGPS.swift in Sources */,
 				D3DBDE911D26B3C800C63D68 /* DetailCellType.swift in Sources */,
+				D3DA9DB61D732D2F000A42E4 /* Fonts.swift in Sources */,
+				D3DA9DB81D732D2F000A42E4 /* Strings.swift in Sources */,
 				D3891C481D1E6FD1001858C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,8 +849,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				D3B828C61AD86F2300D60B6F /* Base */,
+				D3DA9DB91D733088000A42E4 /* es */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		D3DA9DAC1D7328CA000A42E4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3DA9DAB1D7328CA000A42E4 /* Base */,
+				D3DA9DAD1D7328CB000A42E4 /* en */,
+				D3DA9DBA1D733088000A42E4 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

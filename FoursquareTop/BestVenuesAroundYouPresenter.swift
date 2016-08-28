@@ -40,15 +40,15 @@ class BestVenuesAroundYouPresenter : Presenter {
                         self.venues = venueList.venues
                         self.ui?.showVenueList(venueList)
                     } else {
-                        self.ui?.showError(message: "Could not fetch the venues, please tap anywhere to retry")
+                        self.ui?.showError(message: tr(.VenuesListCanNotFetchVenuesError))
                     }
                 }
             } else {
                 switch locationResult.error! {
                 case .CanNotFetch:
-                    self.ui?.showError(message: "Could not fetch your location, please tap anywhere to retry")
+                    self.ui?.showError(message: tr(.VenuesListCanNotFetchLocationError))
                 case .NoGPSAccess:
-                    self.ui?.showError(message: "Can not access to your GPS")
+                    self.ui?.showError(message: tr(.VenuesListNoGPSAccessError))
                     self.ui?.showNoGPSAccessError()
                 }
             }
