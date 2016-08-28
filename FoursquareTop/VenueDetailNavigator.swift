@@ -23,7 +23,7 @@ extension RootNavigator : VenueDetailNavigator {
     }
     
     func call(venueDetail venue: VenueViewModel) {
-        guard let phone = venue.phone, let url = NSURL(string: phone) else {
+        guard let phone = venue.phone, let url = NSURL(string: "tel://\(phone)") else {
             return
         }
         
