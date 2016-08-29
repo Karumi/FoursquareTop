@@ -7,7 +7,7 @@ import MapKit
 class StubGetUserLocationUseCase : GetUserLocationUseCase {
     
     var error: LocationError?
-    var location: CLLocation? = nil
+    var location: CLLocation? = CLLocation(latitude: 40.4168533, longitude: -3.7073171)
     var locationIsPotentiallyGood = false
     
     func execute(callback: Result<CLLocation, LocationError> -> ()) {

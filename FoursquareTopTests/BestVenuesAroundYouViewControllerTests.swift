@@ -14,12 +14,48 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     // MARK: Tests
     
     func testLoadingIndicatorIsVisibleWhenLoadingAds() {
+        givenWeAreFetchingUsersLocation()
+        
         openViewController()
         
-        waitForViewWithLocalizedAccessibilityLabel("Loading")
+        waitForViewWithLocalizedAccessibilityLabel(.Loading)
+    }
+    
+    func testErrorIsShownIfTheLocationCanNotBeDetermined() {
+        givenThereWillBeAnErrorFetchingUsersLocation()
+        
+        openViewController()
+        
+        waitForViewWithLocalizedAccessibilityLabel(.VenuesListCanNotFetchLocationError)
+    }
+    
+    func testErrorIsShownIfTheVenuesCanNotBeFetched() {
+        givenThereWillBeAnErrorFetchingVenues()
+        
+        openViewController()
+        
+        waitForViewWithLocalizedAccessibilityLabel(.VenuesListCanNotFetchVenuesError)
     }
     
     // MARK: Given
+    
+    func givenThereWillBeAnErrorFetchingVenues() {
+        getBestPlacesAroundYouUseCase.error = .Generic
+    }
+    
+    func givenWeAreFetchingUsersLocation() {
+        getUserLocationUseCase.location = nil
+    }
+    
+    func givenThereWillBeAnErrorFetchingUsersLocation() {
+        getUserLocationUseCase.error = .CanNotFetch
+    }
+    
+    func givenWeCanNotAccessTheGPS() {
+        getUserLocationUseCase.error = .NoGPSAccess
+    }
+    
+    // MARK: Private
     
     override func presentViewController(window: UIWindow, navigator: RootNavigator, serviceLocator: RootServiceLocator) {
 
