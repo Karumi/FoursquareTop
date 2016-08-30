@@ -1,13 +1,13 @@
 
 import UIKit
 
-class VenueServiceLocator {
+class VenueCompositionRoot {
     
-    var serviceLocator: RootServiceLocator!
+    var appCompositionRoot: AppCompositionRoot!
     var navigator: RootNavigator!
     
     func getVenueDetailPageViewController(venues: [VenueViewModel], initialIndex: Int) -> UIViewController {
-        let provider = DefaultVenueDetailViewControllerProvider(serviceLocator: self)
+        let provider = DefaultVenueDetailViewControllerProvider(compositionRoot: self)
         let vc = VenueDetailPageViewController()
         vc.dataSource = VenueDetailPageViewControllerDataSource(
             venueDetailViewControllerProvider: provider,

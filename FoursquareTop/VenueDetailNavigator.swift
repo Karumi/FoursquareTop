@@ -77,7 +77,7 @@ extension RootNavigator : VenueDetailNavigator {
     }
     
     func goToPhotoViewer(venueDetail venue: VenueViewModel, selectedIndex: Int, delegate: VenueDetailGalleryViewControllerDelegate) {
-        let vc = serviceLocator.venue.getPhotoViewerViewController(venue, initialIndex: selectedIndex, delegate: delegate)
+        let vc = appCompositionRoot.venue.getPhotoViewerViewController(venue, initialIndex: selectedIndex, delegate: delegate)
         currentNavigationController?.presentViewController(vc, animated: true, completion: nil)
     }
     

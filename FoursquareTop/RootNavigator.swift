@@ -14,18 +14,18 @@ class RootNavigator : NSObject {
     var currentlyPresentedNavigationController: UINavigationController? {
         return currentNavigationController?.presentedViewController as? UINavigationController
     }
-    let serviceLocator: RootServiceLocator
+    let appCompositionRoot: AppCompositionRoot
     
-    init(serviceLocator: RootServiceLocator) {
-        self.serviceLocator = serviceLocator
+    init(appCompositionRoot: AppCompositionRoot) {
+        self.appCompositionRoot = appCompositionRoot
         
         super.init()
         
-        serviceLocator.venue.navigator = self
+        appCompositionRoot.venue.navigator = self
     }
     
     func installRootViewController(window: UIWindow) {
-        let vc = serviceLocator.getInitialViewController()
+        let vc = appCompositionRoot.getInitialViewController()
         currentNavigationController = vc
         window.rootViewController = vc
     }

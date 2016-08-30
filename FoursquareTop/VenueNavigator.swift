@@ -10,7 +10,7 @@ extension RootNavigator : VenueListNavigator {
     func goTo(venueDetail venue: VenueViewModel, ofList list: [VenueViewModel]) {
         let index = list.indexOf { $0.foursquareID == venue.foursquareID }
         if let index = index {
-            let vc = serviceLocator.venue.getVenueDetailPageViewController(list, initialIndex: index)
+            let vc = appCompositionRoot.venue.getVenueDetailPageViewController(list, initialIndex: index)
             currentNavigationController?.pushViewController(vc, animated: true)
         }
     }

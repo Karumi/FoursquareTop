@@ -7,9 +7,9 @@ protocol VenueDetailViewControllerProvider {
 
 struct DefaultVenueDetailViewControllerProvider: VenueDetailViewControllerProvider {
     
-    let serviceLocator: VenueServiceLocator
+    let compositionRoot: VenueCompositionRoot
     
     func getVenueDetailViewControllerAtIndex(venues: [VenueViewModel], index: Int) -> UIViewController {
-        return serviceLocator.getVenueDetailViewController(venues[index], forIndex: index)
+        return compositionRoot.getVenueDetailViewController(venues[index], forIndex: index)
     }
 }

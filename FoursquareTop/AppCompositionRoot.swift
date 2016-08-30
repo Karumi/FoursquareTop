@@ -1,18 +1,18 @@
 
 import UIKit
 
-class RootServiceLocator : NSObject {
+class AppCompositionRoot : NSObject {
     
-    let venue: VenueServiceLocator
+    let venue: VenueCompositionRoot
 
     private convenience override init() {
         self.init(
-            venue: VenueServiceLocator()
+            venue: VenueCompositionRoot()
         )
     }
     
     private init(
-        venue: VenueServiceLocator
+        venue: VenueCompositionRoot
     ) {
         self.venue = venue
     }
@@ -23,29 +23,29 @@ class RootServiceLocator : NSObject {
     }
     
     class Builder {
-        var venue = VenueServiceLocator()
+        var venue = VenueCompositionRoot()
         
         init() {
             
         }
         
-        init(serviceLocator: RootServiceLocator) {
+        init(serviceLocator: AppCompositionRoot) {
             venue = serviceLocator.venue
         }
 
-        func with(venueServiceLocator venue: VenueServiceLocator) -> Builder {
+        func with(venueServiceLocator venue: VenueCompositionRoot) -> Builder {
             self.venue = venue
             return self
         }
 
-        func build() -> RootServiceLocator {
-            let rootServiceLocator = RootServiceLocator(
+        func build() -> AppCompositionRoot {
+            let appCompositionRoot = AppCompositionRoot(
                 venue: venue
             )
             
-            venue.serviceLocator = rootServiceLocator
+            venue.appCompositionRoot = appCompositionRoot
             
-            return rootServiceLocator
+            return appCompositionRoot
         }
     }
 }
