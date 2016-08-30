@@ -37,6 +37,46 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
         waitForViewWithLocalizedAccessibilityLabel(.VenuesListCanNotFetchVenuesError)
     }
     
+    func testRetryShowsVenuesAfterThereIsAnErrorFetchingVenues() {
+    
+    }
+    
+    func testRetryShowsVenuesAfterThereIsAnErrorFetchingUsersLocation() {
+        
+    }
+    
+    func testAlertIsShownIfWeDontHaveAccessToTheGPS() {
+        
+    }
+    
+    func testSettingsIsOpenIfTheUserWantsToEnableTheGPS() {
+        
+    }
+    
+    func testVenuesAreShownIfThereAreVenuesInTheUserLocation() {
+        
+    }
+    
+    func testEmptyCaseIsShownIfThereAreNoVenuesInTheUserLocation() {
+        
+    }
+    
+    func testTopVenueIsShown() {
+        
+    }
+    
+    func testVenuesOfOtherCategoriesAreShown() {
+        
+    }
+    
+    func testNavigatesToVenueDetailIfTheTopVenueIsSelected() {
+        
+    }
+    
+    func testNavigatesToVenueDetailIfACategoryIsSelected() {
+        
+    }
+    
     // MARK: Given
     
     func givenThereWillBeAnErrorFetchingVenues() {
