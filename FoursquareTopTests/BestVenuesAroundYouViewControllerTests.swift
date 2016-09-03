@@ -8,12 +8,19 @@ import Nocilla
 
 class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     
-    private var getUserLocationUseCase = StubGetUserLocationUseCase()
-    private var getBestPlacesAroundYouUseCase = StubGetBestPlacesAroundYouUseCase()
+    private var getUserLocationUseCase: StubGetUserLocationUseCase!
+    private var getBestPlacesAroundYouUseCase: StubGetBestPlacesAroundYouUseCase!
+    
+    override func setUp() {
+        super.setUp()
+        
+        getUserLocationUseCase = StubGetUserLocationUseCase()
+        getBestPlacesAroundYouUseCase = StubGetBestPlacesAroundYouUseCase()
+    }
     
     // MARK: Tests
     
-    func testLoadingIndicatorIsVisibleWhenLoadingAds() {
+    func testLoadingIndicatorIsVisibleWhenLoadingVenues() {
         givenWeAreFetchingUsersLocation()
         
         openViewController()
