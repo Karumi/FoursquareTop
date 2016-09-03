@@ -16,15 +16,23 @@ class BaseUITestCase: KIFTestCase {
     }
     
     func openViewController() {
-        let serviceLocator = getTestingServiceLocator(baseServiceLocator)
-        rootNavigator = RootNavigator(serviceLocator: serviceLocator)
+        let appCompositionRoot = getTestingAppCompositionRoot(
+            baseAppCompositionRoot
+        )
+        rootNavigator = RootNavigator(
+            appCompositionRoot: appCompositionRoot
+        )
         
-        presentViewController(keyWindow, navigator: rootNavigator, serviceLocator: serviceLocator)
+        presentViewController(
+            keyWindow,
+            navigator: rootNavigator,
+            appCompositionRoot: appCompositionRoot
+        )
         
         kifTester().waitForAnimationsToFinish()
     }
     
-    func presentViewController(window: UIWindow, navigator: RootNavigator, serviceLocator: RootServiceLocator) {
+    func presentViewController(window: UIWindow, navigator: RootNavigator, appCompositionRoot: AppCompositionRoot) {
         fatalError("Implement this method on your UI tests")
     }
     
@@ -32,13 +40,13 @@ class BaseUITestCase: KIFTestCase {
         keyWindow.setRootViewController(viewController)
     }
     
-    func getTestingServiceLocator(serviceLocator: RootServiceLocator) -> RootServiceLocator {
-        return serviceLocator
+    func getTestingAppCompositionRoot(compositionRoot: AppCompositionRoot) -> AppCompositionRoot {
+        return baseAppCompositionRoot
     }
     
-    private var baseServiceLocator: RootServiceLocator {
-        return RootServiceLocator.Builder()
-            .with(venueServiceLocator: TestingVenueServiceLocator())
+    private var baseAppCompositionRoot: AppCompositionRoot {
+        return AppCompositionRoot.Builder()
+            .with(venueCompositionRoot: TestingVenueCompositionRoot())
             .build()
     }
 }

@@ -2,7 +2,7 @@
 import Foundation
 @testable import FoursquareTop
 
-class TestingVenueServiceLocator : VenueServiceLocator {
+class TestingVenueCompositionRoot : VenueCompositionRoot {
     
     var stubVenueListNavigator: StubVenueListNavigator?
     var stubVenueDetailNavigator: StubVenueDetailNavigator?

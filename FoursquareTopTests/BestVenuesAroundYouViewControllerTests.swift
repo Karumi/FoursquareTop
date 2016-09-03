@@ -97,23 +97,23 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     
     // MARK: Private
     
-    override func presentViewController(window: UIWindow, navigator: RootNavigator, serviceLocator: RootServiceLocator) {
+    override func presentViewController(window: UIWindow, navigator: RootNavigator, appCompositionRoot: AppCompositionRoot) {
 
         presentViewController(
-            serviceLocator.venue.getBestVenuesAroundViewController()
+            appCompositionRoot.venue.getBestVenuesAroundViewController()
         )
     }
     
-    override func getTestingServiceLocator(serviceLocator: RootServiceLocator) -> RootServiceLocator {
-        return RootServiceLocator.Builder(serviceLocator: serviceLocator)
-            .with(venueServiceLocator: getVenueServiceLocator())
+    override func getTestingAppCompositionRoot(compositionRoot: AppCompositionRoot) -> AppCompositionRoot {
+        return AppCompositionRoot.Builder(compositionRoot: compositionRoot)
+            .with(venueCompositionRoot: getVenueCompositionRoot())
             .build()
     }
     
-    private func getVenueServiceLocator() -> VenueServiceLocator {
-        let serviceLocator = TestingVenueServiceLocator()
-        serviceLocator.stubGetUserLocationUseCase = getUserLocationUseCase
-        serviceLocator.stubGetBestPlacesAroundYouUseCase = getBestPlacesAroundYouUseCase
-        return serviceLocator
+    private func getVenueCompositionRoot() -> VenueCompositionRoot {
+        let venueCompositionRoot = TestingVenueCompositionRoot()
+        venueCompositionRoot.stubGetUserLocationUseCase = getUserLocationUseCase
+        venueCompositionRoot.stubGetBestPlacesAroundYouUseCase = getBestPlacesAroundYouUseCase
+        return venueCompositionRoot
     }
 }

@@ -29,11 +29,11 @@ class AppCompositionRoot : NSObject {
             
         }
         
-        init(serviceLocator: AppCompositionRoot) {
-            venue = serviceLocator.venue
+        init(compositionRoot: AppCompositionRoot) {
+            venue = compositionRoot.venue
         }
 
-        func with(venueServiceLocator venue: VenueCompositionRoot) -> Builder {
+        func with(venueCompositionRoot venue: VenueCompositionRoot) -> Builder {
             self.venue = venue
             return self
         }

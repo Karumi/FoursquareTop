@@ -20,7 +20,7 @@
 		D338EBC71D73508F00EB2B53 /* MapSnapshotGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBC61D73508F00EB2B53 /* MapSnapshotGenerator.swift */; };
 		D338EBC91D73552A00EB2B53 /* AppDelegateForTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBC81D73552A00EB2B53 /* AppDelegateForTests.swift */; };
 		D338EBCD1D73571900EB2B53 /* BaseUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBCB1D73571600EB2B53 /* BaseUITestCase.swift */; };
-		D338EBD11D7357B400EB2B53 /* TestingVenueServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBCF1D7357B200EB2B53 /* TestingVenueServiceLocator.swift */; };
+		D338EBD11D7357B400EB2B53 /* TestingVenueCompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBCF1D7357B200EB2B53 /* TestingVenueCompositionRoot.swift */; };
 		D338EBDB1D7359A100EB2B53 /* StubVenueListNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBD91D73592D00EB2B53 /* StubVenueListNavigator.swift */; };
 		D338EBDD1D7359B100EB2B53 /* StubVenueDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBDC1D7359B100EB2B53 /* StubVenueDetailNavigator.swift */; };
 		D338EBDF1D735DF400EB2B53 /* StubEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338EBDE1D735DF400EB2B53 /* StubEnvironment.swift */; };
@@ -134,7 +134,7 @@
 		D338EBC61D73508F00EB2B53 /* MapSnapshotGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSnapshotGenerator.swift; sourceTree = "<group>"; };
 		D338EBC81D73552A00EB2B53 /* AppDelegateForTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateForTests.swift; sourceTree = "<group>"; };
 		D338EBCB1D73571600EB2B53 /* BaseUITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUITestCase.swift; sourceTree = "<group>"; };
-		D338EBCF1D7357B200EB2B53 /* TestingVenueServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingVenueServiceLocator.swift; sourceTree = "<group>"; };
+		D338EBCF1D7357B200EB2B53 /* TestingVenueCompositionRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingVenueCompositionRoot.swift; sourceTree = "<group>"; };
 		D338EBD91D73592D00EB2B53 /* StubVenueListNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubVenueListNavigator.swift; sourceTree = "<group>"; };
 		D338EBDC1D7359B100EB2B53 /* StubVenueDetailNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubVenueDetailNavigator.swift; sourceTree = "<group>"; };
 		D338EBDE1D735DF400EB2B53 /* StubEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubEnvironment.swift; sourceTree = "<group>"; };
@@ -356,12 +356,12 @@
 			name = "Test Doubles";
 			sourceTree = "<group>";
 		};
-		D338EBD21D7358FF00EB2B53 /* Service Locator */ = {
+		D338EBD21D7358FF00EB2B53 /* CompositionRoot */ = {
 			isa = PBXGroup;
 			children = (
-				D338EBCF1D7357B200EB2B53 /* TestingVenueServiceLocator.swift */,
+				D338EBCF1D7357B200EB2B53 /* TestingVenueCompositionRoot.swift */,
 			);
-			name = "Service Locator";
+			name = CompositionRoot;
 			sourceTree = "<group>";
 		};
 		D338EBD41D73590500EB2B53 /* Use Case */ = {
@@ -379,7 +379,7 @@
 			children = (
 				D338EBD81D73592600EB2B53 /* Navigator */,
 				D338EBD41D73590500EB2B53 /* Use Case */,
-				D338EBD21D7358FF00EB2B53 /* Service Locator */,
+				D338EBD21D7358FF00EB2B53 /* CompositionRoot */,
 			);
 			name = Venue;
 			sourceTree = "<group>";
@@ -1110,7 +1110,7 @@
 				D338EBDB1D7359A100EB2B53 /* StubVenueListNavigator.swift in Sources */,
 				D338EBE51D735EFE00EB2B53 /* StubGetBestPlacesAroundYouUseCase.swift in Sources */,
 				D33564F81D748A97005FD6FE /* BaseUITestCase+L10n.swift in Sources */,
-				D338EBD11D7357B400EB2B53 /* TestingVenueServiceLocator.swift in Sources */,
+				D338EBD11D7357B400EB2B53 /* TestingVenueCompositionRoot.swift in Sources */,
 				D338EBCD1D73571900EB2B53 /* BaseUITestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
