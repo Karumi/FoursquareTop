@@ -40,7 +40,12 @@ class BestVenuesAroundYouPresenter : Presenter {
                         self.venues = venueList.venues
                         self.ui?.showVenueList(venueList)
                     } else {
-                        self.ui?.showError(message: tr(.VenuesListCanNotFetchVenuesError))
+                        switch result.error! {
+                        case .EmptyResult:
+                            self.ui?.showEmptyCase(message: tr(.VenuesListNoVenuesAroundYouError))
+                        case .Generic:
+                            self.ui?.showError(message: tr(.VenuesListCanNotFetchVenuesError))
+                        }
                     }
                 }
             } else {

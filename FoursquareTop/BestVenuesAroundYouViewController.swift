@@ -79,6 +79,7 @@ class BestVenuesAroundYouViewController : FTViewController, BestVenuesAroundYouU
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         collectionView.backgroundColor = .whiteColor()
+        collectionView.accessibilityIdentifier = "BestVenuesAroundYouAccesibilityLabel"
         
         view.addSubview(collectionView)
         

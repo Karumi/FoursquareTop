@@ -22,7 +22,7 @@ enum VenuePrice : String {
 }
 
 struct VenueViewModel {
-    let foursquareID: String;
+    let foursquareID: String
     let name: String
     let URL: NSURL?
     let foursquareURL: NSURL?

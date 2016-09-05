@@ -9,8 +9,12 @@ enum L10n {
   case Cancel
   /// Loading
   case Loading
+  /// An error just happened
+  case ErrorViewAccesibilityLabel
   /// Best open places around you
   case BestPlacesAroundTitle
+  /// There is no open places around you
+  case VenuesListNoVenuesAroundYouError
   /// Could not fetch the venues, please tap anywhere to retry
   case VenuesListCanNotFetchVenuesError
   /// Could not fetch your location, please tap anywhere to retry
@@ -46,8 +50,12 @@ extension L10n: CustomStringConvertible {
         return L10n.tr("Cancel")
       case .Loading:
         return L10n.tr("Loading")
+      case .ErrorViewAccesibilityLabel:
+        return L10n.tr("ErrorView.AccesibilityLabel")
       case .BestPlacesAroundTitle:
         return L10n.tr("BestPlacesAround.Title")
+      case .VenuesListNoVenuesAroundYouError:
+        return L10n.tr("VenuesList.NoVenuesAroundYou.Error")
       case .VenuesListCanNotFetchVenuesError:
         return L10n.tr("VenuesList.CanNotFetchVenues.Error")
       case .VenuesListCanNotFetchLocationError:

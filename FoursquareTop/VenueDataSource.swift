@@ -7,6 +7,7 @@ import enum Result.Result
 
 enum NetworkError : ErrorType {
     case Generic
+    case EmptyResult
 }
 
 class VenueDataSource {

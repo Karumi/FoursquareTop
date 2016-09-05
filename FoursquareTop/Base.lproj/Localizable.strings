@@ -1,8 +1,10 @@
 "Close" = "Close";
 "Cancel" = "Cancel";
 "Loading" = "Loading";
+"ErrorView.AccesibilityLabel" = "An error just happened";
 
 "BestPlacesAround.Title" = "Best open places around you";
+"VenuesList.NoVenuesAroundYou.Error" = "There is no open places around you";
 "VenuesList.CanNotFetchVenues.Error" = "Could not fetch the venues, please tap anywhere to retry";
 "VenuesList.CanNotFetchLocation.Error" = "Could not fetch your location, please tap anywhere to retry";
 "VenuesList.NoGPSAccess.Error" = "Can not access to your GPS";

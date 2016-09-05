@@ -5,6 +5,10 @@ struct VenueListViewModel {
     let venues: [VenueViewModel]
     
     init(venues: [VenueViewModel]) {
+        guard venues.count > 0 else {
+            self.venues = []
+            return
+        }
         
         let allVenuesWithCategories: [VenueViewModel] = Array(venues[1..<venues.count]).flatMap {
             let primaryCategories = $0.categories.filter { $0.primary }

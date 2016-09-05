@@ -1,8 +1,10 @@
 "Close" = "Cerrar";
 "Cancel" = "Cancelar";
 "Loading" = "Cargando";
+"ErrorView.AccesibilityLabel" = "Ha ocurrido un error";
 
 "BestPlacesAround.Title" = "Los mejores sitios abiertos a tu alrededor";
+"VenuesList.NoVenuesAroundYou.Error" = "No hay ningún sitio abierto a tu alrededor";
 "VenuesList.CanNotFetchVenues.Error" = "No ha sido posible cargar los sitios, por favor haz tap en cualquier parte para reintentar";
 "VenuesList.CanNotFetchLocation.Error" = "No ha sido posible obtener tu localización, por favor haz tap en cualquier parte para reintentar";
 "VenuesList.NoGPSAccess.Error" = "No se puede acceder a tu GPS";

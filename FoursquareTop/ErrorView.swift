@@ -8,10 +8,18 @@ class ErrorView : CustomView {
     
     weak var delegate: ErrorViewDelegate?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        label.font = UIFont.regular
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
+        accessibilityLabel = tr(.ErrorViewAccesibilityLabel)
     }
     
     @IBInspectable var topErrorViewImage: String? = nil {

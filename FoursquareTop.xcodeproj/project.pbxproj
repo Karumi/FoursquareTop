@@ -34,6 +34,11 @@
 		D36692DF1AD96DC400B25C55 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36692DE1AD96DC400B25C55 /* Image.xcassets */; };
 		D36692E11AD96E8600B25C55 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D36692E01AD96E8600B25C55 /* Icon.png */; };
 		D369CE521D6FB184006E13C8 /* VenueDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D369CE511D6FB184006E13C8 /* VenueDetailNavigator.swift */; };
+		D381AC221D7D2DE2005125D6 /* BestVenuesAroundYouViewControllerDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D381AC211D7D2DE2005125D6 /* BestVenuesAroundYouViewControllerDriver.swift */; };
+		D381AC251D7D31D4005125D6 /* Double+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D381AC241D7D31D4005125D6 /* Double+Random.swift */; };
+		D381AC271D7D31F1005125D6 /* CLLocation+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D381AC261D7D31F1005125D6 /* CLLocation+Random.swift */; };
+		D381AC291D7D327C005125D6 /* Int+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D381AC281D7D327C005125D6 /* Int+Random.swift */; };
+		D381AC2D1D7D37B8005125D6 /* VenueList+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D381AC2C1D7D37B8005125D6 /* VenueList+Random.swift */; };
 		D3891C411D1E6E41001858C8 /* RootNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891C401D1E6E41001858C8 /* RootNavigator.swift */; };
 		D3891C431D1E6E49001858C8 /* AppCompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891C421D1E6E49001858C8 /* AppCompositionRoot.swift */; };
 		D3891C481D1E6FD1001858C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3891C471D1E6FD1001858C8 /* AppDelegate.swift */; };
@@ -148,6 +153,11 @@
 		D36692DE1AD96DC400B25C55 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		D36692E01AD96E8600B25C55 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		D369CE511D6FB184006E13C8 /* VenueDetailNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailNavigator.swift; sourceTree = "<group>"; };
+		D381AC211D7D2DE2005125D6 /* BestVenuesAroundYouViewControllerDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestVenuesAroundYouViewControllerDriver.swift; sourceTree = "<group>"; };
+		D381AC241D7D31D4005125D6 /* Double+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Random.swift"; sourceTree = "<group>"; };
+		D381AC261D7D31F1005125D6 /* CLLocation+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+Random.swift"; sourceTree = "<group>"; };
+		D381AC281D7D327C005125D6 /* Int+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Random.swift"; sourceTree = "<group>"; };
+		D381AC2C1D7D37B8005125D6 /* VenueList+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VenueList+Random.swift"; sourceTree = "<group>"; };
 		D3891C3F1D1E6E40001858C8 /* FoursquareTop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoursquareTop-Bridging-Header.h"; sourceTree = "<group>"; };
 		D3891C401D1E6E41001858C8 /* RootNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigator.swift; sourceTree = "<group>"; };
 		D3891C421D1E6E49001858C8 /* AppCompositionRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCompositionRoot.swift; sourceTree = "<group>"; };
@@ -338,6 +348,8 @@
 		D338EBCA1D73570500EB2B53 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				D381AC231D7D31CD005125D6 /* Extension */,
+				D381AC201D7D2DD1005125D6 /* Driver */,
 				D338EBCB1D73571600EB2B53 /* BaseUITestCase.swift */,
 				D395DB7F1D73614800882A09 /* BaseUITestCase+Localized.swift */,
 				D33564F71D748A97005FD6FE /* BaseUITestCase+L10n.swift */,
@@ -416,6 +428,25 @@
 				D369CE511D6FB184006E13C8 /* VenueDetailNavigator.swift */,
 			);
 			name = Navigator;
+			sourceTree = "<group>";
+		};
+		D381AC201D7D2DD1005125D6 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				D381AC211D7D2DE2005125D6 /* BestVenuesAroundYouViewControllerDriver.swift */,
+			);
+			name = Driver;
+			sourceTree = "<group>";
+		};
+		D381AC231D7D31CD005125D6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D381AC241D7D31D4005125D6 /* Double+Random.swift */,
+				D381AC261D7D31F1005125D6 /* CLLocation+Random.swift */,
+				D381AC281D7D327C005125D6 /* Int+Random.swift */,
+				D381AC2C1D7D37B8005125D6 /* VenueList+Random.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		D3891C3E1D1E6E33001858C8 /* Library */ = {
@@ -1099,9 +1130,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D338EBE71D735F3300EB2B53 /* StubGetVenueDetailsUseCase.swift in Sources */,
+				D381AC221D7D2DE2005125D6 /* BestVenuesAroundYouViewControllerDriver.swift in Sources */,
+				D381AC2D1D7D37B8005125D6 /* VenueList+Random.swift in Sources */,
 				D395DB861D73618300882A09 /* XCTestCase+KIF.swift in Sources */,
 				D338EBDD1D7359B100EB2B53 /* StubVenueDetailNavigator.swift in Sources */,
 				D395DB811D73614A00882A09 /* BaseUITestCase+Localized.swift in Sources */,
+				D381AC251D7D31D4005125D6 /* Double+Random.swift in Sources */,
 				D395DB8B1D73925900882A09 /* BestVenuesAroundYouViewControllerTests.swift in Sources */,
 				D395DB871D73618500882A09 /* KifTestActor.swift in Sources */,
 				D338EBDF1D735DF400EB2B53 /* StubEnvironment.swift in Sources */,
@@ -1111,6 +1145,8 @@
 				D338EBE51D735EFE00EB2B53 /* StubGetBestPlacesAroundYouUseCase.swift in Sources */,
 				D33564F81D748A97005FD6FE /* BaseUITestCase+L10n.swift in Sources */,
 				D338EBD11D7357B400EB2B53 /* TestingVenueCompositionRoot.swift in Sources */,
+				D381AC271D7D31F1005125D6 /* CLLocation+Random.swift in Sources */,
+				D381AC291D7D327C005125D6 /* Int+Random.swift in Sources */,
 				D338EBCD1D73571900EB2B53 /* BaseUITestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1277,6 +1313,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoursquareTop.app/FoursquareTop";
 			};
 			name = Debug;
@@ -1294,6 +1331,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoursquareTop.app/FoursquareTop";
 			};
 			name = Release;

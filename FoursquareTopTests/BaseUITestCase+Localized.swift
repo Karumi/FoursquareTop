@@ -28,8 +28,8 @@ extension BaseUITestCase {
         kifTester().tapViewWithAccessibilityLabel(localizedAccessibilityLabel, traits: traits)
     }
     
-    func tapFirstItemInCollectionViewWithAccessibilityIdentifier(accessibilityIdentifier: String) {
-        kifTester().tapItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), inCollectionViewWithAccessibilityIdentifier: accessibilityIdentifier)
+    func tapItemInCollectionViewWithAccessibilityIdentifier(accessibilityIdentifier: String, atIndexPath indexPath: NSIndexPath) {
+        kifTester().tapItemAtIndexPath(indexPath, inCollectionViewWithAccessibilityIdentifier: accessibilityIdentifier)
     }
     
     func enterText(text: String, intoViewWithLocalizedAccessibilityLabelKey key: String, arguments: [CVarArgType] = []) {

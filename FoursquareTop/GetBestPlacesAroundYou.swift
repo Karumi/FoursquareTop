@@ -18,7 +18,13 @@ struct GetBestPlacesAroundYou : GetBestPlacesAroundYouUseCase {
     func execute(location: CLLocation, callback: Result<VenueListViewModel, NetworkError> -> ()) {        
         dataSource.topVenues(atLocation: location) { result in
             if let venueList = result.value {
-                callback(Result(venueList))
+                if venueList.venues.count > 0 {
+                    callback(Result(venueList))
+                } else {
+                    callback(Result(error: .EmptyResult))
+                }
+            } else {
+                callback(result)
             }
         }
     }
