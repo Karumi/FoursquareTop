@@ -2,7 +2,6 @@
 import Foundation
 import Nimble
 import KIF
-import Nocilla
 
 @testable import FoursquareTop
 
@@ -25,7 +24,7 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     // MARK: Tests
     
     func testLoadingIndicatorIsVisibleWhenLoadingVenues() {
-        givenWeAreFetchingUsersLocation()
+        getUserLocationUseCase.givenWeAreFetchingUsersLocation()
         
         openViewController()
         
@@ -33,7 +32,7 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     }
     
     func testErrorIsShownIfTheLocationCanNotBeDetermined() {
-        givenThereWillBeAnErrorFetchingUsersLocation()
+        getUserLocationUseCase.givenThereWillBeAnErrorFetchingUsersLocation()
         
         openViewController()
         
@@ -41,7 +40,7 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     }
     
     func testErrorIsShownIfTheVenuesCanNotBeFetched() {
-        givenThereWillBeAnErrorFetchingVenues()
+        getBestPlacesAroundYouUseCase.givenThereWillBeAnErrorFetchingVenues()
         
         openViewController()
         
@@ -50,7 +49,7 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     
     func testRetryShowsVenuesAfterThereIsAnErrorFetchingVenues() {
         executeRetryTest(errorSetupBlock: { 
-            self.givenThereWillBeAnErrorFetchingVenues()
+            self.getBestPlacesAroundYouUseCase.givenThereWillBeAnErrorFetchingVenues()
         }) {
             self.driver.expectCanNotFetchVenuesError(toBeVisible: false)
         }
@@ -58,14 +57,14 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     
     func testRetryShowsVenuesAfterThereIsAnErrorFetchingUsersLocation() {
         executeRetryTest(errorSetupBlock: {
-            self.givenThereWillBeAnErrorFetchingUsersLocation()
+            self.getUserLocationUseCase.givenThereWillBeAnErrorFetchingUsersLocation()
         }) {
             self.driver.expectCanNotFetchLocationError(toBeVisible: false)
         }
     }
     
     func testAlertIsShownIfWeDontHaveAccessToTheGPS() {
-        givenWeCanNotAccessTheGPS()
+        getUserLocationUseCase.givenWeCanNotAccessTheGPS()
         
         openViewController()
         
@@ -73,16 +72,20 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     }
     
     func testSettingsIsOpenIfTheUserWantsToEnableTheGPS() {
-        givenWeCanNotAccessTheGPS()
+        getUserLocationUseCase.givenWeCanNotAccessTheGPS()
         
         openViewController()
         driver.tapGoToSettings()
         
-        expect(self.stubVenueListNavigator.didGoToSettings).toEventually(equal(true))
+        expect(
+            self.stubVenueListNavigator.didGoToSettings
+        ).toEventually(
+            equal(true)
+        )
     }
     
     func testVenuesAreShownIfThereAreVenuesInTheUserLocation() {
-        givenThereWillBeVenues()
+        getBestPlacesAroundYouUseCase.givenThereWillBeVenues()
 
         openViewController()
         
@@ -90,7 +93,7 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     }
     
     func testEmptyCaseIsShownIfThereAreNoVenuesInTheUserLocation() {
-        givenThereWillBeVenues(venuesCount: 0)
+        getBestPlacesAroundYouUseCase.givenThereWillBeVenues(venuesCount: 0)
 
         openViewController()
         
@@ -98,7 +101,7 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     }
     
     func testNavigatesToVenueDetailIfTheTopVenueIsSelected() {
-        givenThereWillBeVenues()
+        getBestPlacesAroundYouUseCase.givenThereWillBeVenues()
         
         openViewController()
         
@@ -111,7 +114,7 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     }
     
     func testNavigatesToVenueDetailIfACategoryIsSelected() {
-        givenThereWillBeVenues()
+        getBestPlacesAroundYouUseCase.givenThereWillBeVenues()
         
         openViewController()
         
@@ -122,36 +125,6 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
         
         expect(self.stubVenueListNavigator.didGoToVenueDetail).toEventually(equal(true))
         expect(self.stubVenueListNavigator.venueDetail!.primaryCategory.identifier).toEventually(equal(categoryToTap.primaryCategory.identifier))
-    }
-    
-    // MARK: Given
-    
-    func givenThereWillBeAnErrorFetchingVenues() {
-        getBestPlacesAroundYouUseCase.error = .Generic
-    }
-    
-    func givenWeAreFetchingUsersLocation() {
-        getUserLocationUseCase.location = nil
-    }
-    
-    func givenThereWillBeAnErrorFetchingUsersLocation() {
-        getUserLocationUseCase.error = .CanNotFetch
-    }
-    
-    func givenWeCanNotAccessTheGPS() {
-        getUserLocationUseCase.error = .NoGPSAccess
-    }
-    
-    func givenThereWillBeVenues(venuesCount count: Int = 10) {
-        guard count > 0 else {
-            getBestPlacesAroundYouUseCase.error = .EmptyResult
-            return
-        }
-        
-        getUserLocationUseCase.error = nil
-        getBestPlacesAroundYouUseCase.error = nil
-        
-        getBestPlacesAroundYouUseCase.venueList = VenueListViewModel.random(venueCount: count)
     }
     
     // MARK: Private
@@ -182,7 +155,9 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
         
         openViewController()
         
-        givenThereWillBeVenues()
+        getUserLocationUseCase.error = nil
+        getBestPlacesAroundYouUseCase.givenThereWillBeVenues()
+        
         driver.tapRetry()
         driver.expectVenueList(getBestPlacesAroundYouUseCase.venueList!)
         

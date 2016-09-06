@@ -16,4 +16,20 @@ class StubGetBestPlacesAroundYouUseCase : GetBestPlacesAroundYouUseCase {
             callback(Result(venueList))
         }
     }
+    
+    
+    func givenThereWillBeAnErrorFetchingVenues() {
+        error = .Generic
+    }
+    
+    func givenThereWillBeVenues(venuesCount count: Int = 10) {
+        guard count > 0 else {
+            error = .EmptyResult
+            return
+        }
+        
+        error = nil
+        
+        venueList = VenueListViewModel.random(venueCount: count)
+    }
 }

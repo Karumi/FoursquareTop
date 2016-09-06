@@ -9,6 +9,7 @@ class BestVenuesAroundYouPresenter : Presenter {
     private let getBestPlacesAroundYouUseCase: GetBestPlacesAroundYouUseCase
     private let getUserLocationUseCase: GetUserLocationUseCase
     private var venues: [VenueViewModel] = []
+    private var firstLoad = false
     
     init(ui: BestVenuesAroundYouUI, getBestPlacesAroundYouUseCase: GetBestPlacesAroundYouUseCase, getUserLocationUseCase: GetUserLocationUseCase, navigator: VenueListNavigator) {
         self.ui = ui
@@ -30,12 +31,16 @@ class BestVenuesAroundYouPresenter : Presenter {
     }
     
     private func loadBestVenuesAroundCurrentUser() {
-        self.ui?.loading = !getUserLocationUseCase.isLocationPotentiallyGood()
+        self.ui?.loading = !firstLoad || !getUserLocationUseCase.isLocationPotentiallyGood()
+        
+        firstLoad = true
         
         getUserLocationUseCase.execute { locationResult in
-            self.ui?.loading = false
             if let location = locationResult.value {
                 self.getBestPlacesAroundYouUseCase.execute(location) { result in
+                    
+                    self.ui?.loading = false
+                    
                     if let venueList = result.value {
                         self.venues = venueList.venues
                         self.ui?.showVenueList(venueList)
@@ -49,6 +54,8 @@ class BestVenuesAroundYouPresenter : Presenter {
                     }
                 }
             } else {
+                self.ui?.loading = false
+                
                 switch locationResult.error! {
                 case .CanNotFetch:
                     self.ui?.showError(message: tr(.VenuesListCanNotFetchLocationError))

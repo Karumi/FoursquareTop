@@ -5,7 +5,6 @@ PODS:
     - KIF/Core (= 3.4.2)
   - KIF/Core (3.4.2)
   - Nimble (3.2.0)
-  - Nocilla (0.10.0)
   - NYTPhotoViewer (1.1.0):
     - NYTPhotoViewer/AnimatedGifSupport (= 1.1.0)
     - NYTPhotoViewer/Core (= 1.1.0)
@@ -24,7 +23,6 @@ DEPENDENCIES:
   - INTULocationManager (~> 4.0)
   - KIF (~> 3.4.2)
   - Nimble (~> 3.2.0)
-  - Nocilla (~> 0.10.0)
   - NYTPhotoViewer (~> 1.1.0)
   - QuadratTouch (>= 1.0)
   - Result (~> 2.0)
@@ -36,13 +34,12 @@ SPEC CHECKSUMS:
   INTULocationManager: 73f8254b3d05c897c56bb13c190e5b7c648c0998
   KIF: b518c9831453abea5afdbbde3908ec47832d6d56
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
-  Nocilla: ae0a2b05f3087b473624ac2b25903695df51246a
   NYTPhotoViewer: e80e8767f3780d2df37c6f72cbab15d6c7232911
   QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
   Result: 822c879f145943320cc80a9a8372378e3d699fe4
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 256a3ba61707a2adbbe2e82602204fdb7b5ee1af
+PODFILE CHECKSUM: cdf281d6aad7fa259b52b23db15b5d3840d879d4
 
 COCOAPODS: 1.0.1

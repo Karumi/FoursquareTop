@@ -22,7 +22,11 @@ class VenueDetailPresenter : Presenter {
     }
     
     func viewWillAppear() {
+        ui?.loading = true
+        
         useCase.execute(partialVenue.foursquareID) { result in
+            self.ui?.loading = false
+            
             if let ui = self.ui, venue = result.value {
                 self.venue = venue
                 ui.showVenue(venue)

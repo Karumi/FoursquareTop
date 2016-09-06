@@ -15,7 +15,6 @@ end
 def tests
     pod 'KIF', '~> 3.4.2'
     pod 'Nimble', '~> 3.2.0'
-    pod 'Nocilla', '~> 0.10.0'
 end
 
 target 'FoursquareTop' do
@@ -25,4 +24,14 @@ end
 target 'FoursquareTopUITests' do
     app
     tests
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            if target.name == 'KIF'
+                config.build_settings['ENABLE_BITCODE'] = 'NO'
+            end
+        end
+    end
 end

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poweredByFoursquare_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Tv-Oz-gqP">
-                    <rect key="frame" x="120" y="400" width="241" height="60"/>
+                    <rect key="frame" x="120" y="210" width="241" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="i1v-cs-Hkk"/>
                         <constraint firstAttribute="width" constant="241" id="mL5-Wj-cZT"/>
@@ -22,6 +23,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="3Tv-Oz-gqP" secondAttribute="bottom" constant="20" id="0rJ-1v-XhI"/>
                 <constraint firstAttribute="centerY" secondItem="3Tv-Oz-gqP" secondAttribute="centerY" id="7pz-sR-lHS"/>
+                <constraint firstItem="3Tv-Oz-gqP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BEn-Nh-A7U"/>
                 <constraint firstItem="3Tv-Oz-gqP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PGs-rf-aMN"/>
                 <constraint firstAttribute="centerX" secondItem="3Tv-Oz-gqP" secondAttribute="centerX" id="cTL-HO-vlg"/>
             </constraints>
@@ -29,6 +31,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="0rJ-1v-XhI"/>
                     <exclude reference="7pz-sR-lHS"/>
                     <exclude reference="PGs-rf-aMN"/>
                 </mask>

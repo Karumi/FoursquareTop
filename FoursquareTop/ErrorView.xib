@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="346" height="505"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_embarrassed" translatesAutoresizingMaskIntoConstraints="NO" id="J8r-bk-BvM" userLabel="TopEmptyCaseImageView">
+                <imageView alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_embarrassed" translatesAutoresizingMaskIntoConstraints="NO" id="J8r-bk-BvM" userLabel="TopEmptyCaseImageView">
                     <rect key="frame" x="24.5" y="104" width="297" height="297"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meh-s5-B6P" userLabel="EmptyCaseMessage">

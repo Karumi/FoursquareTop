@@ -21,4 +21,16 @@ class StubGetUserLocationUseCase : GetUserLocationUseCase {
     func isLocationPotentiallyGood() -> Bool {
         return locationIsPotentiallyGood
     }
+    
+    func givenWeAreFetchingUsersLocation() {
+        location = nil
+    }
+    
+    func givenThereWillBeAnErrorFetchingUsersLocation() {
+        error = .CanNotFetch
+    }
+    
+    func givenWeCanNotAccessTheGPS() {
+        error = .NoGPSAccess
+    }
 }
