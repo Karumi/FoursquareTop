@@ -24,7 +24,9 @@ class BestVenuesAroundYouViewControllerNavigationTests: BaseUITestCase {
     // MARK: Tests
     
     func testNavigatesToVenueDetailWhenUserTapsOnVenue() {
-        getBestPlacesAroundYouUseCase.givenThereWillBeVenues(venuesCount: 10, categoryCount: 1)
+        getBestPlacesAroundYouUseCase.givenThereWillBeVenues(
+            venuesCount: 10, categoryCount: 1
+        )
         
         let topVenue = getBestPlacesAroundYouUseCase.venueList!.venues.first!
         getVenueDetailsUseCase.venue = topVenue
@@ -42,7 +44,7 @@ class BestVenuesAroundYouViewControllerNavigationTests: BaseUITestCase {
     }
     
     override func getTestingAppCompositionRoot(compositionRoot: AppCompositionRoot) -> AppCompositionRoot {
-        return AppCompositionRoot.Builder(compositionRoot: compositionRoot)
+        return AppCompositionRoot.Builder()
             .with(venueCompositionRoot: getVenueCompositionRoot())
             .build()
     }

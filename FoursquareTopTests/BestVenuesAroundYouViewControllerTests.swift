@@ -137,7 +137,7 @@ class BestVenuesAroundYouViewControllerTests: BaseUITestCase {
     }
     
     override func getTestingAppCompositionRoot(compositionRoot: AppCompositionRoot) -> AppCompositionRoot {
-        return AppCompositionRoot.Builder(compositionRoot: compositionRoot)
+        return AppCompositionRoot.Builder()
             .with(venueCompositionRoot: getVenueCompositionRoot())
             .build()
     }

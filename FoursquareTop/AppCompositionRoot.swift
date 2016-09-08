@@ -4,12 +4,6 @@ import UIKit
 class AppCompositionRoot : NSObject {
     
     let venue: VenueCompositionRoot
-
-    private convenience override init() {
-        self.init(
-            venue: VenueCompositionRoot()
-        )
-    }
     
     private init(
         venue: VenueCompositionRoot
@@ -29,10 +23,6 @@ class AppCompositionRoot : NSObject {
             
         }
         
-        init(compositionRoot: AppCompositionRoot) {
-            venue = compositionRoot.venue
-        }
-
         func with(venueCompositionRoot venue: VenueCompositionRoot) -> Builder {
             self.venue = venue
             return self
