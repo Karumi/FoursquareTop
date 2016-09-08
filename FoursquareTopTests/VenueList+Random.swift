@@ -6,13 +6,13 @@ import MapKit
 
 extension VenueListViewModel {
     
-    static func random(venueCount count: Int = 10) -> VenueListViewModel {
+    static func random(venueCount count: Int = 10, categoryCount: Int = 5) -> VenueListViewModel {
         var venues: [VenueViewModel] = []
         
         for i in 0..<count {
             var categories: [VenueCategoryViewModel] = []
             
-            for cat in 0..<Int.random(3, max: 5) {
+            for cat in 0..<Int.random(1, max: categoryCount) {
                 categories.append(
                     VenueCategoryViewModel(
                         identifier: "category_\(i)_\(cat)",

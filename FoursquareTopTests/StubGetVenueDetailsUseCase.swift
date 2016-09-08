@@ -13,7 +13,15 @@ class StubGetVenueDetailsUseCase : GetVenueDetailsUseCase {
         if let error = error {
             callback(Result(error: error))
         } else if let venue = venue {
-            callback(Result(venue))
+            
+            // There is a race condition in the pager view system, as we are using the navigation controller
+            // navigationItem and if it weren't for the delay, the setTitle code would execute before the built-in
+            // navigation and thus the title is wiped out. It is clearly a bug in my pager implementation, but 
+            // I have no time to fix it for now.
+            let delay = (Int64(NSEC_PER_SEC) * 1)
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delay), dispatch_get_main_queue(), { () -> Void in
+                callback(Result(venue))
+            })
         }
     }
 }

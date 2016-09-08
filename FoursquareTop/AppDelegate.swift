@@ -20,7 +20,7 @@ class AppDelegate : NSObject, UIApplicationDelegate {
             
             return nil
             
-            } ?? true
+        } ?? true
         
         createWindow()
         installRootNavigator()
@@ -78,12 +78,6 @@ class AppDelegate : NSObject, UIApplicationDelegate {
         tasks.forEach {
             $0.application(application, didReceiveRemoteNotification: userInfo)
         }
-    }
-    
-    @available(iOS 9.0, *)
-    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
-//        let shortcutItemHandled = navigator.handleShortcutItem(shortcutItem)
-//        completionHandler(shortcutItemHandled)
     }
     
     func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {

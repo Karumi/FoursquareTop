@@ -22,7 +22,7 @@ class StubGetBestPlacesAroundYouUseCase : GetBestPlacesAroundYouUseCase {
         error = .Generic
     }
     
-    func givenThereWillBeVenues(venuesCount count: Int = 10) {
+    func givenThereWillBeVenues(venuesCount count: Int = 10, categoryCount: Int = 5) {
         guard count > 0 else {
             error = .EmptyResult
             return
@@ -30,6 +30,6 @@ class StubGetBestPlacesAroundYouUseCase : GetBestPlacesAroundYouUseCase {
         
         error = nil
         
-        venueList = VenueListViewModel.random(venueCount: count)
+        venueList = VenueListViewModel.random(venueCount: count, categoryCount: categoryCount)
     }
 }

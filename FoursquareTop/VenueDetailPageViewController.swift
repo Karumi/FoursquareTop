@@ -24,12 +24,12 @@ class VenueDetailPageViewController : FTViewController {
         pageViewController.dataSource = dataSource
         pageViewController.delegate = dataSource
         
-        let vc = dataSource.viewControllerAtIndex(initialIndex)
-        
-        pageViewController.setViewControllers([vc], direction: .Forward, animated: false, completion: nil)
         pageViewController.willMoveToParentViewController(self)
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
+        
+        let vc = dataSource.viewControllerAtIndex(initialIndex)
+        pageViewController.setViewControllers([vc], direction: .Forward, animated: false, completion: nil)
     }
 }

@@ -20,7 +20,7 @@ class VenueDetailViewControllerDriver {
     func expectTitle(ofVenue venue: VenueViewModel, toBeVisible visible: Bool) {
         let tester = testCase.kifTester()
         let name = venue.name
-        let categoryName = venue.primaryCategory.names.get(forType: .Regular)
+        let categoryName = venue.primaryCategory.names.get(forType: .Short)
         if visible {
             tester.waitForViewWithAccessibilityLabel(name)
             tester.waitForViewWithAccessibilityLabel(categoryName)

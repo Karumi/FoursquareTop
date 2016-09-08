@@ -24,7 +24,7 @@ class BestVenuesAroundYouViewControllerNavigationTests: BaseUITestCase {
     // MARK: Tests
     
     func testNavigatesToVenueDetailWhenUserTapsOnVenue() {
-        getBestPlacesAroundYouUseCase.givenThereWillBeVenues()
+        getBestPlacesAroundYouUseCase.givenThereWillBeVenues(venuesCount: 10, categoryCount: 1)
         
         let topVenue = getBestPlacesAroundYouUseCase.venueList!.venues.first!
         getVenueDetailsUseCase.venue = topVenue
