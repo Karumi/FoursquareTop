@@ -98,10 +98,16 @@ class AppDelegate : NSObject, UIApplicationDelegate {
     }
     
     private func installRootNavigator() {
-        appCompositionRoot = AppCompositionRoot.Builder().build()
+        let builder = AppCompositionRoot.Builder()
+        
+        appCompositionRoot = builder.with(
+            venueCompositionRoot: VenueCompositionRoot()
+        ).build()
+        
         navigator = RootNavigator(
             appCompositionRoot: appCompositionRoot
         )
+        
         navigator.installRootViewController(window!)
         window?.makeKeyAndVisible()
     }

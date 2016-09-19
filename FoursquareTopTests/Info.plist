@@ -20,5 +20,16 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+    <key>UIApplicationShortcutItems</key>
+    <array>
+        <dict>
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>Super expensive places</string>
+            <key>UIApplicationShortcutItemType</key>
+            <string>com-Ftop-Expensive</string>
+            <key>UIApplicationShortcutItemIconType</key>
+            <string>UIApplicationShortcutIconTypeSearch</string>
+        </dict>
+    </array>
 </dict>
 </plist>
