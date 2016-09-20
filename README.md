@@ -1,4 +1,4 @@
-# FoursquareTop
+# FoursquareTop [![Build Status](https://travis-ci.org/Karumi/FoursquareTop.svg?branch=master)](https://travis-ci.org/Karumi/FoursquareTop)
 
 Code for the app made as part of the NSSpain 2016 talk -> https://speakerdeck.com/karumi/architecting-your-apps-for-ui-testing
 
