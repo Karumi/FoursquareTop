@@ -1,9 +1,9 @@
 PODS:
   - FLAnimatedImage (1.0.12)
   - INTULocationManager (4.2.0)
-  - KIF (3.4.2):
-    - KIF/Core (= 3.4.2)
-  - KIF/Core (3.4.2)
+  - KIF (3.5.1):
+    - KIF/Core (= 3.5.1)
+  - KIF/Core (3.5.1)
   - Nimble (3.2.0)
   - NYTPhotoViewer (1.1.0):
     - NYTPhotoViewer/AnimatedGifSupport (= 1.1.0)
@@ -21,7 +21,7 @@ PODS:
 
 DEPENDENCIES:
   - INTULocationManager (~> 4.0)
-  - KIF (~> 3.4.2)
+  - KIF (~> 3.5.1)
   - Nimble (~> 3.2.0)
   - NYTPhotoViewer (~> 1.1.0)
   - QuadratTouch (from `https://github.com/Karumi/das-quadrat.git`, branch `swift2.3`)
@@ -48,7 +48,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   INTULocationManager: 73f8254b3d05c897c56bb13c190e5b7c648c0998
-  KIF: b518c9831453abea5afdbbde3908ec47832d6d56
+  KIF: 082eb65279e51c3092923802849eb796a04982ab
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   NYTPhotoViewer: e80e8767f3780d2df37c6f72cbab15d6c7232911
   QuadratTouch: 9e311cbd4f0573b58cafe6783df1fa7ce2458afa
@@ -56,6 +56,6 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 44205a64d6afb5fe220ab698e1c604468484c60f
+PODFILE CHECKSUM: b4c8ab33f68d6f0642e3b1ec9a5dd5fa64a63ff7
 
 COCOAPODS: 1.1.0.rc.2
