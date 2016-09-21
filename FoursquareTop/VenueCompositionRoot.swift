@@ -20,13 +20,13 @@ class VenueCompositionRoot {
         return vc
     }
     
-    func getVenueDetailViewController(venue: VenueViewModel, forIndex index: Int) -> UIViewController {
+    func getVenueDetailViewController(foursquareID: String, forIndex index: Int) -> UIViewController {
         let vc = VenueDetailViewController()
         vc.pageIndex = index
         vc.venueDetailPresenter = VenueDetailPresenter(
             ui: vc,
             useCase: getVenueDetailsUseCase(),
-            venue: venue,
+            foursquareID: foursquareID,
             navigator: getVenueDetailNavigator(),
             environment: getEnvironment(),
             snapshotGenerator: getMapSnapshotGenerator()

@@ -10,6 +10,6 @@ struct DefaultVenueDetailViewControllerProvider: VenueDetailViewControllerProvid
     let compositionRoot: VenueCompositionRoot
     
     func getVenueDetailViewControllerAtIndex(venues: [VenueViewModel], index: Int) -> UIViewController {
-        return compositionRoot.getVenueDetailViewController(venues[index], forIndex: index)
+        return compositionRoot.getVenueDetailViewController(venues[index].foursquareID, forIndex: index)
     }
 }
