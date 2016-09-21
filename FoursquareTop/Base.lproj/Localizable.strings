@@ -17,3 +17,8 @@
 "VenueDetail.SeeMenu" = "See Menu";
 "VenueDetail.CanNotFetchVenue.Error" = "Could not show this venue information, please tap anywhere to retry";
 "VenueDetail.PhotoGallery.Title" = "%lu de %lu";
+
+"VenueDetail.Address.AccessibilityLabel" = "The venue's address";
+"VenueDetail.Status.AccessibilityLabel" = "The venue's status";
+"VenueDetail.Rating.AccessibilityLabel" = "The venue's rating";
+"VenueDetail.Pricing.AccessibilityLabel" = "The venue's pricing tag";

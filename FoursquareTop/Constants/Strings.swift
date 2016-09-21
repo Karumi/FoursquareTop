@@ -39,6 +39,14 @@ enum L10n {
   case VenueDetailCanNotFetchVenueError
   /// %lu de %lu
   case VenueDetailPhotoGalleryTitle(Int, Int)
+  /// The venue's address
+  case VenueDetailAddressAccessibilityLabel
+  /// The venue's status
+  case VenueDetailStatusAccessibilityLabel
+  /// The venue's rating
+  case VenueDetailRatingAccessibilityLabel
+  /// The venue's pricing tag
+  case VenueDetailPricingAccessibilityLabel
 }
 // swiftlint:enable type_body_length
 
@@ -81,6 +89,14 @@ extension L10n: CustomStringConvertible {
         return L10n.tr("VenueDetail.CanNotFetchVenue.Error")
       case .VenueDetailPhotoGalleryTitle(let p0, let p1):
         return L10n.tr("VenueDetail.PhotoGallery.Title", p0, p1)
+      case .VenueDetailAddressAccessibilityLabel:
+        return L10n.tr("VenueDetail.Address.AccessibilityLabel")
+      case .VenueDetailStatusAccessibilityLabel:
+        return L10n.tr("VenueDetail.Status.AccessibilityLabel")
+      case .VenueDetailRatingAccessibilityLabel:
+        return L10n.tr("VenueDetail.Rating.AccessibilityLabel")
+      case .VenueDetailPricingAccessibilityLabel:
+        return L10n.tr("VenueDetail.Pricing.AccessibilityLabel")
     }
   }
 

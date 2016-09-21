@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F21FFB9A74CB8BAC57F8103 /* Pods_FoursquareTop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7558D10968FE6BE3AE8367EF /* Pods_FoursquareTop.framework */; };
+		A1F5CF111D9191FD000EF504 /* VenueDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5CF101D9191FD000EF504 /* VenueDetailViewControllerTests.swift */; };
+		A1F5CF131D9285B5000EF504 /* VenueViewModel+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5CF121D9285B5000EF504 /* VenueViewModel+Builder.swift */; };
 		C257C798DE60918C4CCE2290 /* Pods_FoursquareTopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F226C0B8E824E71223683834 /* Pods_FoursquareTopUITests.framework */; };
 		D32BD4C31D73001B00397E39 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32BD4C21D73001B00397E39 /* Environment.swift */; };
 		D33564F81D748A97005FD6FE /* BaseUITestCase+L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33564F71D748A97005FD6FE /* BaseUITestCase+L10n.swift */; };
@@ -129,6 +131,8 @@
 		465E128467B92594FDED88B0 /* Pods-FoursquareTopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareTopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareTopUITests/Pods-FoursquareTopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7558D10968FE6BE3AE8367EF /* Pods_FoursquareTop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoursquareTop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECBF7D2AF1D6AD1177114F5 /* Pods-FoursquareTop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareTop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareTop/Pods-FoursquareTop.debug.xcconfig"; sourceTree = "<group>"; };
+		A1F5CF101D9191FD000EF504 /* VenueDetailViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		A1F5CF121D9285B5000EF504 /* VenueViewModel+Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VenueViewModel+Builder.swift"; sourceTree = "<group>"; };
 		A2EB3C2091C3EE0EB8BE088B /* Pods-FoursquareTopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareTopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoursquareTopUITests/Pods-FoursquareTopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D32BD4C21D73001B00397E39 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D33564F71D748A97005FD6FE /* BaseUITestCase+L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseUITestCase+L10n.swift"; sourceTree = "<group>"; };
@@ -282,6 +286,14 @@
 				F226C0B8E824E71223683834 /* Pods_FoursquareTopUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1F5CF0F1D9191CA000EF504 /* Venue Details */ = {
+			isa = PBXGroup;
+			children = (
+				A1F5CF101D9191FD000EF504 /* VenueDetailViewControllerTests.swift */,
+			);
+			name = "Venue Details";
 			sourceTree = "<group>";
 		};
 		D32BD4C11D72FFA700397E39 /* Environment */ = {
@@ -450,6 +462,7 @@
 				D381AC261D7D31F1005125D6 /* CLLocation+Random.swift */,
 				D381AC281D7D327C005125D6 /* Int+Random.swift */,
 				D381AC2C1D7D37B8005125D6 /* VenueList+Random.swift */,
+				A1F5CF121D9285B5000EF504 /* VenueViewModel+Builder.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -625,6 +638,7 @@
 		D395DB881D73923C00882A09 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A1F5CF0F1D9191CA000EF504 /* Venue Details */,
 				D395DB891D73923F00882A09 /* Best Venues Around */,
 			);
 			name = Screens;
@@ -1150,12 +1164,14 @@
 				D381AC221D7D2DE2005125D6 /* BestVenuesAroundYouViewControllerDriver.swift in Sources */,
 				D381AC2D1D7D37B8005125D6 /* VenueList+Random.swift in Sources */,
 				D395DB861D73618300882A09 /* XCTestCase+KIF.swift in Sources */,
+				A1F5CF131D9285B5000EF504 /* VenueViewModel+Builder.swift in Sources */,
 				D338EBDD1D7359B100EB2B53 /* StubVenueDetailNavigator.swift in Sources */,
 				D395DB811D73614A00882A09 /* BaseUITestCase+Localized.swift in Sources */,
 				D3E226841D7F580700BB893C /* VenueDetailViewControllerDriver.swift in Sources */,
 				D381AC251D7D31D4005125D6 /* Double+Random.swift in Sources */,
 				D395DB8B1D73925900882A09 /* BestVenuesAroundYouViewControllerTests.swift in Sources */,
 				D395DB871D73618500882A09 /* KifTestActor.swift in Sources */,
+				A1F5CF111D9191FD000EF504 /* VenueDetailViewControllerTests.swift in Sources */,
 				D338EBDF1D735DF400EB2B53 /* StubEnvironment.swift in Sources */,
 				D338EBE31D735E9E00EB2B53 /* StubGetUserLocationUseCase.swift in Sources */,
 				D338EBE11D735DFC00EB2B53 /* StubMapSnapshotGenerator.swift in Sources */,

@@ -1,4 +1,7 @@
 import Foundation
+import UIKit
+import Nimble
+
 @testable import FoursquareTop
 
 class VenueDetailViewControllerDriver {
@@ -28,5 +31,57 @@ class VenueDetailViewControllerDriver {
             tester.waitForAbsenceOfViewWithAccessibilityLabel(name)
             tester.waitForAbsenceOfViewWithAccessibilityLabel(categoryName)
         }
+    }
+    
+    func expectMenuButton(toBeVisible visible: Bool) {
+        if visible {
+            testCase.waitForViewWithLocalizedAccessibilityLabel(.VenueDetailSeeMenu)
+        } else {
+            testCase.waitForAbsenceOfViewWithLocalizedAccessibilityLabel(.VenueDetailSeeMenu)
+        }
+    }
+    
+    func expectAddressLabel(ofVenue venue: VenueViewModel, toBeVisible visible: Bool) {
+        
+        expectView(withText: venue.address, withAccessibilityLabel: tr(.VenueDetailAddressAccessibilityLabel), toBeVisible: visible)
+        
+    }
+    
+    func expectStatusLabel(ofVenue venue: VenueViewModel, toBeVisible visible: Bool) {
+        
+        expectView(withText: venue.status, withAccessibilityLabel: tr(.VenueDetailStatusAccessibilityLabel), toBeVisible: visible)
+      
+    }
+    
+    func expectRatingLabel(ofVenue venue: VenueViewModel, toBeVisible visible: Bool) {
+        
+        expectView(withText: venue.formattedRating, withAccessibilityLabel: tr(.VenueDetailRatingAccessibilityLabel), toBeVisible: visible)
+        
+    }
+    
+    func expectPricingLabel(ofVenue venue: VenueViewModel, toBeVisible visible: Bool) {
+        expectView(withText: venue.formattedPrice, withAccessibilityLabel: tr(.VenueDetailPricingAccessibilityLabel), toBeVisible: visible)
+    }
+    
+    private func expectView(withText text: String? = nil, withAccessibilityLabel label: String? = nil, toBeVisible visible: Bool) {
+        
+        if let accessibilityLabel = label {
+            if visible {
+                let view = testCase.waitForViewWithLocalizedAccessibilityLabel(accessibilityLabel) as UIView
+                
+                if let label = view as? UILabel {
+                    expect(label.text!).to(equal(text!))
+                } else if let button = view as? UIButton {
+                    expect(button.titleLabel!.text!).to(equal(text!))
+                } else {
+                    testCase.failWithException(NSException(name: "Unknown UIView", reason: "Trying to find text in an UIView that may not contain text", userInfo: nil), stopTest: false)
+                }
+            } else {
+                testCase.waitForAbsenceOfViewWithLocalizedAccessibilityLabel(accessibilityLabel)
+            }
+        } else if visible {
+            testCase.waitForViewWithLocalizedAccessibilityLabel(text!)
+        }
+        
     }
 }
