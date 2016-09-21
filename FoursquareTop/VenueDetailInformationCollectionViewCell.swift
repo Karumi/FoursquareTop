@@ -24,6 +24,11 @@ class VenueDetailInformationCollectionViewCell : DetailCell {
         statusLabel.textColor = UIColor(named: .DarkTextSecondary)
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(mapTapped)))
+        
+        addressLabel.accessibilityLabel = tr(.VenueDetailAddressAccessibilityLabel)
+        statusLabel.accessibilityLabel = tr(.VenueDetailStatusAccessibilityLabel)
+        ratingLabel.accessibilityLabel = tr(.VenueDetailRatingAccessibilityLabel)
+        priceLabel.accessibilityLabel = tr(.VenueDetailPricingAccessibilityLabel)
     }
     
     override func configure(withVenue venue: VenueViewModel) {

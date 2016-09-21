@@ -4,7 +4,7 @@ import MapKit
 
 class VenueDetailPresenter : Presenter {
     
-    private let partialVenue: VenueViewModel
+    private let foursquareID: String
     private weak var ui: VenueDetailUI?
     private let useCase: GetVenueDetailsUseCase
     private let navigator: VenueDetailNavigator
@@ -12,10 +12,10 @@ class VenueDetailPresenter : Presenter {
     private let snapshotGenerator: MapSnapshotGeneratorProtocol
     private var venue: VenueViewModel?
     
-    init(ui: VenueDetailUI, useCase: GetVenueDetailsUseCase, venue: VenueViewModel, navigator: VenueDetailNavigator, environment: EnvironmentProtocol, snapshotGenerator: MapSnapshotGeneratorProtocol) {
+    init(ui: VenueDetailUI, useCase: GetVenueDetailsUseCase, foursquareID: String, navigator: VenueDetailNavigator, environment: EnvironmentProtocol, snapshotGenerator: MapSnapshotGeneratorProtocol) {
         self.ui = ui
         self.useCase = useCase
-        self.partialVenue = venue
+        self.foursquareID = foursquareID
         self.navigator = navigator
         self.environment = environment
         self.snapshotGenerator = snapshotGenerator
@@ -24,7 +24,7 @@ class VenueDetailPresenter : Presenter {
     func viewWillAppear() {
         ui?.loading = true
         
-        useCase.execute(partialVenue.foursquareID) { result in
+        useCase.execute(foursquareID) { result in
             self.ui?.loading = false
             
             if let ui = self.ui, venue = result.value {

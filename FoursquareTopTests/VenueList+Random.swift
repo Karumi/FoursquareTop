@@ -14,19 +14,7 @@ extension VenueListViewModel {
             
             for cat in 0..<Int.random(1, max: categoryCount) {
                 categories.append(
-                    VenueCategoryViewModel(
-                        identifier: "category_\(i)_\(cat)",
-                        images: VenueCategoryImages(sizes: [:]),
-                        names: VenueCategoryNames(
-                            names: [
-                                .Regular : "Regular Category Name - \(i)_\(cat)",
-                                .Short : "Short CN - \(i)_\(cat)",
-                                .Plural : "Plural CN - \(i)_\(cat)",
-                            ]
-                        ),
-                        iconURL: nil,
-                        primary: true
-                    )
+                    VenueCategoryViewModel.build("\(i)_\(cat)")
                 )
             }
             
