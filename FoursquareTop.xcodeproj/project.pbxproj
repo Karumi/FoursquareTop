@@ -92,7 +92,6 @@
 		D3E156491D244042001FB5BE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E156481D244042001FB5BE /* main.swift */; };
 		D3E226841D7F580700BB893C /* VenueDetailViewControllerDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E226821D7F580600BB893C /* VenueDetailViewControllerDriver.swift */; };
 		D3E97AAB1D246F7F00FE4297 /* BestVenuesAroundYouCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E97AAA1D246F7F00FE4297 /* BestVenuesAroundYouCollectionViewDataSource.swift */; };
-		D3E97AAE1D24770600FE4297 /* UImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E97AAD1D24770600FE4297 /* UImage+Color.swift */; };
 		D3E97AD41D25CB9B00FE4297 /* VenueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E97AD31D25CB9B00FE4297 /* VenueDetailViewController.swift */; };
 		D3E97AD71D25CC3400FE4297 /* VenueDetailGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E97AD61D25CC3400FE4297 /* VenueDetailGalleryCollectionViewCell.swift */; };
 		D3E97AD91D25CC3A00FE4297 /* VenueDetailGalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3E97AD81D25CC3A00FE4297 /* VenueDetailGalleryCollectionViewCell.xib */; };
@@ -222,7 +221,6 @@
 		D3E156481D244042001FB5BE /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D3E226821D7F580600BB893C /* VenueDetailViewControllerDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailViewControllerDriver.swift; sourceTree = "<group>"; };
 		D3E97AAA1D246F7F00FE4297 /* BestVenuesAroundYouCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestVenuesAroundYouCollectionViewDataSource.swift; sourceTree = "<group>"; };
-		D3E97AAD1D24770600FE4297 /* UImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UImage+Color.swift"; sourceTree = "<group>"; };
 		D3E97AD31D25CB9B00FE4297 /* VenueDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailViewController.swift; sourceTree = "<group>"; };
 		D3E97AD61D25CC3400FE4297 /* VenueDetailGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3E97AD81D25CC3A00FE4297 /* VenueDetailGalleryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueDetailGalleryCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -618,7 +616,6 @@
 			children = (
 				D3891C7A1D1FF591001858C8 /* NSBundle+Nib.swift */,
 				D3E1563D1D24300D001FB5BE /* UIFont+Ftop.swift */,
-				D3E97AAD1D24770600FE4297 /* UImage+Color.swift */,
 				D3F363C31D7257E200D5288B /* Array+SafeAccess.swift */,
 				D338EBBD1D734B3D00EB2B53 /* UICollectionView+Register.swift */,
 			);
@@ -896,14 +893,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Karumi;
 				TargetAttributes = {
 					D3B828B21AD86F2300D60B6F = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0800;
 					};
 					D3B828CB1AD86F2300D60B6F = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = D3B828B21AD86F2300D60B6F;
 					};
 				};
@@ -988,7 +987,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		651E1965E9804EB688AC0A4E /* [CP] Copy Pods Resources */ = {
@@ -1018,7 +1017,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D32BD4C81D73277E00397E39 /* [SwiftGen] Build resources */ = {
@@ -1115,7 +1114,6 @@
 				D3891C601D1E7E8C001858C8 /* VenueViewModel.swift in Sources */,
 				D338EBC41D734D6E00EB2B53 /* VenueDetailTipCellProvider.swift in Sources */,
 				D3E1563E1D24300D001FB5BE /* UIFont+Ftop.swift in Sources */,
-				D3E97AAE1D24770600FE4297 /* UImage+Color.swift in Sources */,
 				D3DA9DB71D732D2F000A42E4 /* Images.swift in Sources */,
 				D3F363B41D71F0C300D5288B /* GPS.swift in Sources */,
 				D3E97ADB1D25D23F00FE4297 /* VenueDetailUI.swift in Sources */,
@@ -1208,6 +1206,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1217,8 +1216,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1252,6 +1253,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1261,8 +1263,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1281,6 +1285,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1289,6 +1294,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8ECBF7D2AF1D6AD1177114F5 /* Pods-FoursquareTop.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FoursquareTop/Info.plist;
@@ -1298,6 +1304,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FoursquareTop/FoursquareTop-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1305,6 +1312,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A6515A136A33C1C084D5FAD /* Pods-FoursquareTop.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FoursquareTop/Info.plist;
@@ -1313,6 +1321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "KR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FoursquareTop/FoursquareTop-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -1320,6 +1329,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A2EB3C2091C3EE0EB8BE088B /* Pods-FoursquareTopUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1334,6 +1344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "KR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoursquareTop.app/FoursquareTop";
 			};
 			name = Debug;
@@ -1342,6 +1353,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 465E128467B92594FDED88B0 /* Pods-FoursquareTopUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1351,7 +1363,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KR.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoursquareTop.app/FoursquareTop";
 			};
 			name = Release;
