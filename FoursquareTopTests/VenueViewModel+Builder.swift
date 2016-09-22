@@ -82,3 +82,21 @@ extension VenueCategoryNames {
         ])
     }
 }
+
+extension VenueTipViewModel {
+    static func build(
+        identifier: String = "",
+        URL: NSURL? = nil,
+        foursquareURL: NSURL? = nil,
+        likesCount: Int = 0,
+        text: String = ""
+        ) -> VenueTipViewModel {
+        return VenueTipViewModel(
+            identifier: identifier,
+            URL: URL,
+            foursquareURL: foursquareURL,
+            likesCount: likesCount,
+            text: text
+        )
+    }
+}

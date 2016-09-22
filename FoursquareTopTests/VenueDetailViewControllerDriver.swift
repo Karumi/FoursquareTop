@@ -63,7 +63,30 @@ class VenueDetailViewControllerDriver {
         expectView(withText: venue.formattedPrice, withAccessibilityLabel: tr(.VenueDetailPricingAccessibilityLabel), toBeVisible: visible)
     }
     
+    func expectTipsViewToBeEmpty() {
+        testCase.waitForAbsenceOfViewWithLocalizedAccessibilityLabel(.VenueDetailTipsCellAccessibilityLabel)
+    }
+    
+    func expectTipsView(with tips: [String]) {
+        
+        // Check that our tips stack only has the expected number of items
+        if let view = testCase.waitForViewWithLocalizedAccessibilityLabel(tr(.VenueDetailTipsAccessibilityLabel)) as? UIStackView {
+            failIfNotEqual(view.subviews.count, expected: tips.count)
+        }
+        
+        for tip in tips {
+            expectView(withText: tip, toBeVisible: true)
+        }
+    }
+    
+    // MARK: Private
+    
     private func expectView(withText text: String? = nil, withAccessibilityLabel label: String? = nil, toBeVisible visible: Bool) {
+        
+        guard text != nil || label != nil else {
+            testCase.failWithException(NSException(name: "Illegal argument", reason: "Either you give me text or Accessibility label", userInfo: nil), stopTest: true)
+            return
+        }
         
         if let accessibilityLabel = label {
             if visible {
@@ -74,7 +97,7 @@ class VenueDetailViewControllerDriver {
                 } else if let button = view as? UIButton {
                     failIfNotEqual(button.titleLabel!.text!, expected: text!)
                 } else {
-                    testCase.failWithException(NSException(name: "Unknown UIView", reason: "Trying to find text in an UIView that may not contain text", userInfo: nil), stopTest: false)
+                    testCase.failWithException(NSException(name: "Unknown UIView", reason: "Trying to find text in an UIView that may not contain text", userInfo: nil), stopTest: true)
                 }
             } else {
                 testCase.waitForAbsenceOfViewWithLocalizedAccessibilityLabel(accessibilityLabel)
@@ -85,9 +108,9 @@ class VenueDetailViewControllerDriver {
         
     }
     
-    private func failIfNotEqual(value: String?, expected: String?) {
+    private func failIfNotEqual<T:Equatable>(value: T?, expected: T?) {
         if value! != expected! {
-            testCase.failWithException(NSException(name: "Matching error", reason: "Text is not matching", userInfo: nil), stopTest: false)
+            testCase.failWithException(NSException(name: "Matching error", reason: "Expected item \(expected) is not matching with \(value)", userInfo: nil), stopTest: false)
         }
     }
 }
