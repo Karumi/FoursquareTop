@@ -47,6 +47,10 @@ enum L10n {
   case VenueDetailRatingAccessibilityLabel
   /// The venue's pricing tag
   case VenueDetailPricingAccessibilityLabel
+  /// The venue's tips
+  case VenueDetailTipsAccessibilityLabel
+  /// The venue's tips
+  case VenueDetailTipsCellAccessibilityLabel
 }
 // swiftlint:enable type_body_length
 
@@ -97,6 +101,10 @@ extension L10n: CustomStringConvertible {
         return L10n.tr("VenueDetail.Rating.AccessibilityLabel")
       case .VenueDetailPricingAccessibilityLabel:
         return L10n.tr("VenueDetail.Pricing.AccessibilityLabel")
+      case .VenueDetailTipsAccessibilityLabel:
+        return L10n.tr("VenueDetail.Tips.AccessibilityLabel")
+      case .VenueDetailTipsCellAccessibilityLabel:
+        return L10n.tr("VenueDetail.Tips.Cell.AccessibilityLabel")
     }
   }
 

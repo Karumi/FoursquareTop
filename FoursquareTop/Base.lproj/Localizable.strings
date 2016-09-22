@@ -22,3 +22,6 @@
 "VenueDetail.Status.AccessibilityLabel" = "The venue's status";
 "VenueDetail.Rating.AccessibilityLabel" = "The venue's rating";
 "VenueDetail.Pricing.AccessibilityLabel" = "The venue's pricing tag";
+
+"VenueDetail.Tips.AccessibilityLabel" = "The venue's tips";
+"VenueDetail.Tips.Cell.AccessibilityLabel" = "The venue's tips";

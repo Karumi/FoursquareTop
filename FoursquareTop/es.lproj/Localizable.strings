@@ -17,3 +17,8 @@
 "VenueDetail.SeeMenu" = "Ver menú";
 "VenueDetail.CanNotFetchVenue.Error" = "No ha sido posible cargar la informacieon de este sitio, por favor haz tap en cualquier parte para reintentar";
 "VenueDetail.PhotoGallery.Title" = "%lu de %lu";
+
+"VenueDetail.Address.AccessibilityLabel" = "La direccion del sitio";
+"VenueDetail.Status.AccessibilityLabel" = "El horario del sitio";
+"VenueDetail.Rating.AccessibilityLabel" = "La valoración del sitio";
+"VenueDetail.Pricing.AccessibilityLabel" = "La valoración del precio del sitio";

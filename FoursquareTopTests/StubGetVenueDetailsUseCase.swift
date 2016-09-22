@@ -29,12 +29,13 @@ class StubGetVenueDetailsUseCase : GetVenueDetailsUseCase {
         self.venue = nil
     }
     
-    func givenAVenue(withAddress address: String? = nil, withStatus status: String? = nil, withRating rating: Double? = nil, withPrice price: VenuePrice? = nil) {
+    func givenAVenue(withAddress address: String? = nil, withStatus status: String? = nil, withRating rating: Double? = nil, withPrice price: VenuePrice? = nil, withTips tips: [String] = []) {
         self.venue = VenueViewModel.build(
             address: address,
             status: status,
             rating: rating,
-            price: price
+            price: price,
+            tips: getTips(tips)
         )
     }
     
@@ -43,4 +44,12 @@ class StubGetVenueDetailsUseCase : GetVenueDetailsUseCase {
         self.venue = VenueViewModel.build(menu: url)
     }
     
+    private func getTips(tips: [String]) -> [VenueTipViewModel] {
+        var venueTips = [VenueTipViewModel]()
+        for tip in tips {
+            venueTips.append(VenueTipViewModel.build(text: tip))
+        }
+        
+        return venueTips
+    }
 }
