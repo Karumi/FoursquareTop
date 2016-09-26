@@ -34,7 +34,7 @@ class VenueDetatilViewControllerTests : BaseUITestCase {
     }
     
     func testMenuButtonIsNotVisibleWhenVenueHasNoMenu() {
-        getVenueDetailsUseCase.givenVenue(withMenuURL : nil)
+        getVenueDetailsUseCase.givenVenue(withMenu : nil)
         
         openViewController()
         
@@ -42,7 +42,7 @@ class VenueDetatilViewControllerTests : BaseUITestCase {
     }
     
     func testMenuButtonIsVisibleWhenVenueHasMenu() {
-        getVenueDetailsUseCase.givenVenue(withMenuURL: NSURL(fileURLWithPath: "http://www.karumi.com"))
+        getVenueDetailsUseCase.givenVenue(withMenu: NSURL(fileURLWithPath: "http://www.karumi.com"))
         
         openViewController()
         
