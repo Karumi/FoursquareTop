@@ -2,6 +2,8 @@
 
 import Foundation
 
+// swiftlint:disable file_length
+// swiftlint:disable type_body_length
 enum L10n {
   /// Close
   case Close
@@ -38,6 +40,7 @@ enum L10n {
   /// %lu de %lu
   case VenueDetailPhotoGalleryTitle(Int, Int)
 }
+// swiftlint:enable type_body_length
 
 extension L10n: CustomStringConvertible {
   var description: String { return self.string }
