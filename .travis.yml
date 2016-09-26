@@ -9,5 +9,5 @@ before_script:
   - gem install xcpretty-travis-formatter
 
 script:
-  - set -o pipefail && xcodebuild -workspace FoursquareTop.xcworkspace -scheme FoursquareTop -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build CODE_SIGN_IDENTITY=- | xcpretty -f `xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild -workspace FoursquareTop.xcworkspace -scheme FoursquareTop -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -f `xcpretty-travis-formatter`
   

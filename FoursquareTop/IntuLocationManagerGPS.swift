@@ -7,8 +7,6 @@ typealias GPSAccuracy = INTULocationAccuracy
 
 class IntuLocationManagerGPS : NSObject, GPS {
     
-    private let locationManager = INTULocationManager.sharedInstance()
-    
     func getUserPosition(withAccuracy accuracy: GPSAccuracy, timeout: NSTimeInterval, callback: Result<CLLocation, LocationError> -> ()) {
         
         let locationManager = INTULocationManager.sharedInstance()
