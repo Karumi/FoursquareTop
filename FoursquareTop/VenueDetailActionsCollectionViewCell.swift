@@ -9,6 +9,12 @@ class VenueDetailActionsCollectionViewCell : DetailCell {
     
     weak var delegate: VenueDetailActionsCollectionViewCellDelegate?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.accessibilityLabel = tr(.VenueDetailTipsCellAccessibilityLabel)
+    }
+    
     override func configure(withVenue venue: VenueViewModel) {
         super.configure(withVenue: venue)
         

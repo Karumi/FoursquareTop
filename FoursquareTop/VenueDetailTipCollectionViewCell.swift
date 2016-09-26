@@ -19,6 +19,12 @@ class VenueDetailTipCollectionViewCell : DetailCell {
         return label.frame.height
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        stackView.accessibilityLabel = tr(.VenueDetailTipsAccessibilityLabel)
+    }
+    
     override func configure(withVenue venue: VenueViewModel) {
         super.configure(withVenue: venue)
         

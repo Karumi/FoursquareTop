@@ -119,6 +119,24 @@ class VenueDetatilViewControllerTests : BaseUITestCase {
         
         driver.expectPricingLabel(ofVenue: getVenueDetailsUseCase.venue!, toBeVisible: false)
     }
+    
+    func testTipsAreVisibleIfVenueHasAny() {
+        let tips = [String](arrayLiteral: "Tip 1", "Tip 2")
+        
+        getVenueDetailsUseCase.givenAVenue(withTips: tips)
+        
+        openViewController()
+        
+        driver.expectTipsView(with: tips)
+    }
+    
+    func testTipsAreNotVisibleIfVenueHasNone() {
+        getVenueDetailsUseCase.givenAVenue(withTips: [])
+        
+        openViewController()
+        
+        driver.expectTipsViewToBeEmpty()
+    }
 
     // MARK: Private
     override func presentViewController(window: UIWindow, navigator: RootNavigator, appCompositionRoot: AppCompositionRoot) {
