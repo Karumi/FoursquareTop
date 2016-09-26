@@ -1,10 +1,3 @@
-//
-//  VenueDetailViewControllerTests.swift
-//  FoursquareTop
-//
-//  Created by Fran on 9/20/16.
-//  Copyright © 2016 Karumi. All rights reserved.
-//
 
 import UIKit
 
@@ -41,7 +34,7 @@ class VenueDetatilViewControllerTests : BaseUITestCase {
     }
     
     func testMenuButtonIsNotVisibleWhenVenueHasNoMenu() {
-        getVenueDetailsUseCase.givenVenueWithoutMenu()
+        getVenueDetailsUseCase.givenVenue(withMenuURL : nil)
         
         openViewController()
         
@@ -49,7 +42,7 @@ class VenueDetatilViewControllerTests : BaseUITestCase {
     }
     
     func testMenuButtonIsVisibleWhenVenueHasMenu() {
-        getVenueDetailsUseCase.givenVenueWithMenu()
+        getVenueDetailsUseCase.givenVenue(withMenuURL: NSURL(fileURLWithPath: "http://www.karumi.com"))
         
         openViewController()
         

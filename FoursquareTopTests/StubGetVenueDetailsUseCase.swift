@@ -38,12 +38,9 @@ class StubGetVenueDetailsUseCase : GetVenueDetailsUseCase {
         )
     }
     
-    func givenVenueWithMenu() {
-        self.venue = VenueViewModel.build(menuURL: NSURL(fileURLWithPath: "http://www.karumi.com"))
-    }
-    
-    func givenVenueWithoutMenu() {
-        self.venue = VenueViewModel.build(menuURL: nil)
+    func givenVenue(withMenuURL url : NSURL?)
+    {
+        self.venue = VenueViewModel.build(menuURL: url)
     }
     
 }

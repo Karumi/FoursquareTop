@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import Nimble
 
 @testable import FoursquareTop
 
@@ -58,8 +59,7 @@ class VenueDetailViewControllerDriver {
         
     }
     
-    func expectPricingLabel(ofVenue venue: VenueViewModel, toBeVisible visible: Bool)
-    {
+    func expectPricingLabel(ofVenue venue: VenueViewModel, toBeVisible visible: Bool) {
         expectView(withText: venue.formattedPrice, withAccessibilityLabel: tr(.VenueDetailPricingAccessibilityLabel), toBeVisible: visible)
     }
     
@@ -70,9 +70,9 @@ class VenueDetailViewControllerDriver {
                 let view = testCase.waitForViewWithLocalizedAccessibilityLabel(accessibilityLabel) as UIView
                 
                 if let label = view as? UILabel {
-                    failIfNotEqual(label.text!, expected: text!)
+                    expect(label.text!).to(equal(text!))
                 } else if let button = view as? UIButton {
-                    failIfNotEqual(button.titleLabel!.text!, expected: text!)
+                    expect(button.titleLabel!.text!).to(equal(text!))
                 } else {
                     testCase.failWithException(NSException(name: "Unknown UIView", reason: "Trying to find text in an UIView that may not contain text", userInfo: nil), stopTest: false)
                 }
@@ -83,11 +83,5 @@ class VenueDetailViewControllerDriver {
             testCase.waitForViewWithLocalizedAccessibilityLabel(text!)
         }
         
-    }
-    
-    private func failIfNotEqual(value: String?, expected: String?) {
-        if value! != expected! {
-            testCase.failWithException(NSException(name: "Matching error", reason: "Text is not matching", userInfo: nil), stopTest: false)
-        }
     }
 }
